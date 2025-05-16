@@ -2,9 +2,10 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { UsersRound, Paintbrush, Telescope, LibraryBig, ListChecks, Users, Search, Bell, Smartphone, MessagesSquare, Flame } from "lucide-react";
+import { Paintbrush, Telescope, LibraryBig, ListChecks, Users, Search, Bell, Smartphone, MessagesSquare, Flame } from "lucide-react";
 import Image from "next/image";
 import { AnimatedSection } from "@/components/common/animated-section";
+import { InteractiveCard } from "@/components/common/interactive-card";
 import { useTranslations } from "@/lib/i18n";
 
 export function FuturePlansSection() {
@@ -107,28 +108,30 @@ export function FuturePlansSection() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {nearTermPlannedFeatures.map((feature, index) => (
-            <AnimatedSection key={index} delay={`delay-${index * 100}ms`}>
-              <Card className="h-full flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1 bg-card">
-                <CardHeader className="items-center text-center p-6">
-                  {feature.icon}
-                  <CardTitle className="text-2xl">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex-grow flex flex-col p-6 pt-0">
-                  <div className="relative w-full aspect-[3/2] rounded-md overflow-hidden mb-4">
-                    <Image
-                      src={feature.imageSrc}
-                      alt={feature.imageAlt}
-                      layout="fill"
-                      objectFit="cover"
-                      data-ai-hint={feature.aiHint}
-                      className="transition-transform duration-500 hover:scale-110"
-                    />
-                  </div>
-                  <CardDescription className="text-base text-foreground/70 text-center flex-grow">
-                    {feature.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
+            <AnimatedSection key={index} delay={`delay-${index * 100}ms`} className="h-full">
+              <InteractiveCard className="h-full">
+                <Card className="h-full flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out bg-card">
+                  <CardHeader className="items-center text-center p-6">
+                    {feature.icon}
+                    <CardTitle className="text-2xl">{feature.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow flex flex-col p-6 pt-0">
+                    <div className="relative w-full aspect-[3/2] rounded-md overflow-hidden mb-4">
+                      <Image
+                        src={feature.imageSrc}
+                        alt={feature.imageAlt}
+                        layout="fill"
+                        objectFit="cover"
+                        data-ai-hint={feature.aiHint}
+                        className="transition-transform duration-500"
+                      />
+                    </div>
+                    <CardDescription className="text-base text-foreground/70 text-center flex-grow">
+                      {feature.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </InteractiveCard>
             </AnimatedSection>
           ))}
         </div>
@@ -141,28 +144,30 @@ export function FuturePlansSection() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {longTermPlannedFeatures.map((feature, index) => (
-            <AnimatedSection key={index} delay={`delay-${index * 100}ms`}>
-              <Card className="h-full flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1 bg-card">
-                <CardHeader className="items-center text-center p-6">
-                  {feature.icon}
-                  <CardTitle className="text-2xl">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex-grow flex flex-col p-6 pt-0">
-                  <div className="relative w-full aspect-[3/2] rounded-md overflow-hidden mb-4">
-                    <Image
-                      src={feature.imageSrc}
-                      alt={feature.imageAlt}
-                      layout="fill"
-                      objectFit="cover"
-                      data-ai-hint={feature.aiHint}
-                      className="transition-transform duration-500 hover:scale-110"
-                    />
-                  </div>
-                  <CardDescription className="text-base text-foreground/70 text-center flex-grow">
-                    {feature.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
+            <AnimatedSection key={index} delay={`delay-${index * 100}ms`} className="h-full">
+               <InteractiveCard className="h-full">
+                <Card className="h-full flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out bg-card">
+                  <CardHeader className="items-center text-center p-6">
+                    {feature.icon}
+                    <CardTitle className="text-2xl">{feature.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow flex flex-col p-6 pt-0">
+                    <div className="relative w-full aspect-[3/2] rounded-md overflow-hidden mb-4">
+                      <Image
+                        src={feature.imageSrc}
+                        alt={feature.imageAlt}
+                        layout="fill"
+                        objectFit="cover"
+                        data-ai-hint={feature.aiHint}
+                        className="transition-transform duration-500"
+                      />
+                    </div>
+                    <CardDescription className="text-base text-foreground/70 text-center flex-grow">
+                      {feature.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </InteractiveCard>
             </AnimatedSection>
           ))}
         </div>
