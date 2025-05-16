@@ -98,6 +98,14 @@ const sponsorsSection: Translations['sponsorsSection'] = {
   backerDescription: "Para pessoas que amam o Anime Pack e querem mostrar seu apoio! Como apoiador, você receberá um papel cosmético especial no aplicativo e em nossas plataformas comunitárias, juntamente com algumas vantagens exclusivas para usuários como agradecimento por sua contribuição.",
   backerButtonText: "Torne-se um Apoiador",
   backerEarlyDevelopmentNote: "Nota: A opção 'Torne-se um Apoiador' está disponível exclusivamente durante a fase inicial de desenvolvimento do Anime Pack.",
+  backerDialog: {
+    title: "Apoie o Anime Pack como um Apoiador",
+    description: "Escolha sua forma preferida de contribuir e nos ajude a crescer!",
+    contentPlaceholderLine1: "Seu apoio contribui diretamente para custos de servidor, desenvolvimento de recursos e iniciativas da comunidade.",
+    option1Text: "Apoie-nos no",
+    option2Text: "Dê uma gorjeta no",
+    moreOptionsSoon: "Mais opções em breve...",
+  }
 };
 
 const featureShowcase: Translations['featureShowcase'] = {

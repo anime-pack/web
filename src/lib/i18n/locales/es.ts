@@ -98,6 +98,14 @@ const sponsorsSection: Translations['sponsorsSection'] = {
   backerDescription: "¡Para individuos que aman Anime Pack y quieren mostrar su apoyo! Como partidario, recibirás un rol cosmético especial en la aplicación y en nuestras plataformas comunitarias, junto con algunas ventajas exclusivas para usuarios como agradecimiento por tu contribución.",
   backerButtonText: "Conviértete en Partidario",
   backerEarlyDevelopmentNote: "Nota: La opción 'Conviértete en Partidario' está disponible exclusivamente durante la fase inicial de desarrollo de Anime Pack.",
+  backerDialog: {
+    title: "Apoya a Anime Pack como Partidario",
+    description: "¡Elige tu forma preferida de contribuir y ayúdanos a crecer!",
+    contentPlaceholderLine1: "Tu apoyo contribuye directamente a los costos del servidor, el desarrollo de funciones y las iniciativas comunitarias.",
+    option1Text: "Apóyanos en",
+    option2Text: "Danos una propina en",
+    moreOptionsSoon: "Más opciones próximamente...",
+  }
 };
 
 const featureShowcase: Translations['featureShowcase'] = {

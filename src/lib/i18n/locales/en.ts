@@ -97,6 +97,14 @@ const sponsorsSection = {
   backerDescription: "For individuals who love Anime Pack and want to show their support! As a backer, you'll receive a special cosmetic role in-app and on our community platforms, along with a few exclusive user perks as a thank you for your contribution.",
   backerButtonText: "Become a Backer",
   backerEarlyDevelopmentNote: "Note: The 'Become a Backer' option is available exclusively during the early development phase of Anime Pack.",
+  backerDialog: {
+    title: "Support Anime Pack as a Backer",
+    description: "Choose your preferred way to contribute and help us grow!",
+    contentPlaceholderLine1: "Your support directly contributes to server costs, feature development, and community initiatives.",
+    option1Text: "Support us on",
+    option2Text: "Tip us on",
+    moreOptionsSoon: "More options coming soon...",
+  }
 };
 
 const featureShowcase = {

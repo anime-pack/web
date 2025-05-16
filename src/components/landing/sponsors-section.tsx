@@ -2,6 +2,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { HeartHandshake, Star } from "lucide-react";
 import Link from 'next/link';
 import { AnimatedSection } from "@/components/common/animated-section";
@@ -41,16 +42,41 @@ export function SponsorsSection() {
         <p className="text-lg text-foreground/80 max-w-3xl mx-auto mb-8">
           {t('sponsorsSection.backerDescription')}
         </p>
-        <Button
-          asChild
-          size="lg"
-          className="bg-accent text-accent-foreground hover:bg-accent/90 transition-transform duration-300 ease-in-out hover:scale-105 shadow-lg"
-        >
-          <Link href="#" target="_blank" rel="noopener noreferrer">
-            {t('sponsorsSection.backerButtonText')}
-            <Star className="ml-2 h-5 w-5" />
-          </Link>
-        </Button>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button
+              size="lg"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 transition-transform duration-300 ease-in-out hover:scale-105 shadow-lg"
+            >
+              {t('sponsorsSection.backerButtonText')}
+              <Star className="ml-2 h-5 w-5" />
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle>{t('sponsorsSection.backerDialog.title')}</DialogTitle>
+              <DialogDescription>
+                {t('sponsorsSection.backerDialog.description')}
+              </DialogDescription>
+            </DialogHeader>
+            <div className="grid gap-4 py-4">
+              <p>{t('sponsorsSection.backerDialog.contentPlaceholderLine1')}</p>
+              <p>
+                {t('sponsorsSection.backerDialog.option1Text')}{' '}
+                <Link href="#" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                  Patreon
+                </Link>
+              </p>
+              <p>
+                {t('sponsorsSection.backerDialog.option2Text')}{' '}
+                <Link href="#" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                  Ko-fi
+                </Link>
+              </p>
+              <p>{t('sponsorsSection.backerDialog.moreOptionsSoon')}</p>
+            </div>
+          </DialogContent>
+        </Dialog>
         <p className="text-xs text-muted-foreground mt-4 max-w-md mx-auto">
           {t('sponsorsSection.backerEarlyDevelopmentNote')}
         </p>
@@ -58,4 +84,3 @@ export function SponsorsSection() {
     </AnimatedSection>
   );
 }
-
