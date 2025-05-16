@@ -1,7 +1,8 @@
+
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { UsersRound, Paintbrush, Telescope, LibraryBig, ListChecks, Users, Search, Bell, Wand2, Smartphone } from "lucide-react";
+import { UsersRound, Paintbrush, Telescope, LibraryBig, ListChecks, Users, Search, Bell, Wand2, Smartphone, MessagesSquare } from "lucide-react";
 import Image from "next/image";
 import { AnimatedSection } from "@/components/common/animated-section";
 
@@ -47,12 +48,12 @@ const plannedFeatures = [
     aiHint: "anime notification",
   },
   {
-    icon: <UsersRound className="h-10 w-10 text-accent mb-4" />,
-    title: "Expanded Social Features",
-    description: "More ways to connect, share lists, join group watches, and participate in community events.",
+    icon: <MessagesSquare className="h-10 w-10 text-accent mb-4" />,
+    title: "Social Features",
+    description: "Connect with friends, share lists, and enjoy integrated Discord features for seamless community interaction.",
     imageSrc: "https://placehold.co/600x400.png",
-    imageAlt: "Expanded Social Features",
-    aiHint: "social connection network",
+    imageAlt: "Social Features with Discord Integration",
+    aiHint: "social connection discord",
   },
   {
     icon: <Paintbrush className="h-10 w-10 text-accent mb-4" />,
