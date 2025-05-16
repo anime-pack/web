@@ -3,7 +3,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger, DialogFooter } from "@/components/ui/dialog";
-import { HeartHandshake, Star, CreditCard } from "lucide-react";
+import { HeartHandshake, Star } from "lucide-react";
 import Link from 'next/link';
 import { AnimatedSection } from "@/components/common/animated-section";
 import { useTranslations } from "@/lib/i18n";
@@ -74,7 +74,7 @@ export function SponsorsSection() {
                 <p className="flex items-center">
                   <SiOpencollective className="mr-3 h-6 w-6 text-accent" />
                   {t('sponsorsSection.backerDialog.optionOpenCollectiveText')}{' '}
-                  <Link href="#" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline ml-1">
+                  <Link href="https://opencollective.com/anime-pack" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline ml-1">
                     OpenCollective
                   </Link>
                 </p>
@@ -102,3 +102,4 @@ export function SponsorsSection() {
     </AnimatedSection>
   );
 }
+
