@@ -24,8 +24,7 @@ export function SponsorsSection() {
         <Button
           asChild
           size="lg"
-          variant="outline"
-          className="border-accent text-accent hover:bg-accent/10 transition-transform duration-300 ease-in-out hover:scale-105 shadow-lg"
+          className="bg-accent text-accent-foreground hover:bg-accent/90 transition-transform duration-300 ease-in-out hover:scale-105 shadow-lg"
         >
           <Link href="https://discord.gg/Nv8UXpB36y" target="_blank" rel="noopener noreferrer">
             <FaDiscord className="mr-2 h-5 w-5" />
@@ -59,3 +58,4 @@ export function SponsorsSection() {
     </AnimatedSection>
   );
 }
+
