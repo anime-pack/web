@@ -36,7 +36,10 @@ export function AboutSection() {
               </div>
             </DialogTrigger>
             <DialogOverlay className="bg-black/80" />
-            <DialogContent className="p-0 bg-transparent border-0 shadow-none sm:max-w-xs md:max-w-sm focus-visible:ring-0 focus-visible:ring-offset-0">
+            <DialogContent 
+              hideCloseButton={true}
+              className="p-0 bg-transparent border-0 shadow-none sm:max-w-xs md:max-w-sm focus-visible:ring-0 focus-visible:ring-offset-0"
+            >
               <DialogTitle className="sr-only">App Icon</DialogTitle>
               <Card className="overflow-hidden shadow-xl rounded-lg">
                 <CardContent className="p-0">
