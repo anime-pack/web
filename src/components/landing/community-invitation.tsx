@@ -19,13 +19,12 @@ export function CommunityInvitation() {
         <p className="text-lg text-foreground/80 max-w-2xl mx-auto mb-8">
           {t('communityInvitation.description')}
         </p>
-        <Button 
-          asChild 
-          size="lg" 
+        <Button
+          asChild
+          size="lg"
           className="bg-accent text-accent-foreground hover:bg-accent/90 transition-transform duration-300 ease-in-out hover:scale-105 shadow-lg"
         >
-          {/* Replace "#" with your actual Discord invite link */}
-          <Link href="#" target="_blank" rel="noopener noreferrer"> 
+          <Link href="https://discord.gg/Nv8UXpB36y" target="_blank" rel="noopener noreferrer">
             {t('common.joinDiscord')}
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>

@@ -1,5 +1,5 @@
 
-"use client"; 
+"use client";
 
 import { Github, MessagesSquare } from 'lucide-react';
 import Link from 'next/link';
@@ -29,7 +29,7 @@ export function Header() {
             height={24}
             data-ai-hint="app logo"
           />
-          <span 
+          <span
             className="font-bold text-xl header-app-name"
             data-text-content={translations.common.appName as string}
           >
@@ -52,27 +52,26 @@ export function Header() {
                 <Button variant="outline" size="icon" asChild className="h-9 w-9">
                   <Link href="https://github.com/anime-pack" target="_blank" rel="noopener noreferrer">
                     <Github className="h-[1.2rem] w-[1.2rem]" />
-                    <span className="sr-only">{t('header.srGitHub')[0]}</span>
+                    <span className="sr-only">{t('header.srGitHub')[0] as string}</span>
                   </Link>
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
-                <p>{t('header.srGitHub')[0]}</p>
+                <p>{t('header.srGitHub')[0] as string}</p>
               </TooltipContent>
             </Tooltip>
 
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button variant="outline" size="icon" asChild className="h-9 w-9">
-                  {/* Replace "#" with your actual Discord invite link */}
-                  <Link href="#" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://discord.gg/Nv8UXpB36y" target="_blank" rel="noopener noreferrer">
                     <MessagesSquare className="h-[1.2rem] w-[1.2rem]" />
-                    <span className="sr-only">{t('header.srDiscord')[0]}</span>
+                    <span className="sr-only">{t('header.srDiscord')[0] as string}</span>
                   </Link>
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
-                <p>{t('header.srDiscord')[0]}</p>
+                <p>{t('header.srDiscord')[0] as string}</p>
               </TooltipContent>
             </Tooltip>
 
@@ -81,7 +80,7 @@ export function Header() {
                 <ThemeToggle />
               </TooltipTrigger>
               <TooltipContent>
-                <p>{t('header.srThemeToggle')[0]}</p>
+                <p>{t('header.srThemeToggle')[0] as string}</p>
               </TooltipContent>
             </Tooltip>
           </div>

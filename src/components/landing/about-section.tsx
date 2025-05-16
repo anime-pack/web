@@ -25,7 +25,7 @@ import {
 import { ToastAction } from "@/components/ui/toast";
 
 const LOCAL_STORAGE_KEY_ACHIEVEMENT_UNLOCKED = 'anime-pack-about-icon-achievement-unlocked';
-const DISCORD_SERVER_LINK = "#"; // Replace with your actual Discord server link
+const DISCORD_SERVER_LINK = "https://discord.gg/Nv8UXpB36y";
 
 export function AboutSection() {
   const { t } = useTranslations();
@@ -88,7 +88,7 @@ export function AboutSection() {
   };
 
   const imageUrl = "https://placehold.co/100x100.png";
-  const imageAlt = t('aboutSection.title')[0] as string; 
+  const imageAlt = t('aboutSection.title')[0] as string;
 
   return (
     <AnimatedSection id="about" className="py-16 md:py-24 bg-background">
