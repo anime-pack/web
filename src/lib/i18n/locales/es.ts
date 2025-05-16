@@ -1,3 +1,4 @@
+
 // @/lib/i18n/locales/es.ts
 import type { Translations } from './en';
 
@@ -17,7 +18,7 @@ const header: Translations['header'] = {
   themeSystem: "Sistema",
   language: "Idioma",
   english: "Inglés",
-  portugueseBrazil: "Portugués (Brasil)",
+  portugueseBrazil: "Portugués", // Changed from "Portugués (Brasil)"
   spanish: "Español",
 };
 

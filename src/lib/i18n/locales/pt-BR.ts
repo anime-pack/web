@@ -1,3 +1,4 @@
+
 // @/lib/i18n/locales/pt-BR.ts
 import type { Translations } from './en';
 
@@ -17,8 +18,8 @@ const header: Translations['header'] = {
   themeSystem: "Sistema",
   language: "Idioma",
   english: "Inglês",
-  portugueseBrazil: "Português (Brasil)",
-  spanish: "Espanhol", // Added Spanish
+  portugueseBrazil: "Português", // Changed from "Português (Brasil)"
+  spanish: "Espanhol",
 };
 
 const footer: Translations['footer'] = {

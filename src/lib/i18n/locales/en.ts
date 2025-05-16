@@ -1,3 +1,4 @@
+
 // @/lib/i18n/locales/en.ts
 
 const common = {
@@ -16,8 +17,8 @@ const header = {
   themeSystem: "System",
   language: "Language",
   english: "English",
-  portugueseBrazil: "Portuguese (Brazil)",
-  spanish: "Spanish", // Added Spanish
+  portugueseBrazil: "Portuguese", // Changed from "Portuguese (Brazil)"
+  spanish: "Spanish",
 };
 
 const footer = {

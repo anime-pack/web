@@ -1,3 +1,4 @@
+
 // @/components/layout/language-switcher.tsx
 "use client";
 
@@ -17,7 +18,7 @@ import { cn } from "@/lib/utils";
 
 // Simplified SVGs for flags
 const USFlag = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15" className="mr-2 h-4 w-5 rounded-sm">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15" className="h-4 w-5 rounded-sm">
     <rect width="20" height="15" fill="#fff"/>
     <rect width="20" height="3" fill="#b22234"/>
     <rect width="20" height="3" y="6" fill="#b22234"/>
@@ -27,7 +28,7 @@ const USFlag = () => (
 );
 
 const BrazilFlag = () => (
- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 70 49" className="mr-2 h-4 w-5 rounded-sm">
+ <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 70 49" className="h-4 w-5 rounded-sm">
     <rect width="70" height="49" fill="#009739"/>
     <path d="M35 3.5L66.5 24.5L35 45.5L3.5 24.5L35 3.5Z" fill="#fedd00"/>
     <circle cx="35" cy="24.5" r="12.25" fill="#002776"/>
@@ -35,7 +36,7 @@ const BrazilFlag = () => (
 );
 
 const SpainFlag = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15" className="mr-2 h-4 w-5 rounded-sm">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15" className="h-4 w-5 rounded-sm">
     <rect width="20" height="15" fill="#c60b1e"/> {/* Red top and bottom stripe */}
     <rect width="20" height="7.5" y="3.75" fill="#ffc400"/> {/* Yellow middle stripe */}
   </svg>
@@ -52,13 +53,17 @@ export function LanguageSwitcher() {
   ];
 
   const CurrentFlag = languages.find(lang => lang.code === language)?.Flag || Languages;
-
+  const langShorthand = language.split('-')[0].toUpperCase();
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className="h-9 w-9 border-border/60 hover:border-border">
+        <Button 
+          variant="outline" 
+          className="h-9 px-2.5 border-border/60 hover:border-border flex items-center gap-1.5"
+        >
           <CurrentFlag />
+          <span className="text-xs font-medium">{langShorthand}</span>
           <span className="sr-only">{t('header.language')}</span>
         </Button>
       </DropdownMenuTrigger>
