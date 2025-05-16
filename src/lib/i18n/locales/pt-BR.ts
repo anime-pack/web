@@ -103,6 +103,7 @@ const sponsorsSection: Translations['sponsorsSection'] = {
 const featureShowcase: Translations['featureShowcase'] = {
   title: "Ajude a Construir o Anime Pack!",
   description: `O Anime Pack é um projeto de código aberto e damos as boas-vindas a colaboradores de todos os níveis de habilidade. Seja você um desenvolvedor, designer ou apenas apaixonado por animes, há um lugar para você. Ajude-nos a tornar o Anime Pack o melhor aplicativo companheiro de animes!`,
+  activeContributorNote: "Se você deseja se tornar um contribuidor ativo, abra um ticket de suporte em nosso servidor Discord informando seu interesse."
 };
 
 const communityInvitation: Translations['communityInvitation'] = {

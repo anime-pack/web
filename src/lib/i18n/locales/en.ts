@@ -102,6 +102,7 @@ const sponsorsSection = {
 const featureShowcase = {
   title: "Help Build Anime Pack!",
   description: `Anime Pack is an open-source project, and we welcome contributors of all skill levels. Whether you're a developer, designer, or just passionate about anime, there's a place for you. Help us make Anime Pack the best anime companion app out there!`,
+  activeContributorNote: "If you wish to become an active contributor, please open a support ticket on our Discord server stating your interest."
 };
 
 const communityInvitation = {

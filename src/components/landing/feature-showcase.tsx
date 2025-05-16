@@ -29,6 +29,9 @@ export function FeatureShowcase() {
             {t('common.contributeOnGithub')}
           </Link>
         </Button>
+        <p className="text-xs text-muted-foreground mt-4 max-w-lg mx-auto">
+          {t('featureShowcase.activeContributorNote')}
+        </p>
       </div>
     </AnimatedSection>
   );
