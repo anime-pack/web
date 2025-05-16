@@ -1,5 +1,5 @@
 
-"use client"; // Add this directive
+"use client"; 
 
 import { Github, MessagesSquare } from 'lucide-react';
 import Link from 'next/link';
@@ -28,9 +28,13 @@ export function Header() {
             width={24}
             height={24}
             data-ai-hint="app logo"
-            className="text-accent"
           />
-          <span className="font-bold text-xl">{translations.common.appName}</span>
+          <span 
+            className="font-bold text-xl header-app-name"
+            data-text-content={translations.common.appName}
+          >
+            {translations.common.appName}
+          </span>
         </Link>
         <TooltipProvider delayDuration={1000}>
           <div className="ml-auto flex items-center space-x-2">
