@@ -8,6 +8,7 @@ import {
   Dialog,
   DialogContent,
   DialogOverlay,
+  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 
@@ -35,6 +36,8 @@ export function AboutSection() {
             </DialogTrigger>
             <DialogOverlay className="bg-black/80" />
             <DialogContent className="p-0 bg-transparent border-0 shadow-none sm:max-w-xl md:max-w-2xl lg:max-w-3xl focus-visible:ring-0 focus-visible:ring-offset-0">
+              {/* Visually hidden title for accessibility */}
+              <DialogTitle className="sr-only">App Icon</DialogTitle>
               {/* We remove default padding and styling to make the image the modal itself */}
               {/* You might need to adjust max-w-* based on desired modal image size */}
               <div className="relative aspect-square w-full max-w-full overflow-hidden rounded-lg">
