@@ -1,15 +1,17 @@
+
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 
-interface AnimatedSectionProps {
+interface AnimatedSectionProps extends React.HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   className?: string;
   delay?: string; 
 }
 
-export function AnimatedSection({ children, className, delay }: AnimatedSectionProps) {
+export function AnimatedSection({ children, className, delay, ...rest }: AnimatedSectionProps) {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
@@ -47,6 +49,7 @@ export function AnimatedSection({ children, className, delay }: AnimatedSectionP
         delay,
         className
       )}
+      {...rest} // Spread the rest of the props here (including id)
     >
       {children}
     </div>
