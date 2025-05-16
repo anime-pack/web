@@ -2,7 +2,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { UsersRound, Paintbrush, Telescope, LibraryBig, ListChecks, Users, Search, Bell, Smartphone, MessagesSquare } from "lucide-react";
+import { UsersRound, Paintbrush, Telescope, LibraryBig, ListChecks, Users, Search, Bell, Smartphone, MessagesSquare, Flame } from "lucide-react";
 import Image from "next/image";
 import { AnimatedSection } from "@/components/common/animated-section";
 
@@ -48,7 +48,7 @@ const nearTermPlannedFeatures = [
     aiHint: "profile customization options",
   },
   {
-    icon: <UsersRound className="h-10 w-10 text-accent mb-4" />,
+    icon: <Flame className="h-10 w-10 text-accent mb-4" />,
     title: "Community Recommendations",
     description: "Discover what's hot! Get recommendations based on trending anime and discussions within the Anime Pack community.",
     imageSrc: "https://placehold.co/600x400.png",
