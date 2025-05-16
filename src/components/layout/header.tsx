@@ -31,7 +31,7 @@ export function Header() {
           />
           <span 
             className="font-bold text-xl header-app-name"
-            data-text-content={translations.common.appName}
+            data-text-content={translations.common.appName as string}
           >
             {translations.common.appName}
           </span>
@@ -50,7 +50,7 @@ export function Header() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button variant="outline" size="icon" asChild className="h-9 w-9">
-                  <Link href="https://github.com/firebase/studio-prototyper-example" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://github.com/anime-pack" target="_blank" rel="noopener noreferrer">
                     <Github className="h-[1.2rem] w-[1.2rem]" />
                     <span className="sr-only">{t('header.srGitHub')[0]}</span>
                   </Link>

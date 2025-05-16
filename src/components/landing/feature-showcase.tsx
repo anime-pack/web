@@ -24,7 +24,7 @@ export function FeatureShowcase() {
           size="lg"
           className="bg-accent text-accent-foreground hover:bg-accent/90 transition-transform duration-300 ease-in-out hover:scale-105 shadow-lg"
         >
-          <Link href="https://github.com/firebase/studio-prototyper-example" target="_blank" rel="noopener noreferrer">
+          <Link href="https://github.com/anime-pack" target="_blank" rel="noopener noreferrer">
             <Github className="mr-2 h-5 w-5" />
             {t('common.contributeOnGithub')}
           </Link>
