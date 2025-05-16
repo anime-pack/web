@@ -37,20 +37,21 @@ export function AboutSection() {
               </div>
             </DialogTrigger>
             <DialogOverlay className="bg-black/80" />
-            <DialogContent 
+            <DialogContent
+              onOpenAutoFocus={(e) => e.preventDefault()}
               hideCloseButton={true}
               className="p-0 bg-transparent border-0 shadow-none sm:max-w-xs md:max-w-sm focus-visible:ring-0 focus-visible:ring-offset-0"
             >
-              <DialogTitle className="sr-only">App Icon</DialogTitle>
+              <DialogTitle className="sr-only">{t('aboutSection.title')}</DialogTitle>
               <InteractiveCard className="w-full h-full">
                 <Card className="overflow-hidden shadow-xl rounded-lg w-full h-full">
                   <CardContent className="p-2">
                     <div className="relative aspect-square w-full rounded-md overflow-hidden">
                       <Image
-                        src={imageUrl} 
+                        src={imageUrl}
                         alt={imageAlt}
                         layout="fill"
-                        objectFit="contain" 
+                        objectFit="contain"
                         data-ai-hint="fox box"
                       />
                     </div>
