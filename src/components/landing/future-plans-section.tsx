@@ -2,19 +2,11 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Wand2, UsersRound, Smartphone, Paintbrush, Telescope } from "lucide-react";
+import { UsersRound, Paintbrush, Telescope } from "lucide-react"; // Removed Wand2 and Smartphone
 import Image from "next/image";
 import { AnimatedSection } from "@/components/common/animated-section";
 
 const plannedFeatures = [
-  {
-    icon: <Wand2 className="h-10 w-10 text-accent mb-4" />,
-    title: "AI-Powered Recommendations",
-    description: "Get even smarter anime suggestions based on your evolving tastes, powered by advanced AI.",
-    imageSrc: "https://placehold.co/600x400.png",
-    imageAlt: "AI Recommendations",
-    aiHint: "artificial intelligence brain",
-  },
   {
     icon: <UsersRound className="h-10 w-10 text-accent mb-4" />,
     title: "Expanded Social Features",
@@ -22,14 +14,6 @@ const plannedFeatures = [
     imageSrc: "https://placehold.co/600x400.png",
     imageAlt: "Expanded Social Features",
     aiHint: "social connection network",
-  },
-  {
-    icon: <Smartphone className="h-10 w-10 text-accent mb-4" />,
-    title: "Native Mobile Apps",
-    description: "Take Anime Pack on the go with dedicated iOS and Android applications for a seamless mobile experience.",
-    imageSrc: "https://placehold.co/600x400.png",
-    imageAlt: "Native Mobile Apps",
-    aiHint: "mobile app interface",
   },
   {
     icon: <Paintbrush className="h-10 w-10 text-accent mb-4" />,
