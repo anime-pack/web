@@ -2,11 +2,51 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { UsersRound, Paintbrush, Telescope } from "lucide-react"; // Removed Wand2 and Smartphone
+import { UsersRound, Paintbrush, Telescope, LibraryBig, ListChecks, Users, Search, Bell, Wand2, Smartphone } from "lucide-react";
 import Image from "next/image";
 import { AnimatedSection } from "@/components/common/animated-section";
 
 const plannedFeatures = [
+  {
+    icon: <LibraryBig className="h-10 w-10 text-accent mb-4" />,
+    title: "Vast Library Access",
+    description: "Explore thousands of anime series and movies, with new titles added regularly to keep your watchlist fresh.",
+    imageSrc: "https://placehold.co/600x400.png",
+    imageAlt: "Vast anime library",
+    aiHint: "anime library",
+  },
+  {
+    icon: <ListChecks className="h-10 w-10 text-accent mb-4" />,
+    title: "Personalized Tracking",
+    description: "Effortlessly track watched episodes, manage your watchlist, and get personalized recommendations.",
+    imageSrc: "https://placehold.co/600x400.png",
+    imageAlt: "Personalized anime tracking",
+    aiHint: "anime watchlist",
+  },
+  {
+    icon: <Users className="h-10 w-10 text-accent mb-4" />,
+    title: "Community Hub",
+    description: "Connect with fellow fans, join discussions, share reviews, and discover hidden gems together.",
+    imageSrc: "https://placehold.co/600x400.png",
+    imageAlt: "Anime community hub",
+    aiHint: "anime community",
+  },
+  {
+    icon: <Search className="h-10 w-10 text-accent mb-4" />,
+    title: "Advanced Search & Filters",
+    description: "Quickly find exactly what you're looking for with powerful search and intuitive filtering options by genre, year, and more.",
+    imageSrc: "https://placehold.co/600x400.png",
+    imageAlt: "Advanced anime search",
+    aiHint: "anime search",
+  },
+  {
+    icon: <Bell className="h-10 w-10 text-accent mb-4" />,
+    title: "Release Notifications",
+    description: "Stay updated with notifications for new episode releases of your favorite animes and never miss out.",
+    imageSrc: "https://placehold.co/600x400.png",
+    imageAlt: "Anime release notifications",
+    aiHint: "anime notification",
+  },
   {
     icon: <UsersRound className="h-10 w-10 text-accent mb-4" />,
     title: "Expanded Social Features",
@@ -30,6 +70,22 @@ const plannedFeatures = [
     imageSrc: "https://placehold.co/600x400.png",
     imageAlt: "Advanced Genre Tagging",
     aiHint: "data graph connections",
+  },
+  {
+    icon: <Wand2 className="h-10 w-10 text-accent mb-4" />,
+    title: "AI-Powered Recommendations",
+    description: "Get even smarter suggestions with our upcoming AI engine that learns your unique taste.",
+    imageSrc: "https://placehold.co/600x400.png",
+    imageAlt: "AI Recommendations",
+    aiHint: "artificial intelligence brain",
+  },
+  {
+    icon: <Smartphone className="h-10 w-10 text-accent mb-4" />,
+    title: "Native Mobile Apps",
+    description: "Enjoy Anime Pack on the go with dedicated iOS and Android applications for a seamless mobile experience.",
+    imageSrc: "https://placehold.co/600x400.png",
+    imageAlt: "Native Mobile Apps",
+    aiHint: "mobile phone apps",
   },
 ];
 
