@@ -5,24 +5,42 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, HeartHandshake } from "lucide-react";
 import Link from 'next/link';
 import { AnimatedSection } from "@/components/common/animated-section";
-import Image from 'next/image';
+import Image, { type StaticImageData } from 'next/image';
 import { useTranslations } from "@/lib/i18n";
+import { useState, useEffect } from "react";
+
+// Import background images
+import heroBg1 from '../../app/hero_bg1.jpg';
+import heroBg2 from '../../app/hero_bg2.jpg';
+import heroBg3 from '../../app/hero_bg3.jpg';
+import heroBg4 from '../../app/hero_bg4.png';
+import heroBg5 from '../../app/hero_bg5.jpeg';
+
+const heroImages: StaticImageData[] = [heroBg1, heroBg2, heroBg3, heroBg4, heroBg5];
 
 export function HeroSection() {
   const { t, translations } = useTranslations();
+  const [selectedBgImage, setSelectedBgImage] = useState<StaticImageData | null>(null);
+
+  useEffect(() => {
+    // Select a random image on the client side
+    const randomIndex = Math.floor(Math.random() * heroImages.length);
+    setSelectedBgImage(heroImages[randomIndex]);
+  }, []); // Empty dependency array ensures this runs once on mount
 
   return (
     <AnimatedSection className="bg-primary/30 dark:bg-primary/10 py-20 md:py-32 relative overflow-hidden">
       {/* Background Image - Positioned to be behind fades and content */}
-      <Image
-        src="https://placehold.co/1920x1080.png" 
-        alt={t('heroSection.subtitle')[0] as string} 
-        layout="fill"
-        objectFit="cover"
-        className="absolute inset-0 z-0 opacity-40" 
-        data-ai-hint="abstract anime landscape"
-        priority // Ensures LCP is optimized if this is above the fold
-      />
+      {selectedBgImage && (
+        <Image
+          src={selectedBgImage}
+          alt={t('heroSection.subtitle')[0] as string}
+          fill // Replaced layout="fill" and objectFit="cover" with fill for Next.js 13+
+          className="absolute inset-0 z-0 object-cover opacity-40" // Added object-cover
+          data-ai-hint="abstract anime landscape"
+          priority // Ensures LCP is optimized if this is above the fold
+        />
+      )}
 
       {/* Top Fade Overlay - Sits on top of the image, using the section's background color */}
       <div className="absolute top-0 inset-x-0 h-1/3 bg-gradient-to-b from-primary/30 to-transparent dark:from-primary/10 z-1" />
