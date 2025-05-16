@@ -1,5 +1,7 @@
+
 import { Rocket } from 'lucide-react';
 import Link from 'next/link';
+import { ThemeToggle } from '@/components/layout/theme-toggle';
 
 export function Header() {
   return (
@@ -9,7 +11,9 @@ export function Header() {
           <Rocket className="h-6 w-6 text-accent" />
           <span className="font-bold text-xl">Anime Pack</span>
         </Link>
-        {/* Future navigation items can go here */}
+        <div className="ml-auto flex items-center space-x-4">
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );
