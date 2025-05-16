@@ -90,8 +90,11 @@ const futurePlansSection = {
 
 const sponsorsSection = {
   title: "Support Anime Pack's Development!",
-  description: "Anime Pack is a passion project, and your support can make a huge difference. By becoming a sponsor, you help us dedicate more time to development, cover potential server costs, and bring new features to life faster. Every contribution, big or small, is greatly appreciated!",
+  description: "Anime Pack is a passion project. By becoming a sponsor, you help us dedicate more time to development, cover server costs, and bring new features to life faster. Sponsors may also be showcased in-app! Every contribution is greatly appreciated.",
   buttonText: "Become a Sponsor",
+  backerTitle: "Or Become a Backer!",
+  backerDescription: "For individuals who love Anime Pack and want to show their support! As a backer, you'll receive a special cosmetic role in-app and on our community platforms, along with a few exclusive user perks as a thank you for your contribution.",
+  backerButtonText: "Become a Backer",
 };
 
 const featureShowcase = {
