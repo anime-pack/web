@@ -9,13 +9,14 @@ import { AnimatedSection } from "@/components/common/animated-section";
 import { useTranslations } from "@/lib/i18n";
 import { Separator } from "@/components/ui/separator";
 import { FaDiscord, FaPaypal } from 'react-icons/fa';
-import { SiOpencollective } from 'react-icons/si';
 import { FaPix } from 'react-icons/fa6';
+import { SiOpencollective } from 'react-icons/si';
+
 
 export function SponsorsSection() {
   const { t } = useTranslations();
   return (
-    <AnimatedSection className="py-16 md:py-24 bg-background">
+    <AnimatedSection id="sponsors" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 text-center">
         <HeartHandshake className="h-16 w-16 text-accent mx-auto mb-6" />
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
@@ -63,7 +64,7 @@ export function SponsorsSection() {
             </DialogHeader>
             <div className="grid gap-4 py-4">
               <p>{t('sponsorsSection.backerDialog.contentPlaceholderLine1')}</p>
-              <div className="space-y-4"> {/* Increased spacing between methods */}
+              <div className="space-y-4">
                 <div>
                   <p className="flex items-center">
                     <FaPaypal className="mr-3 h-6 w-6 text-accent" />

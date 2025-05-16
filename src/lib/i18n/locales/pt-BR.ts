@@ -32,6 +32,8 @@ const heroSection: Translations['heroSection'] = {
   welcomePrefix: "Bem-vindo ao ",
   welcomeSuffix: "",
   subtitle: "Seu destino definitivo para descobrir, organizar e desfrutar de animes. Mergulhe em um mundo de entretenimento sem fim, personalizado só para você.",
+  supportUs: "Apoie-nos",
+  becomeContributor: "Seja um Contribuidor",
 };
 
 const aboutSection: Translations['aboutSection'] = {
@@ -160,4 +162,3 @@ export const ptBRTranslations: Translations = {
   communityInvitation,
   toast,
 };
-

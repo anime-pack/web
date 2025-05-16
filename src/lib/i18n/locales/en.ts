@@ -31,6 +31,8 @@ const heroSection = {
   welcomePrefix: "Welcome to ", // Anime Pack (brand name) will be a span
   welcomeSuffix: "",
   subtitle: "Your ultimate destination for discovering, organizing, and enjoying anime. Dive into a world of endless entertainment, personalized just for you.",
+  supportUs: "Support Us",
+  becomeContributor: "Become a Contributor",
 };
 
 const aboutSection = {
@@ -161,4 +163,3 @@ export const enTranslations = {
 };
 
 export type Translations = typeof enTranslations;
-

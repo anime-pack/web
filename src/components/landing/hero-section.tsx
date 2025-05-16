@@ -2,7 +2,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Github, HeartHandshake } from "lucide-react";
 import Link from 'next/link';
 import { AnimatedSection } from "@/components/common/animated-section";
 import Image from 'next/image';
@@ -49,6 +49,30 @@ export function HeroSection() {
             <Link href="#future-plans">
               {t('common.exploreFeatures')}
               <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+        </div>
+        <div className="mt-6 flex flex-col sm:flex-row justify-center items-center gap-4">
+          <Button 
+            asChild 
+            size="sm" 
+            variant="outline"
+            className="shadow-sm hover:shadow-md transition-shadow duration-300"
+          >
+            <Link href="#sponsors">
+              <HeartHandshake className="mr-2 h-4 w-4" />
+              {t('heroSection.supportUs')}
+            </Link>
+          </Button>
+          <Button 
+            asChild 
+            size="sm" 
+            variant="outline"
+            className="shadow-sm hover:shadow-md transition-shadow duration-300"
+          >
+            <Link href="#features">
+              <Github className="mr-2 h-4 w-4" />
+              {t('heroSection.becomeContributor')}
             </Link>
           </Button>
         </div>
