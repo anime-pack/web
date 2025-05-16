@@ -1,3 +1,4 @@
+
 // @/lib/i18n/index.tsx
 "use client";
 
@@ -38,19 +39,38 @@ const translationsMap: Record<Language, Translations> = {
   es: esTranslations,
 };
 
+const supportedLanguages: Language[] = ['en', 'pt-BR', 'es'];
+
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguageState] = useState<Language>('en');
+  const [language, setLanguageState] = useState<Language>('en'); // Default before useEffect runs
 
   useEffect(() => {
+    let determinedLang: Language = 'en'; // Fallback language
+
+    // 1. Check localStorage first
     const storedLang = localStorage.getItem('anime-pack-lang') as Language | null;
-    if (storedLang && (storedLang === 'en' || storedLang === 'pt-BR' || storedLang === 'es')) {
-      setLanguageState(storedLang);
+    if (storedLang && supportedLanguages.includes(storedLang)) {
+      determinedLang = storedLang;
     }
-  }, []);
+    // 2. Else, if on client-side, check browser language
+    else if (typeof window !== 'undefined' && navigator.language) {
+      const browserLang = navigator.language.toLowerCase();
+      if (browserLang.startsWith('es')) {
+        determinedLang = 'es';
+      } else if (browserLang.startsWith('pt')) {
+        determinedLang = 'pt-BR';
+      } else if (browserLang.startsWith('en')) {
+        determinedLang = 'en';
+      }
+      // If browser language doesn't match supported ones, it remains the 'en' fallback.
+    }
+    
+    setLanguageState(determinedLang);
+  }, []); // Empty dependency array ensures this runs once on mount
 
   const setLanguage = useCallback((lang: Language) => {
     setLanguageState(lang);
-    localStorage.setItem('anime-pack-lang', lang);
+    localStorage.setItem('anime-pack-lang', lang); // Save explicit user choice
   }, []);
 
   const t = useCallback((key: string, replacements?: Record<string, string | number | ReactNode>): ReactNode[] => {
@@ -60,11 +80,9 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     let translationString = getNestedValue(currentTranslations, key) || getNestedValue(fallbackTranslations, key);
 
     if (typeof translationString !== 'string') {
-      // If the key is not found or doesn't resolve to a string, return the key itself.
       return [key];
     }
 
-    // Now, translationString is definitely a string.
     if (!replacements) {
       return [translationString];
     }
@@ -84,11 +102,10 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
              if (typeof replacementValue === 'string' || typeof replacementValue === 'number') {
                 parts.push(String(replacementValue));
              } else {
-                // Ensure React elements have a key if they are part of a list
                 parts.push(React.isValidElement(replacementValue) ? React.cloneElement(replacementValue, { key: `rep-${placeholder}-${parts.length}` }) : replacementValue);
              }
         } else {
-            parts.push(match[0]); // Keep placeholder if no replacement found
+            parts.push(match[0]); 
         }
         lastIndex = placeholderRegex.lastIndex;
     }
@@ -97,7 +114,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
         parts.push(translationString.substring(lastIndex));
     }
 
-    return parts.length > 0 ? parts : [translationString]; // Ensure an array is always returned, even if empty (though unlikely with a found string)
+    return parts.length > 0 ? parts : [translationString]; 
   }, [language]);
 
   const contextValue: LanguageContextType = {
