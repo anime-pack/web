@@ -104,6 +104,7 @@ const sponsorsSection = {
     option1Text: "Support us on",
     option2Text: "Tip us on",
     moreOptionsSoon: "More options coming soon...",
+    anonymousDonationNote: "Please note: Anonymous donations are welcome, but cannot receive in-app or community perks as we won't be able to identify you for granting them.",
   }
 };
 

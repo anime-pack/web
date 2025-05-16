@@ -2,7 +2,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger, DialogFooter } from "@/components/ui/dialog";
 import { HeartHandshake, Star } from "lucide-react";
 import Link from 'next/link';
 import { AnimatedSection } from "@/components/common/animated-section";
@@ -75,6 +75,11 @@ export function SponsorsSection() {
               </p>
               <p>{t('sponsorsSection.backerDialog.moreOptionsSoon')}</p>
             </div>
+            <DialogFooter className="mt-2 pt-4 border-t">
+              <p className="text-xs text-muted-foreground text-left w-full">
+                {t('sponsorsSection.backerDialog.anonymousDonationNote')}
+              </p>
+            </DialogFooter>
           </DialogContent>
         </Dialog>
         <p className="text-xs text-muted-foreground mt-4 max-w-md mx-auto">

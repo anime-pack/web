@@ -105,6 +105,7 @@ const sponsorsSection: Translations['sponsorsSection'] = {
     option1Text: "Apóyanos en",
     option2Text: "Danos una propina en",
     moreOptionsSoon: "Más opciones próximamente...",
+    anonymousDonationNote: "Por favor, ten en cuenta: Las donaciones anónimas son bienvenidas, pero no pueden recibir ventajas en la aplicación o en la comunidad, ya que no podremos identificarte para otorgarlas.",
   }
 };
 
