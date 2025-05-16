@@ -102,8 +102,11 @@ const sponsorsSection = {
     description: "Choose your preferred way to contribute and help us grow!",
     contentPlaceholderLine1: "Your support directly contributes to server costs, feature development, and community initiatives.",
     optionPayPalText: "Support us on",
+    optionPayPalDescription: "After donating, please get the confirmation e-mail and a screenshot, then open a support ticket on our Discord server to receive your perks.",
     optionOpenCollectiveText: "Contribute via",
+    optionOpenCollectiveDescription: "After donating, please get the confirmation e-mail and a screenshot, then open a support ticket on our Discord server to receive your perks.",
     optionLivepixText: "Support with",
+    optionLivepixDescription: "To receive your perks, please ensure your Livepix account is connected to your Discord account.",
     moreOptionsSoon: "More options coming soon...",
     anonymousDonationNote: "Please note: Anonymous donations are welcome, but cannot receive in-app or community perks as we won't be able to identify you for granting them.",
   }

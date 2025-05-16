@@ -37,7 +37,7 @@ const aboutSection: Translations['aboutSection'] = {
   title: "O que é o Anime Pack?",
   p1: `O Anime Pack é idealizado como um cliente abrangente do MyAnimeList (MAL), com forte ênfase em fornecer uma rica experiência de aplicativo para desktop. Ele é projetado não apenas para navegar por informações de animes e mangás, mas para ser um vibrante centro social para entusiastas de anime, mangá, manhwa e da cultura otaku em geral.`,
   p2: `Nosso objetivo é criar um espaço dedicado onde os fãs possam se conectar, discutir suas séries favoritas e compartilhar sua paixão. O Anime Pack visa preencher a lacuna entre a descoberta de conteúdo e a interação da comunidade, tornando mais fácil do que nunca mergulhar fundo no nicho de animes.`,
-  p3: `Você poderá conectar sua conta MyAnimeList perfeitamente, exibir seu perfil personalizado, acompanhar seu progresso e descobrir novos títulos. E isso é só o começo – temos muitos outros recursos empolgantes planejados para futuras atualizações para tornar o Anime Pack seu companheiro definitivo para todas as coisas de anime!`,
+  p3: `Você poderá conectar sua conta MyAnimeList perfeitamente, exibir seu perfil personalizado, acompanhar seu progresso e descobrir new títulos. E isso é só o começo – temos muitos outros recursos empolgantes planejados para futuras atualizações para tornar o Anime Pack seu companheiro definitivo para todas as coisas de anime!`,
   clickMeTooltip: "Clique em Mim!",
 };
 
@@ -103,8 +103,11 @@ const sponsorsSection: Translations['sponsorsSection'] = {
     description: "Escolha sua forma preferida de contribuir e nos ajude a crecer!",
     contentPlaceholderLine1: "Seu apoio contribui diretamente para custos de servidor, desenvolvimento de recursos e iniciativas da comunidade.",
     optionPayPalText: "Apoie-nos no",
+    optionPayPalDescription: "Após doar, por favor, obtenha o e-mail de confirmação e uma captura de tela, em seguida, abra um ticket de suporte em nosso servidor do Discord para receber suas vantagens.",
     optionOpenCollectiveText: "Contribua via",
+    optionOpenCollectiveDescription: "Após doar, por favor, obtenha o e-mail de confirmação e uma captura de tela, em seguida, abra um ticket de suporte em nosso servidor do Discord para receber suas vantagens.",
     optionLivepixText: "Apoie com",
+    optionLivepixDescription: "Para receber suas vantagens, certifique-se de que sua conta Livepix está conectada à sua conta do Discord.",
     moreOptionsSoon: "Mais opções em breve...",
     anonymousDonationNote: "Atenção: Doações anônimas são bem-vindas, mas não podem receber vantagens no aplicativo ou na comunidade, pois não poderemos identificá-lo para concedê-las.",
   }

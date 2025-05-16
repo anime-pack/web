@@ -63,28 +63,43 @@ export function SponsorsSection() {
             </DialogHeader>
             <div className="grid gap-4 py-4">
               <p>{t('sponsorsSection.backerDialog.contentPlaceholderLine1')}</p>
-              <div className="space-y-3">
-                <p className="flex items-center">
-                  <FaPaypal className="mr-3 h-6 w-6 text-accent" />
-                  {t('sponsorsSection.backerDialog.optionPayPalText')}{' '}
-                  <Link href="https://www.paypal.com/donate/?business=R9RPLRDQSCAU6&no_recurring=0" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline ml-1">
-                    PayPal
-                  </Link>
-                </p>
-                <p className="flex items-center">
-                  <SiOpencollective className="mr-3 h-6 w-6 text-accent" />
-                  {t('sponsorsSection.backerDialog.optionOpenCollectiveText')}{' '}
-                  <Link href="https://opencollective.com/anime-pack" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline ml-1">
-                    OpenCollective
-                  </Link>
-                </p>
-                <p className="flex items-center">
-                  <FaPix className="mr-3 h-6 w-6 text-accent" />
-                  {t('sponsorsSection.backerDialog.optionLivepixText')}{' '}
-                  <Link href="https://livepix.gg/dark1zin" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline ml-1">
-                    Livepix
-                  </Link>
-                </p>
+              <div className="space-y-4"> {/* Increased spacing between methods */}
+                <div>
+                  <p className="flex items-center">
+                    <FaPaypal className="mr-3 h-6 w-6 text-accent" />
+                    {t('sponsorsSection.backerDialog.optionPayPalText')}{' '}
+                    <Link href="https://www.paypal.com/donate/?business=R9RPLRDQSCAU6&no_recurring=0" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline ml-1">
+                      PayPal
+                    </Link>
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-1 ml-9">
+                    {t('sponsorsSection.backerDialog.optionPayPalDescription')}
+                  </p>
+                </div>
+                <div>
+                  <p className="flex items-center">
+                    <SiOpencollective className="mr-3 h-6 w-6 text-accent" />
+                    {t('sponsorsSection.backerDialog.optionOpenCollectiveText')}{' '}
+                    <Link href="https://opencollective.com/anime-pack" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline ml-1">
+                      OpenCollective
+                    </Link>
+                  </p>
+                   <p className="text-xs text-muted-foreground mt-1 ml-9">
+                    {t('sponsorsSection.backerDialog.optionOpenCollectiveDescription')}
+                  </p>
+                </div>
+                <div>
+                  <p className="flex items-center">
+                    <FaPix className="mr-3 h-6 w-6 text-accent" />
+                    {t('sponsorsSection.backerDialog.optionLivepixText')}{' '}
+                    <Link href="https://livepix.gg/dark1zin" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline ml-1">
+                      Livepix
+                    </Link>
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-1 ml-9">
+                    {t('sponsorsSection.backerDialog.optionLivepixDescription')}
+                  </p>
+                </div>
               </div>
               <p className="mt-2">{t('sponsorsSection.backerDialog.moreOptionsSoon')}</p>
             </div>
@@ -102,4 +117,3 @@ export function SponsorsSection() {
     </AnimatedSection>
   );
 }
-

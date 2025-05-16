@@ -103,8 +103,11 @@ const sponsorsSection: Translations['sponsorsSection'] = {
     description: "¡Elige tu forma preferida de contribuir y ayúdanos a crecer!",
     contentPlaceholderLine1: "Tu apoyo contribuye directamente a los costos del servidor, el desarrollo de funciones y las iniciativas comunitarias.",
     optionPayPalText: "Apóyanos en",
+    optionPayPalDescription: "Después de donar, por favor obtén el correo electrónico de confirmación y una captura de pantalla, luego abre un ticket de soporte en nuestro servidor de Discord para recibir tus ventajas.",
     optionOpenCollectiveText: "Contribuye vía",
+    optionOpenCollectiveDescription: "Después de donar, por favor obtén el correo electrónico de confirmación y una captura de pantalla, luego abre un ticket de soporte en nuestro servidor de Discord para recibir tus ventajas.",
     optionLivepixText: "Apoya con",
+    optionLivepixDescription: "Para recibir tus ventajas, asegúrate de que tu cuenta de Livepix esté conectada a tu cuenta de Discord.",
     moreOptionsSoon: "Más opciones próximamente...",
     anonymousDonationNote: "Por favor, ten en cuenta: Las donaciones anónimas son bienvenidas, pero no pueden recibir ventajas en la aplicación o en la comunidad, ya que no podremos identificarte para otorgarlas.",
   }
