@@ -102,10 +102,9 @@ const sponsorsSection: Translations['sponsorsSection'] = {
     title: "Apoya a Anime Pack como Partidario",
     description: "¡Elige tu forma preferida de contribuir y ayúdanos a crecer!",
     contentPlaceholderLine1: "Tu apoyo contribuye directamente a los costos del servidor, el desarrollo de funciones y las iniciativas comunitarias.",
-    option1Text: "Apóyanos en",
-    option2Text: "Danos una propina en",
-    option3Text: "Contribuye vía",
-    option4Text: "Apoya con",
+    optionPayPalText: "Apóyanos en",
+    optionOpenCollectiveText: "Contribuye vía",
+    optionLivepixText: "Apoya con",
     moreOptionsSoon: "Más opciones próximamente...",
     anonymousDonationNote: "Por favor, ten en cuenta: Las donaciones anónimas son bienvenidas, pero no pueden recibir ventajas en la aplicación o en la comunidad, ya que no podremos identificarte para otorgarlas.",
   }
@@ -157,4 +156,3 @@ export const esTranslations: Translations = {
   communityInvitation,
   toast,
 };
-

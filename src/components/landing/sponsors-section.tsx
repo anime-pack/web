@@ -3,12 +3,14 @@
 
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger, DialogFooter } from "@/components/ui/dialog";
-import { HeartHandshake, Star } from "lucide-react";
+import { HeartHandshake, Star, CreditCard } from "lucide-react";
 import Link from 'next/link';
 import { AnimatedSection } from "@/components/common/animated-section";
 import { useTranslations } from "@/lib/i18n";
 import { Separator } from "@/components/ui/separator";
-import { FaDiscord } from 'react-icons/fa';
+import { FaDiscord, FaPaypal } from 'react-icons/fa';
+import { SiOpencollective } from 'react-icons/si';
+import { FaPix } from 'react-icons/fa6';
 
 export function SponsorsSection() {
   const { t } = useTranslations();
@@ -61,31 +63,30 @@ export function SponsorsSection() {
             </DialogHeader>
             <div className="grid gap-4 py-4">
               <p>{t('sponsorsSection.backerDialog.contentPlaceholderLine1')}</p>
-              <p>
-                {t('sponsorsSection.backerDialog.option1Text')}{' '}
-                <Link href="#" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-                  Patreon
-                </Link>
-              </p>
-              <p>
-                {t('sponsorsSection.backerDialog.option2Text')}{' '}
-                <Link href="#" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-                  Ko-fi
-                </Link>
-              </p>
-              <p>
-                {t('sponsorsSection.backerDialog.option3Text')}{' '}
-                <Link href="#" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-                  OpenCollective
-                </Link>
-              </p>
-              <p>
-                {t('sponsorsSection.backerDialog.option4Text')}{' '}
-                <Link href="#" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-                  Livepix
-                </Link>
-              </p>
-              <p>{t('sponsorsSection.backerDialog.moreOptionsSoon')}</p>
+              <div className="space-y-3">
+                <p className="flex items-center">
+                  <FaPaypal className="mr-3 h-6 w-6 text-accent" />
+                  {t('sponsorsSection.backerDialog.optionPayPalText')}{' '}
+                  <Link href="#" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline ml-1">
+                    PayPal
+                  </Link>
+                </p>
+                <p className="flex items-center">
+                  <SiOpencollective className="mr-3 h-6 w-6 text-accent" />
+                  {t('sponsorsSection.backerDialog.optionOpenCollectiveText')}{' '}
+                  <Link href="#" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline ml-1">
+                    OpenCollective
+                  </Link>
+                </p>
+                <p className="flex items-center">
+                  <FaPix className="mr-3 h-6 w-6 text-accent" />
+                  {t('sponsorsSection.backerDialog.optionLivepixText')}{' '}
+                  <Link href="#" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline ml-1">
+                    Livepix
+                  </Link>
+                </p>
+              </div>
+              <p className="mt-2">{t('sponsorsSection.backerDialog.moreOptionsSoon')}</p>
             </div>
             <DialogFooter className="mt-2 pt-4 border-t">
               <p className="text-xs text-muted-foreground text-left w-full">
@@ -101,4 +102,3 @@ export function SponsorsSection() {
     </AnimatedSection>
   );
 }
-
