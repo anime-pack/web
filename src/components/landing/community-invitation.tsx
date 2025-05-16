@@ -2,17 +2,18 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { MessagesSquare, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from 'next/link';
 import { AnimatedSection } from "@/components/common/animated-section";
 import { useTranslations } from "@/lib/i18n";
+import { DiscordLogoIcon } from "@/components/icons/discord-logo-icon";
 
 export function CommunityInvitation() {
   const { t } = useTranslations();
   return (
     <AnimatedSection className="py-16 md:py-24 bg-primary/30 dark:bg-primary/10">
       <div className="container mx-auto px-4 text-center">
-        <MessagesSquare className="h-16 w-16 text-accent mx-auto mb-6" />
+        <DiscordLogoIcon className="h-16 w-16 text-accent mx-auto mb-6" />
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
           {t('communityInvitation.title')}
         </h2>

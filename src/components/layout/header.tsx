@@ -1,19 +1,20 @@
 
 "use client";
 
-import { Github, MessagesSquare } from 'lucide-react';
+import { Github } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ThemeToggle } from '@/components/layout/theme-toggle';
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '@/components/layout/language-switcher';
-import { useTranslations } from '@/lib/i18n';
+import { useTranslations } from '@/lib/i18n/index.tsx';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { DiscordLogoIcon } from '@/components/icons/discord-logo-icon';
 
 export function Header() {
   const { t, translations } = useTranslations();
@@ -65,7 +66,7 @@ export function Header() {
               <TooltipTrigger asChild>
                 <Button variant="outline" size="icon" asChild className="h-9 w-9">
                   <Link href="https://discord.gg/Nv8UXpB36y" target="_blank" rel="noopener noreferrer">
-                    <MessagesSquare className="h-[1.2rem] w-[1.2rem]" />
+                    <DiscordLogoIcon className="h-[1.2rem] w-[1.2rem]" />
                     <span className="sr-only">{t('header.srDiscord')[0] as string}</span>
                   </Link>
                 </Button>
