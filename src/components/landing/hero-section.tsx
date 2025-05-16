@@ -6,8 +6,11 @@ import { ArrowRight } from "lucide-react";
 import Link from 'next/link';
 import { AnimatedSection } from "@/components/common/animated-section";
 import Image from 'next/image';
+import { useTranslations } from "@/lib/i18n";
 
 export function HeroSection() {
+  const { t, translations } = useTranslations();
+
   return (
     <AnimatedSection className="bg-primary/30 dark:bg-primary/10 py-20 md:py-32 relative overflow-hidden">
       {/* Background Image - Positioned to be behind fades and content */}
@@ -30,10 +33,12 @@ export function HeroSection() {
       {/* Content Layer - Must be above the image and fades */}
       <div className="container mx-auto px-4 text-center relative z-10">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-          Welcome to <span className="text-accent">Anime Pack</span>
+          {t('heroSection.welcomePrefix')}
+          <span className="text-accent">{translations.common.appName}</span>
+          {t('heroSection.welcomeSuffix')}
         </h1>
         <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto mb-10">
-          Your ultimate destination for discovering, organizing, and enjoying anime. Dive into a world of endless entertainment, personalized just for you.
+          {t('heroSection.subtitle')}
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <Button 
@@ -42,13 +47,11 @@ export function HeroSection() {
             className="bg-accent text-accent-foreground hover:bg-accent/90 transition-transform duration-300 ease-in-out hover:scale-105 shadow-lg"
           >
             <Link href="#features">
-              Explore Features
+              {t('common.exploreFeatures')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
-          {/* Trailer Button Removed */}
         </div>
-         {/* Old image/video placeholder div removed */}
       </div>
     </AnimatedSection>
   );
