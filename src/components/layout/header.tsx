@@ -27,11 +27,10 @@ export function Header() {
             <TooltipTrigger asChild>
               <Link href="/" className="flex items-center space-x-2">
                 <Image
-                  src="https://placehold.co/24x24.png"
+                  src="/32x32.png"
                   alt={t('common.appName')[0] as string}
-                  width={24}
-                  height={24}
-                  data-ai-hint="app logo"
+                  width={32}
+                  height={32}
                 />
                 <span
                   className="font-bold text-xl header-app-name"
