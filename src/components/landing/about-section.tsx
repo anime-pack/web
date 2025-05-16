@@ -72,6 +72,7 @@ export function AboutSection() {
                 </ToastAction>
               ),
               duration: 7000, // Longer for toast with action
+              className: "pl-3" // Reduced left padding from p-6 (1.5rem) to pl-3 (0.75rem)
             });
             break;
           case 2:
