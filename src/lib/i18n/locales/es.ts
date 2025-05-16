@@ -24,6 +24,7 @@ const header: Translations['header'] = {
 
 const footer: Translations['footer'] = {
   copyright: `© ${new Date().getFullYear()} ${common.appName}. Todos los derechos reservados.`,
+  communityLove: "Con ❤️ para la comunidad",
   legalNotice: `${common.appName} es un proyecto independiente y no está afiliado ni respaldado por MyAnimeList o Discord.`,
 };
 
@@ -37,7 +38,7 @@ const aboutSection: Translations['aboutSection'] = {
   title: "¿Qué es Anime Pack?",
   p1: `Anime Pack se concibe como un cliente integral de MyAnimeList (MAL), con un fuerte énfasis en proporcionar una rica experiencia de aplicación de escritorio. Está diseñado no solo para navegar por información de anime y manga, sino para ser un vibrante centro social para entusiastas del anime, manga, manhwa y la cultura otaku en general.`,
   p2: `Nuestro objetivo es crear un espacio dedicado donde los fans puedan conectarse, discutir sus series favoritas y compartir su pasión. Anime Pack tiene como objetivo cerrar la brecha entre el descubrimiento de contenido y la interacción comunitaria, haciendo más fácil que nunca sumergirse profundamente en el nicho del anime.`,
-  p3: `Podrás conectar tu cuenta de MyAnimeList sin problemas, mostrar tu perfil personalizado, seguir tu progreso y descubrir nuevos títulos. Y esto es solo el comienzo: ¡tenemos muchas más características emocionantes planeadas para futuras actualizaciones para hacer de Anime Pack tu compañero definitivo para todo lo relacionado con el anime!`,
+  p3: `Podrás conectar tu cuenta de MyAnimeList sin problemas, mostrar tu perfil personalizado, seguir tu progreso y descubrir new títulos. Y esto es solo el comienzo: ¡tenemos muchas más características emocionantes planeadas para futuras actualizaciones para hacer de Anime Pack tu compañero definitivo para todo lo relacionado con el anime!`,
   clickMeTooltip: "¡Haz Clic!",
 };
 
@@ -49,7 +50,7 @@ const futurePlansSection: Translations['futurePlansSection'] = {
   features: {
     vastLibrary: {
       title: "Acceso a una Vasta Biblioteca",
-      description: "Explora miles de series y películas de anime, con nuevos títulos añadidos regularmente para mantener fresca tu lista de visualización.",
+      description: "Explora miles de series y películas de anime, con new títulos añadidos regularmente para mantener fresca tu lista de visualización.",
     },
     personalizedTracking: {
       title: "Seguimiento Personalizado",
@@ -61,7 +62,7 @@ const futurePlansSection: Translations['futurePlansSection'] = {
     },
     releaseNotifications: {
       title: "Notificaciones de Lanzamiento",
-      description: "Mantente actualizado con notificaciones de nuevos lanzamientos de episodios de tus animes favoritos y nunca te pierdas nada.",
+      description: "Mantente actualizado con notificaciones de new lanzamientos de episodios de tus animes favoritos y nunca te pierdas nada.",
     },
     customizableProfiles: {
       title: "Perfiles Personalizables",
@@ -92,7 +93,7 @@ const futurePlansSection: Translations['futurePlansSection'] = {
 
 const sponsorsSection: Translations['sponsorsSection'] = {
   title: "¡Apoya el Desarrollo de Anime Pack!",
-  description: "Anime Pack es un proyecto de pasión. Al convertirte en patrocinador, nos ayudas a dedicar más tiempo al desarrollo, cubrir costos de servidor, ser destacado en anuncios dentro de la aplicación y dar vida a nuevas características más rápidamente. ¡Cada contribución es muy apreciada!",
+  description: "Anime Pack es un proyecto de pasión. Al convertirte en patrocinador, nos ayudas a dedicar más tiempo al desarrollo, cubrir costos de servidor, ser destacado en anuncios dentro de la aplicación y dar vida a new características más rápidamente. ¡Cada contribución es muy apreciada!",
   buttonTextDiscord: "Únete a Discord para Info de Patrocinio",
   backerTitle: "¡O Conviértete en Partidario!",
   backerDescription: "¡Para individuos que aman Anime Pack y quieren mostrar su apoyo! Como partidario, recibirás un rol cosmético especial en la aplicación y en nuestras plataformas comunitarias, junto con algunas ventajas exclusivas para usuarios como agradecimiento por tu contribución.",
@@ -121,7 +122,7 @@ const featureShowcase: Translations['featureShowcase'] = {
 
 const communityInvitation: Translations['communityInvitation'] = {
   title: "¡Únete a Nuestra Comunidad de Discord!",
-  description: "Conéctate con otros miembros de Anime Pack en nuestro servidor oficial de Discord. Comparte tus ideas, descubre nuevas joyas, obtén soporte y mantente actualizado con las últimas noticias.",
+  description: "Conéctate con otros miembros de Anime Pack en nuestro servidor oficial de Discord. Comparte tus ideas, descubre new joyas, obtén soporte y mantente actualizado con las últimas noticias.",
 };
 
 const toast: Translations['toast'] = {
@@ -159,3 +160,4 @@ export const esTranslations: Translations = {
   communityInvitation,
   toast,
 };
+

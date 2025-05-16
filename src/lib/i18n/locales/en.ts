@@ -23,6 +23,7 @@ const header = {
 
 const footer = {
   copyright: `© ${new Date().getFullYear()} ${common.appName}. All rights reserved.`,
+  communityLove: "With ❤️ for the community",
   legalNotice: `${common.appName} is an independent project and is not affiliated with, nor endorsed by, MyAnimeList or Discord.`,
 };
 
@@ -160,3 +161,4 @@ export const enTranslations = {
 };
 
 export type Translations = typeof enTranslations;
+

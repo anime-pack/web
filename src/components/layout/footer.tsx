@@ -11,6 +11,9 @@ export function Footer() {
           <p className="text-balance text-sm leading-loose text-muted-foreground">
             {t('footer.copyright')}
           </p>
+          <p className="text-balance text-xs leading-loose text-muted-foreground/90 mt-1">
+            {t('footer.communityLove')}
+          </p>
           <p className="text-balance text-xs leading-loose text-muted-foreground/80 mt-1">
             {t('footer.legalNotice')}
           </p>
@@ -19,3 +22,4 @@ export function Footer() {
     </footer>
   );
 }
+

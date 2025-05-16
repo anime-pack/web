@@ -24,6 +24,7 @@ const header: Translations['header'] = {
 
 const footer: Translations['footer'] = {
   copyright: `© ${new Date().getFullYear()} ${common.appName}. Todos os direitos reservados.`,
+  communityLove: "Com ❤️ para a comunidade",
   legalNotice: `${common.appName} é um projeto independente e não é afiliado nem endossado pelo MyAnimeList ou Discord.`,
 };
 
@@ -49,7 +50,7 @@ const futurePlansSection: Translations['futurePlansSection'] = {
   features: {
     vastLibrary: {
       title: "Acesso a Vasta Biblioteca",
-      description: "Explore milhares de séries e filmes de anime, com novos títulos adicionados regularmente para manter sua lista de observação atualizada.",
+      description: "Explore milhares de séries e filmes de anime, com new títulos adicionados regularmente para manter sua lista de observação atualizada.",
     },
     personalizedTracking: {
       title: "Acompanhamento Personalizado",
@@ -61,7 +62,7 @@ const futurePlansSection: Translations['futurePlansSection'] = {
     },
     releaseNotifications: {
       title: "Notificações de Lançamento",
-      description: "Mantenha-se atualizado com notificações de novos lançamentos de episódios de seus animes favoritos e nunca perca nada.",
+      description: "Mantenha-se atualizado com notificações de new lançamentos de episódios de seus animes favoritos e nunca perca nada.",
     },
     customizableProfiles: {
       title: "Perfis Personalizáveis",
@@ -92,7 +93,7 @@ const futurePlansSection: Translations['futurePlansSection'] = {
 
 const sponsorsSection: Translations['sponsorsSection'] = {
   title: "Apoie o Desenvolvimento do Anime Pack!",
-  description: "O Anime Pack é um projeto de paixão. Ao se tornar um patrocinador, você nos ajuda a dedicar mais tempo ao desenvolvimento, cobrir custos de servidor, ser destacado em anúncios no aplicativo e trazer novos recursos à vida mais rapidamente. Toda contribuição é muito apreciada.",
+  description: "O Anime Pack é um projeto de paixão. Ao se tornar um patrocinador, você nos ajuda a dedicar mais tempo ao desenvolvimento, cobrir custos de servidor, ser destacado em anúncios no aplicativo e trazer new recursos à vida mais rapidamente. Toda contribuição é muito apreciada.",
   buttonTextDiscord: "Entre no Discord para Infos de Patrocínio",
   backerTitle: "Ou Torne-se um Apoiador!",
   backerDescription: "Para pessoas que amam o Anime Pack e querem mostrar seu apoio! Como apoiador, você receberá um papel cosmético especial no aplicativo e em nossas plataformas comunitárias, juntamente com algumas vantagens exclusivas para usuários como agradecimento por sua contribuição.",
@@ -121,7 +122,7 @@ const featureShowcase: Translations['featureShowcase'] = {
 
 const communityInvitation: Translations['communityInvitation'] = {
   title: "Junte-se à Nossa Comunidade no Discord!",
-  description: "Conecte-se com outros membros do Anime Pack em nosso servidor oficial do Discord. Compartilhe suas ideias, descubra novas joias, obtenha suporte e mantenha-se atualizado com as últimas notícias.",
+  description: "Conecte-se com outros membros do Anime Pack em nosso servidor oficial do Discord. Compartilhe suas ideias, descubra new joias, obtenha suporte e mantenha-se atualizado com as últimas notícias.",
 };
 
 const toast: Translations['toast'] = {
@@ -159,3 +160,4 @@ export const ptBRTranslations: Translations = {
   communityInvitation,
   toast,
 };
+
