@@ -39,7 +39,7 @@ export function Header() {
                 <LanguageSwitcher />
               </TooltipTrigger>
               <TooltipContent>
-                <p>{t('header.language')}</p>
+                <p>{t('header.language')[0]}</p>
               </TooltipContent>
             </Tooltip>
 
@@ -48,12 +48,12 @@ export function Header() {
                 <Button variant="outline" size="icon" asChild className="h-9 w-9">
                   <Link href="https://github.com/firebase/studio-prototyper-example" target="_blank" rel="noopener noreferrer">
                     <Github className="h-[1.2rem] w-[1.2rem]" />
-                    <span className="sr-only">{t('header.srGitHub')}</span>
+                    <span className="sr-only">{t('header.srGitHub')[0]}</span>
                   </Link>
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
-                <p>{t('header.srGitHub')}</p>
+                <p>{t('header.srGitHub')[0]}</p>
               </TooltipContent>
             </Tooltip>
 
@@ -63,12 +63,12 @@ export function Header() {
                   {/* Replace "#" with your actual Discord invite link */}
                   <Link href="#" target="_blank" rel="noopener noreferrer">
                     <MessagesSquare className="h-[1.2rem] w-[1.2rem]" />
-                    <span className="sr-only">{t('header.srDiscord')}</span>
+                    <span className="sr-only">{t('header.srDiscord')[0]}</span>
                   </Link>
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
-                <p>{t('header.srDiscord')}</p>
+                <p>{t('header.srDiscord')[0]}</p>
               </TooltipContent>
             </Tooltip>
 
@@ -77,7 +77,7 @@ export function Header() {
                 <ThemeToggle />
               </TooltipTrigger>
               <TooltipContent>
-                <p>{t('header.srThemeToggle')}</p>
+                <p>{t('header.srThemeToggle')[0]}</p>
               </TooltipContent>
             </Tooltip>
           </div>
