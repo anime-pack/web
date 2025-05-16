@@ -24,7 +24,7 @@ export function AboutSection() {
         <div className="text-center mb-12">
           <Dialog>
             <DialogTrigger asChild>
-              <div className="relative mx-auto mb-6 h-24 w-24 md:h-28 md:w-28 overflow-hidden rounded-lg shadow-md cursor-pointer hover:shadow-xl transition-shadow duration-300">
+              <div className="relative mx-auto mb-6 h-24 w-24 md:h-28 md:w-28 overflow-hidden rounded-lg shadow-md cursor-pointer hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
                 <Image
                   src={imageUrl}
                   alt={imageAlt}
@@ -42,8 +42,8 @@ export function AboutSection() {
             >
               <DialogTitle className="sr-only">App Icon</DialogTitle>
               <Card className="overflow-hidden shadow-xl rounded-lg">
-                <CardContent className="p-2"> {/* Changed p-0 to p-2 */}
-                  <div className="relative aspect-square w-full">
+                <CardContent className="p-2">
+                  <div className="relative aspect-square w-full rounded-md overflow-hidden">
                     <Image
                       src={imageUrl} 
                       alt={imageAlt}
