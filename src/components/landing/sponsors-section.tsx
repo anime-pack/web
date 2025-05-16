@@ -2,7 +2,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { HeartHandshake, MessagesSquare, ArrowRight, Star } from "lucide-react";
+import { HeartHandshake, MessagesSquare, Star } from "lucide-react";
 import Link from 'next/link';
 import { AnimatedSection } from "@/components/common/animated-section";
 import { useTranslations } from "@/lib/i18n";
@@ -44,13 +44,12 @@ export function SponsorsSection() {
         <Button
           asChild
           size="lg"
-          variant="outline"
-          className="border-accent text-accent hover:bg-accent/10 transition-transform duration-300 ease-in-out hover:scale-105 shadow-md hover:shadow-lg"
+          className="bg-accent text-accent-foreground hover:bg-accent/90 transition-transform duration-300 ease-in-out hover:scale-105 shadow-lg"
         >
           {/* Replace "#" with your actual backer link (e.g., a different tier on Patreon, Ko-fi) */}
           <Link href="#" target="_blank" rel="noopener noreferrer">
             {t('sponsorsSection.backerButtonText')}
-            <Star className="ml-2 h-5 w-5 fill-accent" />
+            <Star className="ml-2 h-5 w-5" /> {/* Removed fill-accent */}
           </Link>
         </Button>
       </div>
