@@ -12,6 +12,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Card, CardContent } from "@/components/ui/card";
+import { InteractiveCard } from "@/components/common/interactive-card";
 
 export function AboutSection() {
   const { t } = useTranslations();
@@ -41,19 +42,21 @@ export function AboutSection() {
               className="p-0 bg-transparent border-0 shadow-none sm:max-w-xs md:max-w-sm focus-visible:ring-0 focus-visible:ring-offset-0"
             >
               <DialogTitle className="sr-only">App Icon</DialogTitle>
-              <Card className="overflow-hidden shadow-xl rounded-lg">
-                <CardContent className="p-2">
-                  <div className="relative aspect-square w-full rounded-md overflow-hidden">
-                    <Image
-                      src={imageUrl} 
-                      alt={imageAlt}
-                      layout="fill"
-                      objectFit="contain" 
-                      data-ai-hint="fox box"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
+              <InteractiveCard className="w-full h-full">
+                <Card className="overflow-hidden shadow-xl rounded-lg w-full h-full">
+                  <CardContent className="p-2">
+                    <div className="relative aspect-square w-full rounded-md overflow-hidden">
+                      <Image
+                        src={imageUrl} 
+                        alt={imageAlt}
+                        layout="fill"
+                        objectFit="contain" 
+                        data-ai-hint="fox box"
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              </InteractiveCard>
             </DialogContent>
           </Dialog>
 
