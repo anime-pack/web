@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from 'react';
 import { Star } from "lucide-react";
 import { AnimatedSection } from "@/components/common/animated-section";
-import { useTranslations } from "@/lib/i18n";
+import { useTranslations } from "@/lib/i18n/index.tsx";
 import { useToast } from "@/hooks/use-toast";
 import {
   Dialog,
@@ -65,7 +65,7 @@ export function AboutSection() {
               description: t('toast.subsequent.joinDiscord.description'),
               action: (
                 <ToastAction
-                  altText={t('toast.subsequent.joinDiscord.buttonAltText') as string}
+                  altText={t('toast.subsequent.joinDiscord.buttonAltText')[0] as string}
                   onClick={() => window.open(DISCORD_SERVER_LINK, '_blank', 'noopener,noreferrer')}
                 >
                   {t('toast.subsequent.joinDiscord.buttonText')}
@@ -87,7 +87,7 @@ export function AboutSection() {
   };
 
   const imageUrl = "https://placehold.co/100x100.png";
-  const imageAlt = t('aboutSection.title') as string; 
+  const imageAlt = t('aboutSection.title')[0] as string; 
 
   return (
     <AnimatedSection id="about" className="py-16 md:py-24 bg-background">
@@ -117,7 +117,7 @@ export function AboutSection() {
                   hideCloseButton={true}
                   className="p-0 bg-transparent border-0 shadow-none sm:max-w-xs md:max-w-sm focus-visible:ring-0 focus-visible:ring-offset-0"
                 >
-                  <DialogTitle className="sr-only">App Icon</DialogTitle>
+                  <DialogTitle className="sr-only">{t('aboutSection.title')}</DialogTitle>
                   <InteractiveCard className="w-full h-full">
                     <Card className="overflow-hidden shadow-xl rounded-lg w-full h-full">
                       <CardContent className="p-2">
@@ -160,3 +160,4 @@ export function AboutSection() {
     </AnimatedSection>
   );
 }
+
