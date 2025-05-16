@@ -1,15 +1,34 @@
+
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, PlayCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from 'next/link';
 import { AnimatedSection } from "@/components/common/animated-section";
 import Image from 'next/image';
 
 export function HeroSection() {
   return (
-    <AnimatedSection className="bg-primary/30 dark:bg-primary/10 py-20 md:py-32">
-      <div className="container mx-auto px-4 text-center">
+    <AnimatedSection className="bg-primary/30 dark:bg-primary/10 py-20 md:py-32 relative overflow-hidden">
+      {/* Background Image - Positioned to be behind fades and content */}
+      <Image
+        src="https://placehold.co/1920x1080.png" 
+        alt="Hero background image"
+        layout="fill"
+        objectFit="cover"
+        className="absolute inset-0 z-0 opacity-40" 
+        data-ai-hint="abstract anime landscape"
+        priority // Ensures LCP is optimized if this is above the fold
+      />
+
+      {/* Top Fade Overlay - Sits on top of the image, using the section's background color */}
+      <div className="absolute top-0 inset-x-0 h-1/3 bg-gradient-to-b from-primary/30 to-transparent dark:from-primary/10 z-1" />
+      
+      {/* Bottom Fade Overlay - Sits on top of the image, using the section's background color */}
+      <div className="absolute bottom-0 inset-x-0 h-1/3 bg-gradient-to-t from-primary/30 to-transparent dark:from-primary/10 z-1" />
+
+      {/* Content Layer - Must be above the image and fades */}
+      <div className="container mx-auto px-4 text-center relative z-10">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
           Welcome to <span className="text-accent">Anime Pack</span>
         </h1>
@@ -27,28 +46,9 @@ export function HeroSection() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
-          <Button 
-            variant="outline" 
-            size="lg" 
-            className="border-accent text-accent hover:bg-accent/10 transition-transform duration-300 ease-in-out hover:scale-105 shadow-lg"
-          >
-            <PlayCircle className="mr-2 h-5 w-5" />
-            Watch Trailer
-          </Button>
+          {/* Trailer Button Removed */}
         </div>
-         <div className="mt-16 relative aspect-video max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl">
-            <Image 
-                src="https://placehold.co/1280x720.png" 
-                alt="Anime Pack promotional video placeholder"
-                layout="fill"
-                objectFit="cover"
-                data-ai-hint="anime montage"
-                className="transform transition-transform duration-500 hover:scale-105"
-            />
-             <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                <PlayCircle className="h-20 w-20 text-white/80 hover:text-white cursor-pointer transition-colors" />
-            </div>
-        </div>
+         {/* Old image/video placeholder div removed */}
       </div>
     </AnimatedSection>
   );
