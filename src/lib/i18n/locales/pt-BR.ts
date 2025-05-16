@@ -38,6 +38,7 @@ const aboutSection: Translations['aboutSection'] = {
   p1: `O Anime Pack é idealizado como um cliente abrangente do MyAnimeList (MAL), com forte ênfase em fornecer uma rica experiência de aplicativo para desktop. Ele é projetado não apenas para navegar por informações de animes e mangás, mas para ser um vibrante centro social para entusiastas de anime, mangá, manhwa e da cultura otaku em geral.`,
   p2: `Nosso objetivo é criar um espaço dedicado onde os fãs possam se conectar, discutir suas séries favoritas e compartilhar sua paixão. O Anime Pack visa preencher a lacuna entre a descoberta de conteúdo e a interação da comunidade, tornando mais fácil do que nunca mergulhar fundo no nicho de animes.`,
   p3: `Você poderá conectar sua conta MyAnimeList perfeitamente, exibir seu perfil personalizado, acompanhar seu progresso e descobrir novos títulos. E isso é só o começo – temos muitos outros recursos empolgantes planejados para futuras atualizações para tornar o Anime Pack seu companheiro definitivo para todas as coisas de anime!`,
+  clickMeTooltip: "Clique em Mim!",
 };
 
 const futurePlansSection: Translations['futurePlansSection'] = {
@@ -113,6 +114,22 @@ const toast: Translations['toast'] = {
   achievementUnlocked: {
     title: "Conquista Desbloqueada!",
     description: "Esses cards interativos parecem legais, né?",
+  },
+  subsequent: {
+    likeStickers: {
+      title: "Uau!",
+      description: "Você deve gostar mesmo desses adesivos interativos!",
+    },
+    joinDiscord: {
+      title: "Quer Mais Coisas Legais?",
+      description: "Para mais recursos e interação com a comunidade, entre no nosso servidor do Discord!",
+      buttonText: "Entrar no Discord",
+      buttonAltText: "Entre no nosso servidor do Discord",
+    },
+    funFact: {
+      title: "Curiosidade!",
+      description: "O Anime Pack foi inicialmente apenas um pequeno projeto para um grupo de amigos.",
+    },
   }
 };
 

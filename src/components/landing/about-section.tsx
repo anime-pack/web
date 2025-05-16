@@ -22,22 +22,19 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { ToastAction } from "@/components/ui/toast";
 
-const LOCAL_STORAGE_KEY_ACHIEVEMENT = 'anime-pack-about-icon-achievement-unlocked';
+const LOCAL_STORAGE_KEY_ACHIEVEMENT_UNLOCKED = 'anime-pack-about-icon-achievement-unlocked';
+const DISCORD_SERVER_LINK = "#"; // Replace with your actual Discord server link
 
 export function AboutSection() {
   const { t } = useTranslations();
   const { toast } = useToast();
-  const [isFirstTimeAchievement, setIsFirstTimeAchievement] = useState(false);
-
-  useEffect(() => {
-    if (localStorage.getItem(LOCAL_STORAGE_KEY_ACHIEVEMENT) !== 'true') {
-      setIsFirstTimeAchievement(true);
-    }
-  }, []);
 
   const handleIconClick = () => {
-    if (isFirstTimeAchievement) {
+    const achievementUnlocked = localStorage.getItem(LOCAL_STORAGE_KEY_ACHIEVEMENT_UNLOCKED) === 'true';
+
+    if (!achievementUnlocked) {
       toast({
         title: (
           <div className="flex items-center gap-2">
@@ -47,15 +44,50 @@ export function AboutSection() {
         ),
         description: t('toast.achievementUnlocked.description'),
         className: "border-yellow-500 bg-yellow-50 dark:bg-yellow-900/30 dark:border-yellow-600",
-        duration: 5000, // Display for 5 seconds
+        duration: 5000,
       });
-      localStorage.setItem(LOCAL_STORAGE_KEY_ACHIEVEMENT, 'true');
-      setIsFirstTimeAchievement(false);
+      localStorage.setItem(LOCAL_STORAGE_KEY_ACHIEVEMENT_UNLOCKED, 'true');
+    } else {
+      // Subsequent clicks: 20% chance to show one of three random toasts
+      if (Math.random() < 0.20) {
+        const randomNumber = Math.floor(Math.random() * 3);
+        switch (randomNumber) {
+          case 0:
+            toast({
+              title: t('toast.subsequent.likeStickers.title'),
+              description: t('toast.subsequent.likeStickers.description'),
+              duration: 5000,
+            });
+            break;
+          case 1:
+            toast({
+              title: t('toast.subsequent.joinDiscord.title'),
+              description: t('toast.subsequent.joinDiscord.description'),
+              action: (
+                <ToastAction
+                  altText={t('toast.subsequent.joinDiscord.buttonAltText') as string}
+                  onClick={() => window.open(DISCORD_SERVER_LINK, '_blank', 'noopener,noreferrer')}
+                >
+                  {t('toast.subsequent.joinDiscord.buttonText')}
+                </ToastAction>
+              ),
+              duration: 7000, // Longer for toast with action
+            });
+            break;
+          case 2:
+            toast({
+              title: t('toast.subsequent.funFact.title'),
+              description: t('toast.subsequent.funFact.description'),
+              duration: 6000,
+            });
+            break;
+        }
+      }
     }
   };
 
   const imageUrl = "https://placehold.co/100x100.png";
-  const imageAlt = t('aboutSection.title') as string; // Assuming t returns string for simple keys
+  const imageAlt = t('aboutSection.title') as string; 
 
   return (
     <AnimatedSection id="about" className="py-16 md:py-24 bg-background">
@@ -92,7 +124,7 @@ export function AboutSection() {
                         <div className="relative aspect-square w-full rounded-md overflow-hidden">
                           <Image
                             src={imageUrl}
-                            alt={imageAlt} // Using the same alt text
+                            alt={imageAlt}
                             layout="fill"
                             objectFit="contain"
                             data-ai-hint="fox box"
@@ -104,7 +136,7 @@ export function AboutSection() {
                 </DialogContent>
               </Dialog>
               <TooltipContent side="top">
-                <p>Click Me!</p>
+                <p>{t('aboutSection.clickMeTooltip')}</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>

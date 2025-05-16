@@ -38,11 +38,12 @@ const aboutSection: Translations['aboutSection'] = {
   p1: `Anime Pack se concibe como un cliente integral de MyAnimeList (MAL), con un fuerte énfasis en proporcionar una rica experiencia de aplicación de escritorio. Está diseñado no solo para navegar por información de anime y manga, sino para ser un vibrante centro social para entusiastas del anime, manga, manhwa y la cultura otaku en general.`,
   p2: `Nuestro objetivo es crear un espacio dedicado donde los fans puedan conectarse, discutir sus series favoritas y compartir su pasión. Anime Pack tiene como objetivo cerrar la brecha entre el descubrimiento de contenido y la interacción comunitaria, haciendo más fácil que nunca sumergirse profundamente en el nicho del anime.`,
   p3: `Podrás conectar tu cuenta de MyAnimeList sin problemas, mostrar tu perfil personalizado, seguir tu progreso y descubrir nuevos títulos. Y esto es solo el comienzo: ¡tenemos muchas más características emocionantes planeadas para futuras actualizaciones para hacer de Anime Pack tu compañero definitivo para todo lo relacionado con el anime!`,
+  clickMeTooltip: "¡Haz Clic!",
 };
 
 const futurePlansSection: Translations['futurePlansSection'] = {
   nearTermTitle: "¿Qué Viene Próximamente?",
-  nearTermSubtitle: "Estamos trabajando constantemente para mejorar Anime Pack. Aquí tienes un adelanto de lo que estamos planeando para el futuro cercano.",
+  nearTermSubtitle: "Estamos trabajando constantemente para mejorar Anime Pack. Aquí tienes un adelanto de lo que estamos planejando para el futuro cercano.",
   longTermTitle: "Nuestra Visión a Largo Plazo",
   longTermSubtitle: "Mirando más adelante, aquí están algunas de las metas ambiciosas que estamos emocionados de abordar.",
   features: {
@@ -113,6 +114,22 @@ const toast: Translations['toast'] = {
   achievementUnlocked: {
     title: "¡Logro Desbloqueado!",
     description: "Estas tarjetas interactivas se ven geniales, ¿verdad?",
+  },
+  subsequent: {
+    likeStickers: {
+      title: "¡Guau!",
+      description: "¡Realmente te deben gustar estas pegatinas interactivas!",
+    },
+    joinDiscord: {
+      title: "¿Quieres Más Cosas Geniales?",
+      description: "¡Para más funciones e interacción comunitaria, únete a nuestro servidor de Discord!",
+      buttonText: "Unirse a Discord",
+      buttonAltText: "Únete a nuestro servidor de Discord",
+    },
+    funFact: {
+      title: "¡Dato Curioso!",
+      description: "Anime Pack inicialmente solo era un pequeño proyecto para un grupo de amigos.",
+    },
   }
 };
 
