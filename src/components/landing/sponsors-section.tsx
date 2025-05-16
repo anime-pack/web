@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { AnimatedSection } from "@/components/common/animated-section";
 import { useTranslations } from "@/lib/i18n";
 import { Separator } from "@/components/ui/separator";
-import { DiscordLogoIcon } from "@/components/icons/discord-logo-icon";
+import { FaDiscord } from 'react-icons/fa';
 
 export function SponsorsSection() {
   const { t } = useTranslations();
@@ -28,7 +28,7 @@ export function SponsorsSection() {
           className="border-accent text-accent hover:bg-accent/10 transition-transform duration-300 ease-in-out hover:scale-105 shadow-lg"
         >
           <Link href="https://discord.gg/Nv8UXpB36y" target="_blank" rel="noopener noreferrer">
-            <DiscordLogoIcon className="mr-2 h-5 w-5" />
+            <FaDiscord className="mr-2 h-5 w-5" />
             {t('sponsorsSection.buttonTextDiscord')}
           </Link>
         </Button>

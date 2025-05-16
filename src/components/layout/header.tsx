@@ -14,7 +14,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { DiscordLogoIcon } from '@/components/icons/discord-logo-icon';
+import { FaDiscord } from 'react-icons/fa';
 
 export function Header() {
   const { t, translations } = useTranslations();
@@ -44,7 +44,7 @@ export function Header() {
                 <LanguageSwitcher />
               </TooltipTrigger>
               <TooltipContent>
-                <p>{t('header.language')[0]}</p>
+                <p>{t('header.language')[0] as string}</p>
               </TooltipContent>
             </Tooltip>
 
@@ -66,7 +66,7 @@ export function Header() {
               <TooltipTrigger asChild>
                 <Button variant="outline" size="icon" asChild className="h-9 w-9">
                   <Link href="https://discord.gg/Nv8UXpB36y" target="_blank" rel="noopener noreferrer">
-                    <DiscordLogoIcon className="h-[1.2rem] w-[1.2rem]" />
+                    <FaDiscord className="h-[1.2rem] w-[1.2rem]" />
                     <span className="sr-only">{t('header.srDiscord')[0] as string}</span>
                   </Link>
                 </Button>
