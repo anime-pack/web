@@ -6,7 +6,7 @@ import { UsersRound, Paintbrush, Telescope, LibraryBig, ListChecks, Users, Searc
 import Image from "next/image";
 import { AnimatedSection } from "@/components/common/animated-section";
 
-const plannedFeatures = [
+const nearTermPlannedFeatures = [
   {
     icon: <LibraryBig className="h-10 w-10 text-accent mb-4" />,
     title: "Vast Library Access",
@@ -30,14 +30,6 @@ const plannedFeatures = [
     imageSrc: "https://placehold.co/600x400.png",
     imageAlt: "Anime community hub",
     aiHint: "anime community",
-  },
-  {
-    icon: <Search className="h-10 w-10 text-accent mb-4" />,
-    title: "Advanced Filters",
-    description: "Quickly find exactly what you're looking for with powerful search and intuitive filtering options by genre, year, and more.",
-    imageSrc: "https://placehold.co/600x400.png",
-    imageAlt: "Advanced anime filters",
-    aiHint: "anime search",
   },
   {
     icon: <Bell className="h-10 w-10 text-accent mb-4" />,
@@ -64,20 +56,31 @@ const plannedFeatures = [
     aiHint: "profile customization options",
   },
   {
-    icon: <Telescope className="h-10 w-10 text-accent mb-4" />,
-    title: "Advanced Genre Tagging",
-    description: "Discover niche genres and explore anime with a highly detailed and community-curated tagging system.",
-    imageSrc: "https://placehold.co/600x400.png",
-    imageAlt: "Advanced Genre Tagging",
-    aiHint: "data graph connections",
-  },
-  {
     icon: <Wand2 className="h-10 w-10 text-accent mb-4" />,
     title: "AI-Powered Recommendations",
     description: "Get even smarter suggestions with our upcoming AI engine that learns your unique taste.",
     imageSrc: "https://placehold.co/600x400.png",
     imageAlt: "AI Recommendations",
     aiHint: "artificial intelligence brain",
+  },
+];
+
+const longTermPlannedFeatures = [
+  {
+    icon: <Search className="h-10 w-10 text-accent mb-4" />,
+    title: "Advanced Filters",
+    description: "Quickly find exactly what you're looking for with powerful search and intuitive filtering options by genre, year, and more.",
+    imageSrc: "https://placehold.co/600x400.png",
+    imageAlt: "Advanced anime filters",
+    aiHint: "anime search",
+  },
+  {
+    icon: <Telescope className="h-10 w-10 text-accent mb-4" />,
+    title: "Advanced Genre Tagging",
+    description: "Discover niche genres and explore anime with a highly detailed and community-curated tagging system.",
+    imageSrc: "https://placehold.co/600x400.png",
+    imageAlt: "Advanced Genre Tagging",
+    aiHint: "data graph connections",
   },
   {
     icon: <Smartphone className="h-10 w-10 text-accent mb-4" />,
@@ -96,11 +99,45 @@ export function FuturePlansSection() {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">What's Coming Next?</h2>
           <p className="text-lg text-foreground/70 mt-2 max-w-2xl mx-auto">
-            We're constantly working to make Anime Pack even better. Here's a sneak peek at what we're planning.
+            We're constantly working to make Anime Pack even better. Here's a sneak peek at what we're planning for the near future.
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {plannedFeatures.map((feature, index) => (
+          {nearTermPlannedFeatures.map((feature, index) => (
+            <AnimatedSection key={index} delay={`delay-${index * 100}ms`}>
+              <Card className="h-full flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1 bg-card">
+                <CardHeader className="items-center text-center p-6">
+                  {feature.icon}
+                  <CardTitle className="text-2xl">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex-grow flex flex-col p-6 pt-0">
+                  <div className="relative w-full aspect-[3/2] rounded-md overflow-hidden mb-4">
+                    <Image
+                      src={feature.imageSrc}
+                      alt={feature.imageAlt}
+                      layout="fill"
+                      objectFit="cover"
+                      data-ai-hint={feature.aiHint}
+                      className="transition-transform duration-500 hover:scale-110"
+                    />
+                  </div>
+                  <CardDescription className="text-base text-foreground/70 text-center flex-grow">
+                    {feature.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
+          ))}
+        </div>
+
+        <div className="text-center mt-16 md:mt-24 mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Our Long-Term Vision</h2>
+          <p className="text-lg text-foreground/70 mt-2 max-w-2xl mx-auto">
+            Looking further ahead, here are some of the ambitious goals we're excited to tackle.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {longTermPlannedFeatures.map((feature, index) => (
             <AnimatedSection key={index} delay={`delay-${index * 100}ms`}>
               <Card className="h-full flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1 bg-card">
                 <CardHeader className="items-center text-center p-6">
@@ -130,3 +167,4 @@ export function FuturePlansSection() {
     </AnimatedSection>
   );
 }
+
