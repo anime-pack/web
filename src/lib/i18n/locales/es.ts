@@ -59,7 +59,7 @@ const futurePlansSection: Translations['futurePlansSection'] = {
       description: "Conéctate con otros fans, únete a discusiones, comparte reseñas y descubre joyas ocultas juntos.",
     },
     releaseNotifications: {
-      title: "Notificaciones de Lanzamiento",
+      title: "Notificações de Lançamento",
       description: "Mantente actualizado con notificaciones de nuevos lanzamientos de episodios de tus animes favoritos y nunca te pierdas nada.",
     },
     customizableProfiles: {
@@ -96,6 +96,7 @@ const sponsorsSection: Translations['sponsorsSection'] = {
   backerTitle: "¡O Conviértete en Partidario!",
   backerDescription: "¡Para individuos que aman Anime Pack y quieren mostrar su apoyo! Como partidario, recibirás un rol cosmético especial en la aplicación y en nuestras plataformas comunitarias, junto con algunas ventajas exclusivas para usuarios como agradecimiento por tu contribución.",
   backerButtonText: "Conviértete en Partidario",
+  backerEarlyDevelopmentNote: "Nota: La opción 'Conviértete en Partidario' está disponible exclusivamente durante la fase inicial de desarrollo de Anime Pack.",
 };
 
 const featureShowcase: Translations['featureShowcase'] = {
@@ -119,4 +120,3 @@ export const esTranslations: Translations = {
   featureShowcase,
   communityInvitation,
 };
-

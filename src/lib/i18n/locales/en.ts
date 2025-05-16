@@ -95,6 +95,7 @@ const sponsorsSection = {
   backerTitle: "Or Become a Backer!",
   backerDescription: "For individuals who love Anime Pack and want to show their support! As a backer, you'll receive a special cosmetic role in-app and on our community platforms, along with a few exclusive user perks as a thank you for your contribution.",
   backerButtonText: "Become a Backer",
+  backerEarlyDevelopmentNote: "Note: The 'Become a Backer' option is available exclusively during the early development phase of Anime Pack.",
 };
 
 const featureShowcase = {
@@ -121,4 +122,3 @@ export const enTranslations = {
 };
 
 export type Translations = typeof enTranslations;
-

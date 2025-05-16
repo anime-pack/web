@@ -96,6 +96,7 @@ const sponsorsSection: Translations['sponsorsSection'] = {
   backerTitle: "Ou Torne-se um Apoiador!",
   backerDescription: "Para pessoas que amam o Anime Pack e querem mostrar seu apoio! Como apoiador, você receberá um papel cosmético especial no aplicativo e em nossas plataformas comunitárias, juntamente com algumas vantagens exclusivas para usuários como agradecimento por sua contribuição.",
   backerButtonText: "Torne-se um Apoiador",
+  backerEarlyDevelopmentNote: "Nota: A opção 'Torne-se um Apoiador' está disponível exclusivamente durante a fase inicial de desenvolvimento do Anime Pack.",
 };
 
 const featureShowcase: Translations['featureShowcase'] = {
@@ -119,4 +120,3 @@ export const ptBRTranslations: Translations = {
   featureShowcase,
   communityInvitation,
 };
-

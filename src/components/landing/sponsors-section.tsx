@@ -28,7 +28,7 @@ export function SponsorsSection() {
           {/* Replace "#" with your actual Discord invite link */}
           <Link href="#" target="_blank" rel="noopener noreferrer">
             <MessagesSquare className="mr-2 h-5 w-5" />
-            {t('sponsorsSection.buttonTextDiscord')} 
+            {t('sponsorsSection.buttonTextDiscord')}
           </Link>
         </Button>
 
@@ -49,11 +49,13 @@ export function SponsorsSection() {
           {/* Replace "#" with your actual backer link (e.g., a different tier on Patreon, Ko-fi) */}
           <Link href="#" target="_blank" rel="noopener noreferrer">
             {t('sponsorsSection.backerButtonText')}
-            <Star className="ml-2 h-5 w-5" /> {/* Removed fill-accent */}
+            <Star className="ml-2 h-5 w-5" />
           </Link>
         </Button>
+        <p className="text-xs text-muted-foreground mt-4 max-w-md mx-auto">
+          {t('sponsorsSection.backerEarlyDevelopmentNote')}
+        </p>
       </div>
     </AnimatedSection>
   );
 }
-
