@@ -42,7 +42,7 @@ export function AboutSection() {
             >
               <DialogTitle className="sr-only">App Icon</DialogTitle>
               <Card className="overflow-hidden shadow-xl rounded-lg">
-                <CardContent className="p-0">
+                <CardContent className="p-2"> {/* Changed p-0 to p-2 */}
                   <div className="relative aspect-square w-full">
                     <Image
                       src={imageUrl} 
