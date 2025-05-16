@@ -9,10 +9,24 @@ import { ptBRTranslations } from './locales/pt-BR';
 
 type Language = 'en' | 'pt-BR';
 
+// Helper function to get nested value from an object using a dot-separated path
+const getNestedValue = (obj: any, path: string): string | undefined => {
+  const keys = path.split('.');
+  let current = obj;
+  for (const key of keys) {
+    if (current && typeof current === 'object' && key in current) {
+      current = current[key];
+    } else {
+      return undefined; // Path not found or not an object
+    }
+  }
+  return typeof current === 'string' ? current : undefined; // Return only if the final value is a string
+};
+
 interface LanguageContextType {
   language: Language;
   setLanguage: (language: Language) => void;
-  t: (key: keyof Translations, replacements?: Record<string, string | number | ReactNode>) => string | ReactNode[];
+  t: (key: string, replacements?: Record<string, string | number | ReactNode>) => ReactNode[]; // key is now string
   translations: Translations;
 }
 
@@ -38,34 +52,39 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem('anime-pack-lang', lang);
   }, []);
 
-  const t = useCallback((key: keyof Translations, replacements?: Record<string, string | number | ReactNode>): string | ReactNode[] => {
-    const translationString = translationsMap[language][key] || translationsMap['en'][key] || String(key);
-    
+  const t = useCallback((key: string, replacements?: Record<string, string | number | ReactNode>): ReactNode[] => {
+    const currentTranslations = translationsMap[language];
+    const fallbackTranslations = translationsMap['en'];
+
+    let translationString = getNestedValue(currentTranslations, key) || getNestedValue(fallbackTranslations, key);
+
     if (typeof translationString !== 'string') {
-        return [String(translationString)];
+      // If the key is not found or doesn't resolve to a string, return the key itself.
+      return [key];
     }
 
+    // Now, translationString is definitely a string.
     if (!replacements) {
       return [translationString];
     }
 
     const parts: ReactNode[] = [];
     let lastIndex = 0;
-    
     const placeholderRegex = /\{(\w+)\}/g;
     let match;
-    
+
     while((match = placeholderRegex.exec(translationString)) !== null) {
         const placeholder = match[1];
         if (lastIndex < match.index) {
             parts.push(translationString.substring(lastIndex, match.index));
         }
-        if (replacements && placeholder in replacements) {
+        if (placeholder in replacements) {
              const replacementValue = replacements[placeholder];
              if (typeof replacementValue === 'string' || typeof replacementValue === 'number') {
                 parts.push(String(replacementValue));
              } else {
-                parts.push(React.cloneElement(replacementValue as React.ReactElement, { key: `rep-${placeholder}-${parts.length}` }));
+                // Ensure React elements have a key if they are part of a list
+                parts.push(React.isValidElement(replacementValue) ? React.cloneElement(replacementValue, { key: `rep-${placeholder}-${parts.length}` }) : replacementValue);
              }
         } else {
             parts.push(match[0]); // Keep placeholder if no replacement found
@@ -76,11 +95,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     if (lastIndex < translationString.length) {
         parts.push(translationString.substring(lastIndex));
     }
-    
-    if (parts.length === 0 && translationString) {
-        return [translationString];
-    }
-    return parts;
+
+    return parts.length > 0 ? parts : [translationString]; // Ensure an array is always returned, even if empty (though unlikely with a found string)
   }, [language]);
 
   const contextValue: LanguageContextType = {
