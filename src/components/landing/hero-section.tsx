@@ -7,16 +7,34 @@ import Link from 'next/link';
 import { AnimatedSection } from "@/components/common/animated-section";
 import Image from 'next/image';
 import { useTranslations } from "@/lib/i18n";
+import type { MouseEvent } from 'react';
 
 export function HeroSection() {
   const { t, translations } = useTranslations();
+
+  const handleSmoothScroll = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const href = e.currentTarget.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      const elementId = href.substring(1);
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+        });
+        // Optionally, update the URL hash after scrolling if desired,
+        // but for a static site and simple scroll, this might be sufficient.
+        // window.history.pushState(null, '', href);
+      }
+    }
+  };
 
   return (
     <AnimatedSection className="bg-primary/30 dark:bg-primary/10 py-20 md:py-32 relative overflow-hidden">
       {/* Background Image - Positioned to be behind fades and content */}
       <Image
         src="https://placehold.co/1920x1080.png" 
-        alt="Hero background image"
+        alt={t('heroSection.subtitle')[0] as string} // Using subtitle as alt, adjust if needed
         layout="fill"
         objectFit="cover"
         className="absolute inset-0 z-0 opacity-40" 
@@ -46,7 +64,7 @@ export function HeroSection() {
             size="lg" 
             className="bg-accent text-accent-foreground hover:bg-accent/90 transition-transform duration-300 ease-in-out hover:scale-105 shadow-lg"
           >
-            <Link href="#features">
+            <Link href="#future-plans" onClick={handleSmoothScroll}>
               {t('common.exploreFeatures')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
