@@ -80,7 +80,7 @@ export function Header() {
               <TooltipTrigger asChild>
                 <ThemeToggle />
               </TooltipTrigger>
-              <TooltipContent>
+              <TooltipContent align="end">
                 <p>{t('header.srThemeToggle')[0] as string}</p>
               </TooltipContent>
             </Tooltip>
