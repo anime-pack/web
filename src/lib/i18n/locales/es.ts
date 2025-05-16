@@ -91,8 +91,8 @@ const futurePlansSection: Translations['futurePlansSection'] = {
 
 const sponsorsSection: Translations['sponsorsSection'] = {
   title: "¡Apoya el Desarrollo de Anime Pack!",
-  description: "Anime Pack es un proyecto de pasión. Al convertirte en patrocinador, nos ayudas a dedicar más tiempo al desarrollo, cubrir costos de servidor y dar vida a nuevas características más rápidamente. ¡Los patrocinadores también pueden ser destacados dentro de la aplicación! Cada contribución es muy apreciada.",
-  buttonText: "Conviértete en Patrocinador",
+  description: "Anime Pack es un proyecto de pasión. Al convertirte en patrocinador, nos ayudas a dedicar más tiempo al desarrollo, cubrir costos de servidor, ser destacado en anuncios dentro de la aplicación y dar vida a nuevas características más rápidamente. ¡Cada contribución es muy apreciada!",
+  buttonTextDiscord: "Únete a Discord para Info de Patrocinio",
   backerTitle: "¡O Conviértete en Partidario!",
   backerDescription: "¡Para individuos que aman Anime Pack y quieren mostrar su apoyo! Como partidario, recibirás un rol cosmético especial en la aplicación y en nuestras plataformas comunitarias, junto con algunas ventajas exclusivas para usuarios como agradecimiento por tu contribución.",
   backerButtonText: "Conviértete en Partidario",
@@ -119,3 +119,4 @@ export const esTranslations: Translations = {
   featureShowcase,
   communityInvitation,
 };
+

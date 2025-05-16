@@ -2,7 +2,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { HeartHandshake, Users, ArrowRight, Star } from "lucide-react";
+import { HeartHandshake, MessagesSquare, ArrowRight, Star } from "lucide-react";
 import Link from 'next/link';
 import { AnimatedSection } from "@/components/common/animated-section";
 import { useTranslations } from "@/lib/i18n";
@@ -25,10 +25,10 @@ export function SponsorsSection() {
           size="lg"
           className="bg-accent text-accent-foreground hover:bg-accent/90 transition-transform duration-300 ease-in-out hover:scale-105 shadow-lg"
         >
-          {/* Replace "#" with your actual sponsorship link (e.g., GitHub Sponsors, Patreon) */}
+          {/* Replace "#" with your actual Discord invite link */}
           <Link href="#" target="_blank" rel="noopener noreferrer">
-            {t('sponsorsSection.buttonText')}
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <MessagesSquare className="mr-2 h-5 w-5" />
+            {t('sponsorsSection.buttonTextDiscord')} 
           </Link>
         </Button>
 
@@ -57,3 +57,4 @@ export function SponsorsSection() {
     </AnimatedSection>
   );
 }
+
