@@ -103,6 +103,8 @@ const sponsorsSection = {
     contentPlaceholderLine1: "Your support directly contributes to server costs, feature development, and community initiatives.",
     option1Text: "Support us on",
     option2Text: "Tip us on",
+    option3Text: "Contribute via",
+    option4Text: "Support with",
     moreOptionsSoon: "More options coming soon...",
     anonymousDonationNote: "Please note: Anonymous donations are welcome, but cannot receive in-app or community perks as we won't be able to identify you for granting them.",
   }
@@ -156,3 +158,4 @@ export const enTranslations = {
 };
 
 export type Translations = typeof enTranslations;
+

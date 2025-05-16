@@ -73,6 +73,18 @@ export function SponsorsSection() {
                   Ko-fi
                 </Link>
               </p>
+              <p>
+                {t('sponsorsSection.backerDialog.option3Text')}{' '}
+                <Link href="#" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                  OpenCollective
+                </Link>
+              </p>
+              <p>
+                {t('sponsorsSection.backerDialog.option4Text')}{' '}
+                <Link href="#" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                  Livepix
+                </Link>
+              </p>
               <p>{t('sponsorsSection.backerDialog.moreOptionsSoon')}</p>
             </div>
             <DialogFooter className="mt-2 pt-4 border-t">
@@ -89,3 +101,4 @@ export function SponsorsSection() {
     </AnimatedSection>
   );
 }
+
