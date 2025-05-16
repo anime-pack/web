@@ -42,7 +42,7 @@ export function AboutSection() {
             <span className="font-semibold">{t('toast.achievementUnlocked.title')}</span>
           </div>
         ),
-        description: t('toast.achievementUnlocked.description'),
+        description: t('toast.achievementUnlocked.description')[0] as string,
         className: "border-yellow-500 bg-yellow-50 dark:bg-yellow-900/30 dark:border-yellow-600",
         duration: 5000,
       });
@@ -54,15 +54,15 @@ export function AboutSection() {
         switch (randomNumber) {
           case 0:
             toast({
-              title: t('toast.subsequent.likeStickers.title'),
-              description: t('toast.subsequent.likeStickers.description'),
+              title: t('toast.subsequent.likeStickers.title')[0] as string,
+              description: t('toast.subsequent.likeStickers.description')[0] as string,
               duration: 5000,
             });
             break;
           case 1:
             toast({
-              title: t('toast.subsequent.joinDiscord.title'),
-              description: t('toast.subsequent.joinDiscord.description'),
+              title: t('toast.subsequent.joinDiscord.title')[0] as string,
+              description: t('toast.subsequent.joinDiscord.description')[0] as string,
               action: (
                 <ToastAction
                   altText={t('toast.subsequent.joinDiscord.buttonAltText')[0] as string}
@@ -77,8 +77,8 @@ export function AboutSection() {
             break;
           case 2:
             toast({
-              title: t('toast.subsequent.funFact.title'),
-              description: t('toast.subsequent.funFact.description'),
+              title: t('toast.subsequent.funFact.title')[0] as string,
+              description: t('toast.subsequent.funFact.description')[0] as string,
               duration: 6000,
             });
             break;
@@ -87,7 +87,7 @@ export function AboutSection() {
     }
   };
 
-  const imageUrl = "https://placehold.co/100x100.png";
+  const imageUrl = "https://avatars.githubusercontent.com/u/200832410?s=200&v=4";
   const imageAlt = t('aboutSection.title')[0] as string;
 
   return (
