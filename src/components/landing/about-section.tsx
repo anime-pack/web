@@ -11,6 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Card, CardContent } from "@/components/ui/card";
 
 export function AboutSection() {
   const { t } = useTranslations();
@@ -35,20 +36,21 @@ export function AboutSection() {
               </div>
             </DialogTrigger>
             <DialogOverlay className="bg-black/80" />
-            <DialogContent className="p-0 bg-transparent border-0 shadow-none sm:max-w-xl md:max-w-2xl lg:max-w-3xl focus-visible:ring-0 focus-visible:ring-offset-0">
-              {/* Visually hidden title for accessibility */}
+            <DialogContent className="p-0 bg-transparent border-0 shadow-none sm:max-w-xs md:max-w-sm focus-visible:ring-0 focus-visible:ring-offset-0">
               <DialogTitle className="sr-only">App Icon</DialogTitle>
-              {/* We remove default padding and styling to make the image the modal itself */}
-              {/* You might need to adjust max-w-* based on desired modal image size */}
-              <div className="relative aspect-square w-full max-w-full overflow-hidden rounded-lg">
-                <Image
-                  src={imageUrl} // Display the same image, or a larger version if available
-                  alt={imageAlt}
-                  layout="fill"
-                  objectFit="contain" // Use 'contain' to see the whole image
-                  data-ai-hint="fox box"
-                />
-              </div>
+              <Card className="overflow-hidden shadow-xl rounded-lg">
+                <CardContent className="p-0">
+                  <div className="relative aspect-square w-full">
+                    <Image
+                      src={imageUrl} 
+                      alt={imageAlt}
+                      layout="fill"
+                      objectFit="contain" 
+                      data-ai-hint="fox box"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
             </DialogContent>
           </Dialog>
 
