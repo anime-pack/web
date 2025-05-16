@@ -17,7 +17,7 @@ const header = {
   themeSystem: "System",
   language: "Language",
   english: "English",
-  portugueseBrazil: "Portuguese", // Changed from "Portuguese (Brazil)"
+  portugueseBrazil: "Portuguese",
   spanish: "Spanish",
 };
 
@@ -88,6 +88,12 @@ const futurePlansSection = {
   }
 };
 
+const sponsorsSection = {
+  title: "Support Anime Pack's Development!",
+  description: "Anime Pack is a passion project, and your support can make a huge difference. By becoming a sponsor, you help us dedicate more time to development, cover potential server costs, and bring new features to life faster. Every contribution, big or small, is greatly appreciated!",
+  buttonText: "Become a Sponsor",
+};
+
 const featureShowcase = {
   title: "Help Build Anime Pack!",
   description: `Anime Pack is an open-source project, and we welcome contributors of all skill levels. Whether you're a developer, designer, or just passionate about anime, there's a place for you. Help us make Anime Pack the best anime companion app out there!`,
@@ -106,6 +112,7 @@ export const enTranslations = {
   heroSection,
   aboutSection,
   futurePlansSection,
+  sponsorsSection,
   featureShowcase,
   communityInvitation,
 };

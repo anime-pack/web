@@ -18,7 +18,7 @@ const header: Translations['header'] = {
   themeSystem: "Sistema",
   language: "Idioma",
   english: "Inglés",
-  portugueseBrazil: "Portugués", // Changed from "Portugués (Brasil)"
+  portugueseBrazil: "Portugués",
   spanish: "Español",
 };
 
@@ -89,6 +89,12 @@ const futurePlansSection: Translations['futurePlansSection'] = {
   }
 };
 
+const sponsorsSection: Translations['sponsorsSection'] = {
+  title: "¡Apoya el Desarrollo de Anime Pack!",
+  description: "Anime Pack es un proyecto de pasión, y tu apoyo puede marcar una gran diferencia. Al convertirte en patrocinador, nos ayudas a dedicar más tiempo al desarrollo, cubrir posibles costos de servidor y dar vida a nuevas características más rápidamente. ¡Cada contribución, grande o pequeña, es muy apreciada!",
+  buttonText: "Conviértete en Patrocinador",
+};
+
 const featureShowcase: Translations['featureShowcase'] = {
   title: "¡Ayuda a Construir Anime Pack!",
   description: `Anime Pack es un proyecto de código abierto, y damos la bienvenida a colaboradores de todos los niveles de habilidad. Ya seas desarrollador, diseñador o simplemente un apasionado del anime, hay un lugar para ti. ¡Ayúdanos a hacer de Anime Pack la mejor aplicación compañera de anime!`,
@@ -106,6 +112,7 @@ export const esTranslations: Translations = {
   heroSection,
   aboutSection,
   futurePlansSection,
+  sponsorsSection,
   featureShowcase,
   communityInvitation,
 };
