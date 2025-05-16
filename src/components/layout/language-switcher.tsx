@@ -34,6 +34,13 @@ const BrazilFlag = () => (
   </svg>
 );
 
+const SpainFlag = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15" className="mr-2 h-4 w-5 rounded-sm">
+    <rect width="20" height="15" fill="#c60b1e"/> {/* Red top and bottom stripe */}
+    <rect width="20" height="7.5" y="3.75" fill="#ffc400"/> {/* Yellow middle stripe */}
+  </svg>
+);
+
 
 export function LanguageSwitcher() {
   const { language, setLanguage, t } = useTranslations();
@@ -41,6 +48,7 @@ export function LanguageSwitcher() {
   const languages = [
     { code: "en" as const, label: t('header.english'), Flag: USFlag },
     { code: "pt-BR" as const, label: t('header.portugueseBrazil'), Flag: BrazilFlag },
+    { code: "es" as const, label: t('header.spanish'), Flag: SpainFlag },
   ];
 
   const CurrentFlag = languages.find(lang => lang.code === language)?.Flag || Languages;

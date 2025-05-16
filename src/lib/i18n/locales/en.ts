@@ -17,6 +17,7 @@ const header = {
   language: "Language",
   english: "English",
   portugueseBrazil: "Portuguese (Brazil)",
+  spanish: "Spanish", // Added Spanish
 };
 
 const footer = {

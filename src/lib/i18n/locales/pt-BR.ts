@@ -18,6 +18,7 @@ const header: Translations['header'] = {
   language: "Idioma",
   english: "Inglês",
   portugueseBrazil: "Português (Brasil)",
+  spanish: "Espanhol", // Added Spanish
 };
 
 const footer: Translations['footer'] = {

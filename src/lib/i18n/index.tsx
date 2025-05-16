@@ -1,4 +1,3 @@
-
 // @/lib/i18n/index.tsx
 "use client";
 
@@ -6,8 +5,9 @@ import type { ReactNode } from 'react';
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { enTranslations, type Translations } from './locales/en';
 import { ptBRTranslations } from './locales/pt-BR';
+import { esTranslations } from './locales/es';
 
-type Language = 'en' | 'pt-BR';
+type Language = 'en' | 'pt-BR' | 'es';
 
 // Helper function to get nested value from an object using a dot-separated path
 const getNestedValue = (obj: any, path: string): string | undefined => {
@@ -35,6 +35,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const translationsMap: Record<Language, Translations> = {
   en: enTranslations,
   'pt-BR': ptBRTranslations,
+  es: esTranslations,
 };
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
@@ -42,7 +43,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const storedLang = localStorage.getItem('anime-pack-lang') as Language | null;
-    if (storedLang && (storedLang === 'en' || storedLang === 'pt-BR')) {
+    if (storedLang && (storedLang === 'en' || storedLang === 'pt-BR' || storedLang === 'es')) {
       setLanguageState(storedLang);
     }
   }, []);
