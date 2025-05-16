@@ -42,10 +42,10 @@ export function AboutSection() {
         title: (
           <div className="flex items-center gap-2">
             <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-            <span className="font-semibold">Achievement Unlocked!</span>
+            <span className="font-semibold">{t('toast.achievementUnlocked.title')}</span>
           </div>
         ),
-        description: "These interactive sticker cards do look cool, right?",
+        description: t('toast.achievementUnlocked.description'),
         className: "border-yellow-500 bg-yellow-50 dark:bg-yellow-900/30 dark:border-yellow-600",
         duration: 5000, // Display for 5 seconds
       });
@@ -55,7 +55,7 @@ export function AboutSection() {
   };
 
   const imageUrl = "https://placehold.co/100x100.png";
-  const imageAlt = t('aboutSection.title') as string;
+  const imageAlt = t('aboutSection.title') as string; // Assuming t returns string for simple keys
 
   return (
     <AnimatedSection id="about" className="py-16 md:py-24 bg-background">
@@ -92,7 +92,7 @@ export function AboutSection() {
                         <div className="relative aspect-square w-full rounded-md overflow-hidden">
                           <Image
                             src={imageUrl}
-                            alt={imageAlt}
+                            alt={imageAlt} // Using the same alt text
                             layout="fill"
                             objectFit="contain"
                             data-ai-hint="fox box"

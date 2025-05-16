@@ -108,6 +108,12 @@ const communityInvitation = {
   description: "Connect with fellow Anime Pack members on our official Discord server. Share your thoughts, discover new gems, get support, and stay updated with the latest news.",
 };
 
+const toast = {
+  achievementUnlocked: {
+    title: "Achievement Unlocked!",
+    description: "These interactive sticker cards do look cool, right?",
+  }
+};
 
 export const enTranslations = {
   common,
@@ -119,6 +125,7 @@ export const enTranslations = {
   sponsorsSection,
   featureShowcase,
   communityInvitation,
+  toast,
 };
 
 export type Translations = typeof enTranslations;

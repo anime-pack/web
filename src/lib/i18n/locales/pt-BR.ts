@@ -109,6 +109,13 @@ const communityInvitation: Translations['communityInvitation'] = {
   description: "Conecte-se com outros membros do Anime Pack em nosso servidor oficial do Discord. Compartilhe suas ideias, descubra novas joias, obtenha suporte e mantenha-se atualizado com as últimas notícias.",
 };
 
+const toast: Translations['toast'] = {
+  achievementUnlocked: {
+    title: "Conquista Desbloqueada!",
+    description: "Esses cards interativos parecem legais, né?",
+  }
+};
+
 export const ptBRTranslations: Translations = {
   common,
   header,
@@ -119,4 +126,5 @@ export const ptBRTranslations: Translations = {
   sponsorsSection,
   featureShowcase,
   communityInvitation,
+  toast,
 };

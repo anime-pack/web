@@ -59,7 +59,7 @@ const futurePlansSection: Translations['futurePlansSection'] = {
       description: "Conéctate con otros fans, únete a discusiones, comparte reseñas y descubre joyas ocultas juntos.",
     },
     releaseNotifications: {
-      title: "Notificações de Lançamento",
+      title: "Notificaciones de Lanzamiento",
       description: "Mantente actualizado con notificaciones de nuevos lanzamientos de episodios de tus animes favoritos y nunca te pierdas nada.",
     },
     customizableProfiles: {
@@ -109,6 +109,13 @@ const communityInvitation: Translations['communityInvitation'] = {
   description: "Conéctate con otros miembros de Anime Pack en nuestro servidor oficial de Discord. Comparte tus ideas, descubre nuevas joyas, obtén soporte y mantente actualizado con las últimas noticias.",
 };
 
+const toast: Translations['toast'] = {
+  achievementUnlocked: {
+    title: "¡Logro Desbloqueado!",
+    description: "Estas tarjetas interactivas se ven geniales, ¿verdad?",
+  }
+};
+
 export const esTranslations: Translations = {
   common,
   header,
@@ -119,4 +126,5 @@ export const esTranslations: Translations = {
   sponsorsSection,
   featureShowcase,
   communityInvitation,
+  toast,
 };
