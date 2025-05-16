@@ -97,21 +97,23 @@ export function AboutSection() {
           <TooltipProvider delayDuration={6000}>
             <Tooltip>
               <Dialog>
-                <DialogTrigger asChild>
-                  <div
-                    onClick={handleIconClick}
-                    className="relative mx-auto mb-6 h-24 w-24 md:h-28 md:w-28 overflow-hidden rounded-lg shadow-md cursor-pointer hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
-                  >
-                    <Image
-                      src={imageUrl}
-                      alt={imageAlt}
-                      layout="fill"
-                      objectFit="cover"
-                      data-ai-hint="fox box"
-                      className="transform transition-transform duration-500 hover:scale-110"
-                    />
-                  </div>
-                </DialogTrigger>
+                <TooltipTrigger asChild>
+                  <DialogTrigger asChild>
+                    <div
+                      onClick={handleIconClick}
+                      className="relative mx-auto mb-6 h-24 w-24 md:h-28 md:w-28 overflow-hidden rounded-lg shadow-md cursor-pointer hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
+                    >
+                      <Image
+                        src={imageUrl}
+                        alt={imageAlt}
+                        layout="fill"
+                        objectFit="cover"
+                        data-ai-hint="fox box"
+                        className="transform transition-transform duration-500 hover:scale-110"
+                      />
+                    </div>
+                  </DialogTrigger>
+                </TooltipTrigger>
                 <DialogOverlay className="bg-black/80" />
                 <DialogContent
                   onOpenAutoFocus={(e) => e.preventDefault()}
@@ -161,4 +163,3 @@ export function AboutSection() {
     </AnimatedSection>
   );
 }
-
