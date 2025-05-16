@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -33,10 +32,10 @@ const plannedFeatures = [
   },
   {
     icon: <Search className="h-10 w-10 text-accent mb-4" />,
-    title: "Advanced Search & Filters",
+    title: "Advanced Filters",
     description: "Quickly find exactly what you're looking for with powerful search and intuitive filtering options by genre, year, and more.",
     imageSrc: "https://placehold.co/600x400.png",
-    imageAlt: "Advanced anime search",
+    imageAlt: "Advanced anime filters",
     aiHint: "anime search",
   },
   {
