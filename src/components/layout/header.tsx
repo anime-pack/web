@@ -8,6 +8,12 @@ import { ThemeToggle } from '@/components/layout/theme-toggle';
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '@/components/layout/language-switcher';
 import { useTranslations } from '@/lib/i18n';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export function Header() {
   const { t, translations } = useTranslations();
@@ -18,31 +24,64 @@ export function Header() {
         <Link href="/" className="flex items-center space-x-2">
           <Image
             src="https://placehold.co/24x24.png"
-            alt={t('common.appName') as string}
+            alt={t('common.appName')[0] as string}
             width={24}
             height={24}
             data-ai-hint="app logo"
-            className="text-accent" // Keeps a similar visual space if needed, can be removed
+            className="text-accent"
           />
           <span className="font-bold text-xl">{translations.common.appName}</span>
         </Link>
-        <div className="ml-auto flex items-center space-x-2">
-          <LanguageSwitcher />
-          <Button variant="outline" size="icon" asChild className="h-9 w-9">
-            <Link href="https://github.com/firebase/studio-prototyper-example" target="_blank" rel="noopener noreferrer">
-              <Github className="h-[1.2rem] w-[1.2rem]" />
-              <span className="sr-only">{t('header.srGitHub')}</span>
-            </Link>
-          </Button>
-          <Button variant="outline" size="icon" asChild className="h-9 w-9">
-            {/* Replace "#" with your actual Discord invite link */}
-            <Link href="#" target="_blank" rel="noopener noreferrer">
-              <MessagesSquare className="h-[1.2rem] w-[1.2rem]" />
-              <span className="sr-only">{t('header.srDiscord')}</span>
-            </Link>
-          </Button>
-          <ThemeToggle />
-        </div>
+        <TooltipProvider delayDuration={1000}>
+          <div className="ml-auto flex items-center space-x-2">
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <LanguageSwitcher />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{t('header.language')}</p>
+              </TooltipContent>
+            </Tooltip>
+
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="outline" size="icon" asChild className="h-9 w-9">
+                  <Link href="https://github.com/firebase/studio-prototyper-example" target="_blank" rel="noopener noreferrer">
+                    <Github className="h-[1.2rem] w-[1.2rem]" />
+                    <span className="sr-only">{t('header.srGitHub')}</span>
+                  </Link>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{t('header.srGitHub')}</p>
+              </TooltipContent>
+            </Tooltip>
+
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="outline" size="icon" asChild className="h-9 w-9">
+                  {/* Replace "#" with your actual Discord invite link */}
+                  <Link href="#" target="_blank" rel="noopener noreferrer">
+                    <MessagesSquare className="h-[1.2rem] w-[1.2rem]" />
+                    <span className="sr-only">{t('header.srDiscord')}</span>
+                  </Link>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{t('header.srDiscord')}</p>
+              </TooltipContent>
+            </Tooltip>
+
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <ThemeToggle />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{t('header.srThemeToggle')}</p>
+              </TooltipContent>
+            </Tooltip>
+          </div>
+        </TooltipProvider>
       </div>
     </header>
   );
