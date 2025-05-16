@@ -67,7 +67,7 @@ export function SponsorsSection() {
                 <p className="flex items-center">
                   <FaPaypal className="mr-3 h-6 w-6 text-accent" />
                   {t('sponsorsSection.backerDialog.optionPayPalText')}{' '}
-                  <Link href="#" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline ml-1">
+                  <Link href="https://www.paypal.com/donate/?business=R9RPLRDQSCAU6&no_recurring=0" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline ml-1">
                     PayPal
                   </Link>
                 </p>
@@ -81,7 +81,7 @@ export function SponsorsSection() {
                 <p className="flex items-center">
                   <FaPix className="mr-3 h-6 w-6 text-accent" />
                   {t('sponsorsSection.backerDialog.optionLivepixText')}{' '}
-                  <Link href="#" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline ml-1">
+                  <Link href="https://livepix.gg/dark1zin" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline ml-1">
                     Livepix
                   </Link>
                 </p>
