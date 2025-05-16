@@ -15,6 +15,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { FaDiscord } from 'react-icons/fa';
+import appIcon from '../../app/32x32.png'; // Import the image
 
 export function Header() {
   const { t, translations } = useTranslations();
@@ -27,7 +28,7 @@ export function Header() {
             <TooltipTrigger asChild>
               <Link href="/" className="flex items-center space-x-2">
                 <Image
-                  src="/32x32.png"
+                  src={appIcon} // Use the imported image object
                   alt={t('common.appName')[0] as string}
                   width={32}
                   height={32}
@@ -53,7 +54,7 @@ export function Header() {
                 <LanguageSwitcher />
               </TooltipTrigger>
               <TooltipContent>
-                <p>{t('header.language')[0]}</p>
+                <p>{t('header.language')[0] as string}</p>
               </TooltipContent>
             </Tooltip>
 
@@ -62,12 +63,12 @@ export function Header() {
                 <Button variant="outline" size="icon" asChild className="h-9 w-9">
                   <Link href="https://github.com/anime-pack" target="_blank" rel="noopener noreferrer">
                     <Github className="h-[1.2rem] w-[1.2rem]" />
-                    <span className="sr-only">{t('header.srGitHub')[0]}</span>
+                    <span className="sr-only">{t('header.srGitHub')[0] as string}</span>
                   </Link>
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
-                <p>{t('header.srGitHub')[0]}</p>
+                <p>{t('header.srGitHub')[0] as string}</p>
               </TooltipContent>
             </Tooltip>
 
@@ -76,12 +77,12 @@ export function Header() {
                 <Button variant="outline" size="icon" asChild className="h-9 w-9">
                   <Link href="https://discord.gg/Nv8UXpB36y" target="_blank" rel="noopener noreferrer">
                     <FaDiscord className="h-[1.2rem] w-[1.2rem]" />
-                    <span className="sr-only">{t('header.srDiscord')[0]}</span>
+                    <span className="sr-only">{t('header.srDiscord')[0] as string}</span>
                   </Link>
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
-                <p>{t('header.srDiscord')[0]}</p>
+                <p>{t('header.srDiscord')[0] as string}</p>
               </TooltipContent>
             </Tooltip>
 
@@ -90,7 +91,7 @@ export function Header() {
                 <ThemeToggle />
               </TooltipTrigger>
               <TooltipContent align="end">
-                <p>{t('header.srThemeToggle')[0]}</p>
+                <p>{t('header.srThemeToggle')[0] as string}</p>
               </TooltipContent>
             </Tooltip>
           </div>
