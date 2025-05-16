@@ -1,7 +1,8 @@
 
-import { Rocket } from 'lucide-react';
+import { Rocket, Github } from 'lucide-react';
 import Link from 'next/link';
 import { ThemeToggle } from '@/components/layout/theme-toggle';
+import { Button } from '@/components/ui/button';
 
 export function Header() {
   return (
@@ -11,7 +12,13 @@ export function Header() {
           <Rocket className="h-6 w-6 text-accent" />
           <span className="font-bold text-xl">Anime Pack</span>
         </Link>
-        <div className="ml-auto flex items-center space-x-4">
+        <div className="ml-auto flex items-center space-x-2">
+          <Button variant="outline" size="icon" asChild>
+            <Link href="https://github.com/firebase/studio-prototyper-example" target="_blank" rel="noopener noreferrer">
+              <Github className="h-[1.2rem] w-[1.2rem]" />
+              <span className="sr-only">GitHub</span>
+            </Link>
+          </Button>
           <ThemeToggle />
         </div>
       </div>
