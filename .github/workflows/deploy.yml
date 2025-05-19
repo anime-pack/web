@@ -40,6 +40,8 @@ jobs:
         run: npm run build # This runs `next build` which includes `next export` due to `output: 'export'`
       - name: Create .nojekyll file
         run: touch ./out/.nojekyll # Prevents GitHub Pages from running Jekyll
+      - name: Create CNAME file
+        run: echo "animepack.net" > ./out/CNAME # Add your custom domain here
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
