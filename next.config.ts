@@ -1,7 +1,7 @@
 
 import type {NextConfig} from 'next';
 
-// IMPORTANT: Replace 'anime-pack-landing-page' with your actual GitHub repository name
+// IMPORTANT: Replace 'web-page' with your actual GitHub repository name if it's different
 const repositoryName = 'web-page';
 
 const nextConfig: NextConfig = {
