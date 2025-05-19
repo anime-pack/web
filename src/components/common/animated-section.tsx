@@ -4,6 +4,7 @@
 import type { ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile'; // Import useIsMobile
 
 interface AnimatedSectionProps extends React.HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
@@ -14,8 +15,11 @@ interface AnimatedSectionProps extends React.HTMLAttributes<HTMLDivElement> {
 export function AnimatedSection({ children, className, delay, ...rest }: AnimatedSectionProps) {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement | null>(null);
+  const isMobile = useIsMobile(); // Get mobile state
 
   useEffect(() => {
+    const currentThreshold = isMobile ? 0.01 : 0.1; // Conditional threshold
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -25,7 +29,7 @@ export function AnimatedSection({ children, className, delay, ...rest }: Animate
           }
         });
       },
-      { threshold: 0.01 } // Changed threshold from 0.1 to 0.01
+      { threshold: currentThreshold } // Use the determined threshold
     );
 
     const currentRef = sectionRef.current;
@@ -38,7 +42,7 @@ export function AnimatedSection({ children, className, delay, ...rest }: Animate
         observer.unobserve(currentRef);
       }
     };
-  }, []);
+  }, [isMobile]); // Add isMobile to dependency array to re-run effect if it changes
 
   return (
     <div
@@ -55,3 +59,4 @@ export function AnimatedSection({ children, className, delay, ...rest }: Animate
     </div>
   );
 }
+
