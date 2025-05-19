@@ -40,7 +40,7 @@ const aboutSection: Translations['aboutSection'] = {
   title: "O que é o Anime Pack?",
   p1: `O Anime Pack é idealizado como um cliente abrangente do MyAnimeList (MAL), com forte ênfase em fornecer uma rica experiência de aplicativo para desktop. Ele é projetado não apenas para navegar por informações de animes e mangás, mas para ser um vibrante centro social para entusiastas de anime, mangá, manhwa e da cultura otaku em geral.`,
   p2: `Nosso objetivo é criar um espaço dedicado onde os fãs possam se conectar, discutir suas séries favoritas e compartilhar sua paixão. O Anime Pack visa preencher a lacuna entre a descoberta de conteúdo e a interação da comunidade, tornando mais fácil do que nunca mergulhar fundo no nicho de animes.`,
-  p3: `Você poderá conectar sua conta MyAnimeList perfeitamente, exibir seu perfil personalizado, acompanhar seu progresso e descobrir new títulos. E isso é só o começo – temos muitos outros recursos empolgantes planejados para futuras atualizações para tornar o Anime Pack seu companheiro definitivo para todas as coisas de anime!`,
+  p3: `Você poderá conectar sua conta MyAnimeList perfeitamente, exibir seu perfil personalizado, acompanhar seu progresso e descobrir novos títulos. E isso é só o começo – temos muitos outros recursos empolgantes planejados para futuras atualizações para tornar o Anime Pack seu companheiro definitivo para todas as coisas de anime!`,
   clickMeTooltip: "Clique em Mim!",
 };
 
@@ -52,7 +52,7 @@ const futurePlansSection: Translations['futurePlansSection'] = {
   features: {
     vastLibrary: {
       title: "Acesso a Vasta Biblioteca",
-      description: "Explore milhares de séries e filmes de anime, com new títulos adicionados regularmente para manter sua lista de observação atualizada.",
+      description: "Explore milhares de séries e filmes de anime, com novos títulos adicionados regularmente para manter sua lista de observação atualizada.",
     },
     personalizedTracking: {
       title: "Acompanhamento Personalizado",
@@ -64,7 +64,7 @@ const futurePlansSection: Translations['futurePlansSection'] = {
     },
     releaseNotifications: {
       title: "Notificações de Lançamento",
-      description: "Mantenha-se atualizado com notificações de new lançamentos de episódios de seus animes favoritos e nunca perca nada.",
+      description: "Mantenha-se atualizado com notificações de novos lançamentos de episódios de seus animes favoritos e nunca perca nada.",
     },
     customizableProfiles: {
       title: "Perfis Personalizáveis",
@@ -95,7 +95,7 @@ const futurePlansSection: Translations['futurePlansSection'] = {
 
 const sponsorsSection: Translations['sponsorsSection'] = {
   title: "Apoie o Desenvolvimento do Anime Pack!",
-  description: "O Anime Pack é um projeto de paixão. Ao se tornar um patrocinador, você nos ajuda a dedicar mais tempo ao desenvolvimento, cobrir custos de servidor, ser destacado em anúncios no aplicativo e trazer new recursos à vida mais rapidamente. Toda contribuição é muito apreciada.",
+  description: "O Anime Pack é um projeto de paixão. Ao se tornar um patrocinador, você nos ajuda a dedicar mais tempo ao desenvolvimento, cobrir custos de servidor, ser destacado em anúncios no aplicativo e trazer novos recursos à vida mais rapidamente. Toda contribuição é muito apreciada.",
   buttonTextDiscord: "Entre no Discord para Infos de Patrocínio",
   backerTitle: "Ou Torne-se um Apoiador!",
   backerDescription: "Para pessoas que amam o Anime Pack e querem mostrar seu apoio! Como apoiador, você receberá um papel cosmético especial no aplicativo e em nossas plataformas comunitárias, juntamente com algumas vantagens exclusivas para usuários como agradecimento por sua contribuição.",
@@ -103,7 +103,7 @@ const sponsorsSection: Translations['sponsorsSection'] = {
   backerEarlyDevelopmentNote: "Nota: A opção 'Torne-se um Apoiador' está disponível exclusivamente durante a fase inicial de desenvolvimento do Anime Pack.",
   backerDialog: {
     title: "Apoie o Anime Pack como um Apoiador",
-    description: "Escolha sua forma preferida de contribuir e nos ajude a crecer!",
+    description: "Escolha sua forma preferida de contribuir e nos ajude a crescer!",
     contentPlaceholderLine1: "Seu apoio contribui diretamente para custos de servidor, desenvolvimento de recursos e iniciativas da comunidade.",
     optionPayPalText: "Apoie-nos no",
     optionPayPalDescription: "Devido às opções limitadas de integração com o PayPal, por favor, obtenha o e-mail de confirmação e uma captura de tela após doar, em seguida, abra um ticket de suporte em nosso servidor do Discord para receber suas vantagens. Estamos buscando melhorar este processo em futuras atualizações.",
@@ -124,7 +124,7 @@ const featureShowcase: Translations['featureShowcase'] = {
 
 const communityInvitation: Translations['communityInvitation'] = {
   title: "Junte-se à Nossa Comunidade no Discord!",
-  description: "Conecte-se com outros membros do Anime Pack em nosso servidor oficial do Discord. Compartilhe suas ideias, descubra new joias, obtenha suporte e mantenha-se atualizado com as últimas notícias.",
+  description: "Conecte-se com outros membros do Anime Pack em nosso servidor oficial do Discord. Compartilhe suas ideias, descubra novas joias, obtenha suporte e mantenha-se atualizado com as últimas notícias.",
 };
 
 const toast: Translations['toast'] = {
