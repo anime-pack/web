@@ -6,7 +6,7 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/layout/theme-provider';
-import { LanguageProvider } from '@/lib/i18n/index.tsx';
+import { LanguageProvider } from '@/lib/i18n/index';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
