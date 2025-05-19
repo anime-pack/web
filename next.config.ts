@@ -2,7 +2,7 @@
 import type {NextConfig} from 'next';
 
 // IMPORTANT: Replace 'anime-pack-landing-page' with your actual GitHub repository name
-const repositoryName = 'anime-pack-landing-page';
+const repositoryName = 'web-page';
 
 const nextConfig: NextConfig = {
   output: 'export',
@@ -14,12 +14,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Disable image optimization for static export
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'placehold.co',
-        port: '',
-        pathname: '/**',
-      },
       {
         protocol: 'https',
         hostname: 'avatars.githubusercontent.com',
