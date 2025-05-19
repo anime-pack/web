@@ -11,16 +11,16 @@ import { useTranslations } from "@/lib/i18n";
 // Import local images - ASSUMES .png EXTENSION.
 // MANUALLY CHANGE THE EXTENSION (e.g., to .jpg or .webp) IF YOUR FILE IS DIFFERENT.
 // Using camelCase for feature names in filenames as per user instruction.
-import vastLibraryFeatureImg from '@/app/features_img/vastLibrary-feature.png';
-import personalizedTrackingFeatureImg from '@/app/features_img/personalizedTracking-feature.png';
-import communityHubFeatureImg from '@/app/features_img/communityHub-feature.png';
-import releaseNotificationsFeatureImg from '@/app/features_img/releaseNotifications-feature.png';
-import customizableProfilesFeatureImg from '@/app/features_img/customizableProfiles-feature.png';
-import communityRecommendationsFeatureImg from '@/app/features_img/communityRecommendations-feature.png';
-import advancedFiltersFeatureImg from '@/app/features_img/advancedFilters-feature.png'; // Ensure this file exists: src/app/features_img/advancedFilters-feature.png
-import advancedGenreTaggingFeatureImg from '@/app/features_img/advancedGenreTagging-feature.png';
-import nativeMobileAppsFeatureImg from '@/app/features_img/nativeMobileApps-feature.png';
-import socialFeaturesFeatureImg from '@/app/features_img/socialFeatures-feature.png';
+import vastLibraryFeatureImg from '@/app/features_img/vastLibrary-feature.jpg';
+import personalizedTrackingFeatureImg from '@/app/features_img/personalizedTracking-feature.webp';
+import communityHubFeatureImg from '@/app/features_img/communityHub-feature.jpg';
+import releaseNotificationsFeatureImg from '@/app/features_img/releaseNotifications-feature.jpg';
+import customizableProfilesFeatureImg from '@/app/features_img/customizableProfiles-feature.jpg';
+import communityRecommendationsFeatureImg from '@/app/features_img/communityRecommendations-feature.jpg';
+import advancedFiltersFeatureImg from '@/app/features_img/advancedFilters-feature.jpg'; // Ensure this file exists: src/app/features_img/advancedFilters-feature.png
+import advancedGenreTaggingFeatureImg from '@/app/features_img/advancedGenreTagging-feature.jpg';
+import nativeMobileAppsFeatureImg from '@/app/features_img/nativeMobileApps-feature.jpg';
+import socialFeaturesFeatureImg from '@/app/features_img/socialFeatures-feature.webp';
 
 
 export function FuturePlansSection() {
