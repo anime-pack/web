@@ -25,7 +25,7 @@ export function AnimatedSection({ children, className, delay, ...rest }: Animate
           }
         });
       },
-      { threshold: 0.1 } 
+      { threshold: 0.01 } // Changed threshold from 0.1 to 0.01
     );
 
     const currentRef = sectionRef.current;
