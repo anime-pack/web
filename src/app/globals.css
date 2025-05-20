@@ -10,9 +10,9 @@
   :root {
     --background: 0 0% 96%; /* Light Gray #F5F5F5 */
     --foreground: 0 0% 13%; /* Darker Gray #222222 */
-    --card: 0 0% 100%; /* White */
+    --card: 0 0% 98%; /* Softer White #FAFAFA */
     --card-foreground: 0 0% 13%; /* Darker Gray #222222 */
-    --popover: 0 0% 100%; /* White */
+    --popover: 0 0% 98%; /* Softer White #FAFAFA */
     --popover-foreground: 0 0% 13%; /* Darker Gray #222222 */
     --primary: 240 67% 97%; /* Soft Lavender #E6E6FA */
     --primary-foreground: 0 0% 20%; /* Dark Gray #333333 for text on Soft Lavender */

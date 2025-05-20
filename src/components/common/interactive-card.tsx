@@ -3,6 +3,8 @@
 
 import React, { useRef, type ReactNode, useCallback } from 'react';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { useTheme } from 'next-themes'; // Import useTheme
 
 interface InteractiveCardProps {
   children: ReactNode;
@@ -21,9 +23,11 @@ export function InteractiveCard({
 }: InteractiveCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const glareRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
+  const { resolvedTheme } = useTheme(); // Get the resolved theme
 
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
+    if (isMobile || !cardRef.current) return;
 
     const rect = cardRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -41,60 +45,64 @@ export function InteractiveCard({
     if (glareRef.current) {
       const mouseXpercentage = (x / rect.width) * 100;
       const mouseYpercentage = (y / rect.height) * 100;
+      
+      const glareColor = resolvedTheme === 'light' ? 'rgba(0, 0, 0, 0.1)' : 'rgba(255, 255, 255, 0.4)';
+      const transparentColor = resolvedTheme === 'light' ? 'rgba(0, 0, 0, 0)' : 'rgba(255, 255, 255, 0)';
+
       glareRef.current.style.opacity = '1';
-      // A subtle white glare that moves with the mouse
-      glareRef.current.style.background = `radial-gradient(circle at ${mouseXpercentage}% ${mouseYpercentage}%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 60%)`;
+      glareRef.current.style.background = `radial-gradient(circle at ${mouseXpercentage}% ${mouseYpercentage}%, ${glareColor} 0%, ${transparentColor} 70%)`;
     }
-  }, [perspective, maxRotation, scaleOnHover]);
+  }, [perspective, maxRotation, scaleOnHover, isMobile, resolvedTheme]); // Added resolvedTheme to dependencies
 
   const handleMouseLeave = useCallback(() => {
-    if (cardRef.current) {
-      cardRef.current.style.transform = `perspective(${perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-      cardRef.current.style.transition = 'transform 0.3s ease-out';
-    }
+    if (isMobile || !cardRef.current) return;
+
+    cardRef.current.style.transform = `perspective(${perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+    cardRef.current.style.transition = 'transform 0.3s ease-out';
+    
     if (glareRef.current) {
       glareRef.current.style.opacity = '0';
-      glareRef.current.style.background = 'none'; // Clear background
+      glareRef.current.style.background = 'none';
     }
-  }, [perspective]);
+  }, [perspective, isMobile]);
 
-  // Ensure className includes rounded corners if the card is meant to be rounded.
-  // The glare overlay will attempt to inherit this.
   const cardClassName = cn(
-    'relative overflow-hidden', // Added for glare containment and positioning
+    'relative overflow-hidden', // Ensure overflow:hidden is here for glare clipping
     className
   );
   
-  // Match the border radius of the parent card, assuming it's typically 'rounded-lg' from ShadCN.
-  // If 'className' prop provides a different radius, this glare might not perfectly match.
-  // For more robust radius matching, the parent would need to pass its specific radius class.
   const glareClassName = cn(
     'pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 ease-out',
-    // Attempt to inherit border radius. This might need to be explicit if className doesn't work well.
-    // For example, if className is 'rounded-xl', this should be 'rounded-xl' too.
-    // We'll use a common default from ShadCN cards if className doesn't specify one.
+    // Attempt to match border radius. This part might need adjustment if card's rounded class changes often
     className?.includes('rounded-') ? className?.match(/rounded-(lg|md|sm|xl|2xl|3xl|full)/)?.[0] || 'rounded-lg' : 'rounded-lg'
   );
 
+  const mouseMoveHandler = isMobile ? undefined : handleMouseMove;
+  const mouseLeaveHandler = isMobile ? undefined : handleMouseLeave;
+  const initialTransform = isMobile 
+    ? 'perspective(none) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)'
+    : `perspective(${perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
 
   return (
     <div
       ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
+      onMouseMove={mouseMoveHandler}
+      onMouseLeave={mouseLeaveHandler}
       className={cardClassName}
       style={{
-        transformStyle: 'preserve-3d',
-        transform: `perspective(${perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`,
+        transformStyle: isMobile ? 'flat' : 'preserve-3d',
+        transform: initialTransform,
         transition: 'transform 0.3s ease-out',
       }}
     >
       {children}
-      <div 
-        ref={glareRef} 
-        className={glareClassName}
-        style={{ zIndex: 1 }} // Ensure glare is on top of children
-      />
+      {!isMobile && (
+        <div 
+          ref={glareRef} 
+          className={glareClassName}
+          style={{ zIndex: 1 }} 
+        />
+      )}
     </div>
   );
 }
