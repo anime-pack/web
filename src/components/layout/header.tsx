@@ -15,7 +15,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { FaDiscord } from 'react-icons/fa';
-import appIcon from '@/app/32x32.png'; // Import the image using path alias
+import appIcon from '@/app/32x32.webp'; // Import the image using path alias
 
 export function Header() {
   const { t, translations } = useTranslations();

@@ -10,11 +10,11 @@ import { useTranslations } from "@/lib/i18n";
 import { useState, useEffect } from "react";
 
 // Import background images
-import heroBg1 from '../../app/hero_img/hero_bg1.jpg';
-import heroBg2 from '../../app/hero_img/hero_bg2.jpg';
-import heroBg3 from '../../app/hero_img/hero_bg3.jpg';
-import heroBg4 from '../../app/hero_img/hero_bg4.png';
-import heroBg5 from '../../app/hero_img/hero_bg5.jpeg';
+import heroBg1 from '../../app/hero_img/hero_bg1.webp';
+import heroBg2 from '../../app/hero_img/hero_bg2.webp';
+import heroBg3 from '../../app/hero_img/hero_bg3.webp';
+import heroBg4 from '../../app/hero_img/hero_bg4.webp';
+import heroBg5 from '../../app/hero_img/hero_bg5.webp';
 
 const heroImages: StaticImageData[] = [heroBg1, heroBg2, heroBg3, heroBg4, heroBg5];
 

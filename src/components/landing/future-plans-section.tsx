@@ -10,15 +10,15 @@ import { useTranslations } from "@/lib/i18n";
 
 // Import local images. ENSURE THESE FILENAMES AND EXTENSIONS MATCH YOUR FILES in src/app/features_img/
 // The convention is <camelCaseCardFeatureName>-feature.<actualExtension>
-import vastLibraryFeatureImg from '@/app/features_img/vastLibrary-feature.jpg';
+import vastLibraryFeatureImg from '@/app/features_img/vastLibrary-feature.webp';
 import personalizedTrackingFeatureImg from '@/app/features_img/personalizedTracking-feature.webp';
-import communityHubFeatureImg from '@/app/features_img/communityHub-feature.jpg';
-import releaseNotificationsFeatureImg from '@/app/features_img/releaseNotifications-feature.jpg';
-import customizableProfilesFeatureImg from '@/app/features_img/customizableProfiles-feature.jpg';
-import communityRecommendationsFeatureImg from '@/app/features_img/communityRecommendations-feature.jpg';
-import advancedFiltersFeatureImg from '@/app/features_img/advancedFilters-feature.jpg'; // Ensure this matches your file, e.g., .jpg, .png, .webp
-import advancedGenreTaggingFeatureImg from '@/app/features_img/advancedGenreTagging-feature.jpg';
-import nativeMobileAppsFeatureImg from '@/app/features_img/nativeMobileApps-feature.jpg';
+import communityHubFeatureImg from '@/app/features_img/communityHub-feature.webp';
+import releaseNotificationsFeatureImg from '@/app/features_img/releaseNotifications-feature.webp';
+import customizableProfilesFeatureImg from '@/app/features_img/customizableProfiles-feature.webp';
+import communityRecommendationsFeatureImg from '@/app/features_img/communityRecommendations-feature.webp';
+import advancedFiltersFeatureImg from '@/app/features_img/advancedFilters-feature.webp'; // Ensure this matches your file, e.g., .jpg, .png, .webp
+import advancedGenreTaggingFeatureImg from '@/app/features_img/advancedGenreTagging-feature.webp';
+import nativeMobileAppsFeatureImg from '@/app/features_img/nativeMobileApps-feature.webp';
 import socialFeaturesFeatureImg from '@/app/features_img/socialFeatures-feature.webp';
 
 

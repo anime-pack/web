@@ -11,10 +11,13 @@ import { Separator } from "@/components/ui/separator";
 import { FaDiscord, FaPaypal } from 'react-icons/fa';
 import { FaPix } from 'react-icons/fa6';
 import { SiOpencollective } from 'react-icons/si';
-
+import { useIsMobile } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 export function SponsorsSection() {
   const { t } = useTranslations();
+  const isMobile = useIsMobile();
+
   return (
     <AnimatedSection id="sponsors" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 text-center">
@@ -55,7 +58,12 @@ export function SponsorsSection() {
               <Star className="ml-2 h-5 w-5" />
             </Button>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-[425px]">
+          <DialogContent
+            className={cn(
+              "max-w-sm sm:max-w-[425px]",
+              isMobile && "max-h-[80vh] overflow-y-auto"
+            )}
+          >
             <DialogHeader>
               <DialogTitle>{t('sponsorsSection.backerDialog.title')}</DialogTitle>
               <DialogDescription>
