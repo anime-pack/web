@@ -55,7 +55,7 @@ export function SponsorsSection() {
               <Star className="ml-2 h-5 w-5" />
             </Button>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-[425px]">
+          <DialogContent className="max-w-sm sm:max-w-[425px]">
             <DialogHeader>
               <DialogTitle>{t('sponsorsSection.backerDialog.title')}</DialogTitle>
               <DialogDescription>
@@ -118,3 +118,4 @@ export function SponsorsSection() {
     </AnimatedSection>
   );
 }
+
