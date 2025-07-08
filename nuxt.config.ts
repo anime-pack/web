@@ -2,8 +2,12 @@
 export default defineNuxtConfig({
     compatibilityDate: '2025-05-15',
     devtools: { enabled: true },
-    modules: ['@nuxt/ui', '@nuxt/icon', '@nuxt/fonts', '@nuxt/image', '@nuxtjs/i18n'],
-    css: ['~/assets/css/main.css'],
+    modules: [
+      '@nuxt/ui',
+      '@nuxt/image',
+      '@nuxtjs/i18n',
+    ],
+    css: ['./assets/css/main.css'],
     i18n: {
         locales: [
             {
@@ -15,5 +19,6 @@ export default defineNuxtConfig({
             //     name: 'Português',
             // },
         ],
+        defaultLocale: 'en',
     },
 });
