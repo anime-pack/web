@@ -53,7 +53,7 @@ const navItems = ref<NavigationMenuItem[]>([
 
 <template>
     <header
-        class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        class="sticky top-0 z-50 w-full border-b border-white/10 backdrop-blur">
         <UContainer class="container flex h-15 max-w-screen-2xl items-center px-4 justify-between">
 
             <UContainer class="flex items-center gap-2 w-fit mx-0 px-0 sm:px-0 lg:px-0">
