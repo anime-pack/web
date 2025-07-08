@@ -14,6 +14,7 @@ export default defineNuxtConfig({
                 code: 'en',
                 name: 'English',
             },
+            //* Look for solution of pt-BR locale not working
             // {
             //     code: 'pt-BR',
             //     name: 'Português',
