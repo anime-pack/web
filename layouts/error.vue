@@ -1,9 +1,5 @@
-<script lang="ts" setup>
-
-</script>
-
 <template>
-    <div class="min-h-screen flex flex-col justify-between sm:p-0 lg:p-0 mx-0">
+    <div class="min-h-screen flex flex-col justify-between">
         <div class="flex flex-col flex-grow w-full h-full min-h-screen">
             <Header />
 
