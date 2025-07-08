@@ -18,11 +18,14 @@ export default defineNuxtConfig({
             {
                 code: 'en',
                 name: 'English',
+                file: 'en.json',
+                flag: 'us',
             },
-            //* Look for solution of pt-BR locale not working
             // {
-            //     code: 'pt-BR',
+            //     code: 'pt_br',
             //     name: 'Português',
+            //     file: 'pt_br.json',
+            //     flag: 'br',
             // },
         ],
         defaultLocale: 'en',

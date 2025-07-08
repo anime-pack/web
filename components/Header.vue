@@ -66,6 +66,7 @@ const navItems = ref<NavigationMenuItem[]>([
             <UNavigationMenu :items="navItems" class="w-[75%]" />
 
             <UContainer class="flex items-center gap-2 w-fit mx-0 px-0 sm:px-0 lg:px-0">
+                <LanguageSwitcher />
                 <ColorModeButton />
             </UContainer>
 

@@ -1,8 +1,21 @@
 <script setup lang="ts">
 import type { NuxtError } from '#app'
+import * as locales from '@nuxt/ui/locale'
 
 defineProps({
     error: Object as () => NuxtError
+})
+
+const { locale } = useI18n()
+
+const lang = computed(() => locales[locale.value].code)
+const dir = computed(() => locales[locale.value].dir)
+
+useHead({
+    htmlAttrs: {
+        lang,
+        dir
+    }
 })
 </script>
 
