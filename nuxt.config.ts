@@ -18,13 +18,13 @@ export default defineNuxtConfig({
             {
                 code: 'en',
                 name: 'English',
-                file: 'en.json',
+                file: 'en.ts',
                 flag: 'us',
             },
             // {
             //     code: 'pt_br',
             //     name: 'Português',
-            //     file: 'pt_br.json',
+            //     file: 'pt_br.ts',
             //     flag: 'br',
             // },
         ],

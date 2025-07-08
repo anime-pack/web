@@ -2,12 +2,12 @@
 import type { DropdownMenuItem } from '@nuxt/ui'
 
 
-const { locales, setLocale, locale } = useI18n()
+const { locales, setLocale, locale, t } = useI18n({ useScope: 'global' })
 
 const items = ref<DropdownMenuItem[][]>([
   [
     {
-      label: 'Language',  //* look on setting this label to a translation
+      label: t('header.languageSwitcher.label'),  //* look on setting this label immediately on select
       icon: 'i-gis-globe-poi',
       type: 'label',
     }
