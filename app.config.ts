@@ -1,8 +1,8 @@
 export default defineAppConfig({
     ui: {
         colors: {
-            primary: 'orange-500',
-            secondary: 'teal-400',
+            primary: 'orange',
+            secondary: 'teal',
             neutral: 'zinc',
         },
     },
