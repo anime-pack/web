@@ -6,48 +6,48 @@ import type { NavigationMenuItem } from '@nuxt/ui';
 const navItems = ref<NavigationMenuItem[]>([
     {
         label: 'Anime',
-        to: '/anime',
+        to: '/animes',
         children: [
             {
                 label: 'Top Anime',
-                to: '/anime/top',
+                to: '/animes/top',
             },
             {
                 label: 'Calendar',
-                to: '/anime/calendar',
+                to: '/animes/calendar',
             },
             {
                 label: 'Upcoming',
-                to: '/anime/upcoming',
+                to: '/animes/upcoming',
             },
             {
                 label: 'This Season',
-                to: '/anime?season=current',
+                to: '/animes?season=current',
             },
         ],
     },
-    {
-        label: 'Manga',
-        to: '/manga',
-        children: [
-            {
-                label: 'Top Anime',
-                to: '/manga/top',
-            },
-            {
-                label: 'Calendar',
-                to: '/manga/calendar',
-            },
-            {
-                label: 'Upcoming',
-                to: '/manga/upcoming',
-            },
-            {
-                label: 'This Season',
-                to: '/manga?season=current',
-            },
-        ],
-    },
+    // {
+    //     label: 'Manga',
+    //     to: '/manga',
+    //     children: [
+    //         {
+    //             label: 'Top Anime',
+    //             to: '/manga/top',
+    //         },
+    //         {
+    //             label: 'Calendar',
+    //             to: '/manga/calendar',
+    //         },
+    //         {
+    //             label: 'Upcoming',
+    //             to: '/manga/upcoming',
+    //         },
+    //         {
+    //             label: 'This Season',
+    //             to: '/manga?season=current',
+    //         },
+    //     ],
+    // },
 ])
 </script>
 

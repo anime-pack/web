@@ -34,8 +34,8 @@ onMounted(fetchAnimes);
                 {{ item.synopsis }}
               </p>
               <div class="flex gap-3 mb-3">
-                <UButton color="primary" size="lg" icon="i-heroicons-play" label="Assistir" />
-                <UButton color="info" size="lg" icon="i-heroicons-information-circle" label="Detalhes" variant="soft" />
+                <!-- <UButton color="primary" size="lg" icon="i-heroicons-play" label="Assistir" /> -->
+                <UButton :to="`/animes/${item.mal_id}`" color="info" size="lg" icon="i-heroicons-information-circle" label="Detalhes" />
                 <UButton color="error" size="lg" icon="i-lucide-heart" variant="soft" />
               </div>
               <div class="flex gap-2">
