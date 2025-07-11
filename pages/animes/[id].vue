@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 import type { Anime, RecommendationEntry } from '@tutkli/jikan-ts';
 
+// definePageMeta({
+//     layout: 'anime-info',
+// });
+
 const anime = ref<Anime | null>(null);
 const recomendations = ref<RecommendationEntry[]>([]);
 const isLoading = ref(true);
@@ -42,7 +46,7 @@ onMounted(async () => {
 
         <div v-else-if="anime" class="flex flex-col">
             <!-- Hero Section com Background -->
-            <section class="relative h-[50vh] w-full">
+            <section class="relative h-[39vh] w-full">
                 <!-- Background Image -->
                 <div class="absolute inset-0">
                     <img :src="anime.images.webp?.large_image_url || anime.images.jpg.large_image_url"
@@ -56,7 +60,7 @@ onMounted(async () => {
 
                 <!-- Hero Content -->
                 <div class="relative h-full flex flex-col justify-end pb-12 px-6 sm:px-12">
-                    <header class="flex flex-col gap-4 max-w-5xl translate-y-8">
+                    <section class="flex flex-col gap-4 max-w-5xl translate-y-8">
                         <!-- Title & Japanese Title -->
                         <div class="flex flex-col gap-2">
                             <h1 class="text-4xl font-bold">{{ anime.title }}</h1>
@@ -93,16 +97,39 @@ onMounted(async () => {
                             <UButton icon="i-lucide-heart" size="lg" variant="soft" class="gap-2" />
                             <UButton icon="i-lucide-circle-plus" size="lg" variant="soft" class="gap-2" />
                         </div> -->
-                    </header>
+                    </section>
                 </div>
             </section>
 
             <USeparator />
 
             <!-- Synopsis etc -->
-            <section class="mt-5">
+            <section class="flex flex-row mt-5">
                 <UContainer class="">
-                    <UAccordion :items="[{
+                    <h2 class="text-2xl font-bold mb-4">Information</h2>
+                    <div class="flex flex-col text-md gap-2">
+                        <span>
+                            <strong>Type:</strong> {{ anime.type }}
+                        </span>
+                        <span>
+                            <strong>Episodes:</strong> {{ anime.episodes || 'N/A' }}
+                        </span>
+                        <span>
+                            <strong>Rating:</strong> {{ anime.rating || 'N/A' }}
+                        </span>
+                        <span>
+                            <strong>Genres:</strong> {{ anime.genres.map(g => g.name).join(', ') || 'N/A' }}
+                        </span>
+                        <span>
+                            <strong>Producers:</strong> {{ anime.producers.map(p => p.name).join(', ') || 'N/A' }}
+                        </span>
+                        <span>
+                            <strong>Studios:</strong> {{ anime.studios.map(s => s.name).join(', ') || 'N/A' }}
+                        </span>
+                    </div>
+                </UContainer>
+                <UContainer class="">
+                    <UAccordion default-value="0" :items="[{
                         label: 'Synopsis',
                         icon: 'i-lucide-book-text',
                         content: anime.synopsis || 'No synopsis available.',
