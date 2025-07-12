@@ -33,10 +33,6 @@ onMounted(async () => {
 
 <template>
     <div class="relative flex flex-grow">
-        <!-- //* fix, this is going over header when scrolling -->
-        <!-- <UButton variant="ghost" class="absolute left-6 top-6 z-50 size-10 items-center" @click="useRouter().back()">
-            <UIcon name="i-lucide-arrow-left" class="size-5" />
-        </UButton> -->
 
         <UContainer as="section" v-if="isLoading"
             class="min-w-full min-h-full sm:p-0 lg:p-0 mx-0 flex items-center justify-center">
@@ -47,8 +43,13 @@ onMounted(async () => {
         </UContainer>
 
         <div v-else-if="anime" class="flex flex-col w-full">
+            <UButton variant="ghost" class="absolute left-6 top-6 z-1 size-10 items-center"
+                @click="useRouter().back()">
+                <UIcon name="i-lucide-arrow-left" class="size-5" />
+            </UButton>
+            
             <!-- Hero Section com Background -->
-            <section class="relative h-[39vh] w-full">
+            <section class="relative h-[37vh] w-full">
                 <!-- Background Image -->
                 <div class="absolute inset-0">
                     <img :src="anime.images.webp?.large_image_url || anime.images.jpg.large_image_url"
