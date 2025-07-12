@@ -21,7 +21,7 @@ useHead({
 
 <template>
     <UApp>
-        <NuxtLayout name="error">
+        <NuxtLayout name="default">
             <div
                 class="w-full flex flex-col items-center justify-center gap-3 mx-0 flex-grow text-center bg-gradient-to-t from-primary from-10% to-transparent to-35%">
                 <UContainer class="flex flex-col items-center justify-center">

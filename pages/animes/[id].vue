@@ -1,10 +1,6 @@
 <script lang="ts" setup>
 import type { Anime, RecommendationEntry } from '@tutkli/jikan-ts';
 
-// definePageMeta({
-//     layout: 'anime-info',
-// });
-
 const anime = ref<Anime | null>(null);
 const recomendations = ref<RecommendationEntry[]>([]);
 const isLoading = ref(true);
