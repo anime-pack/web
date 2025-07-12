@@ -11,6 +11,7 @@ const isLoading = ref(true);
 const id = useRoute().params.id as string;
 
 async function fetchAnime() {
+    // await new Promise(resolve => setTimeout(resolve, 5000)); //? Simulate loading delay
     return await jk.anime.getAnimeById(Number(id)).then(res => res.data);
 };
 
@@ -35,16 +36,21 @@ onMounted(async () => {
 </script>
 
 <template>
-    <div class="relative">
-        <UButton variant="ghost" class="absolute left-6 top-6 z-50 size-10 items-center" @click="useRouter().back()">
+    <div class="relative flex flex-grow">
+        <!-- //* fix, this is going over header when scrolling -->
+        <!-- <UButton variant="ghost" class="absolute left-6 top-6 z-50 size-10 items-center" @click="useRouter().back()">
             <UIcon name="i-lucide-arrow-left" class="size-5" />
-        </UButton>
+        </UButton> -->
 
-        <div v-if="isLoading" class="flex flex-grow items-center justify-center">
-            <div class="h-8 w-8 animate-spin rounded-full border-b-2 border-primary"></div>
-        </div>
+        <UContainer as="section" v-if="isLoading"
+            class="min-w-full min-h-full sm:p-0 lg:p-0 mx-0 flex items-center justify-center">
+            <USkeleton class="w-full h-full rounded-lg flex flex-col justify-center items-center">
+                <UIcon name="i-lucide-loader-circle" class="size-10 animate-spin text-primary mb-2" />
+                <h3 class="font-bold">We are preparing this, just for you. ❤️</h3>
+            </USkeleton>
+        </UContainer>
 
-        <div v-else-if="anime" class="flex flex-col">
+        <div v-else-if="anime" class="flex flex-col w-full">
             <!-- Hero Section com Background -->
             <section class="relative h-[39vh] w-full">
                 <!-- Background Image -->
@@ -118,13 +124,13 @@ onMounted(async () => {
                             <strong>Rating:</strong> {{ anime.rating || 'N/A' }}
                         </span>
                         <span>
-                            <strong>Genres:</strong> {{ anime.genres.map(g => g.name).join(', ') || 'N/A' }}
+                            <strong>Genres:</strong> {{anime.genres.map(g => g.name).join(', ') || 'N/A'}}
                         </span>
                         <span>
-                            <strong>Producers:</strong> {{ anime.producers.map(p => p.name).join(', ') || 'N/A' }}
+                            <strong>Producers:</strong> {{anime.producers.map(p => p.name).join(', ') || 'N/A'}}
                         </span>
                         <span>
-                            <strong>Studios:</strong> {{ anime.studios.map(s => s.name).join(', ') || 'N/A' }}
+                            <strong>Studios:</strong> {{anime.studios.map(s => s.name).join(', ') || 'N/A'}}
                         </span>
                     </div>
                 </UContainer>
@@ -138,8 +144,17 @@ onMounted(async () => {
             </section>
         </div>
 
-        <div v-else class="flex h-full items-center justify-center">
-            <p class="text-muted-foreground">Anime not found...</p>
-        </div>
+        <UContainer as="section" v-else
+            class="min-w-full min-h-full sm:p-0 lg:p-0 mx-0 flex flex-col items-center justify-center">
+            <h3 class="font-bold text-7xl mb-3">404?</h3>
+            <p>The anime of id <span class="text-primary font-bold">{{ id }}</span> could not be found.</p>
+            <p>Do you think this is an issue? Contact us via
+                <UButton variant="link" label="Discord" to="/discord" class="p-0 underline underline-offset-2" />.
+            </p>
+            <div>
+                <UButton color="primary" @click="useRouter().back()" size="lg" icon="i-lucide-arrow-left"
+                    label="Go back" class="mt-4" />
+            </div>
+        </UContainer as="section">
     </div>
-</template>
+</template>0
