@@ -43,11 +43,10 @@ onMounted(async () => {
         </UContainer>
 
         <div v-else-if="anime" class="flex flex-col w-full">
-            <UButton variant="ghost" class="absolute left-6 top-6 z-1 size-10 items-center"
-                @click="useRouter().back()">
+            <UButton variant="ghost" class="absolute left-6 top-6 z-1 size-10 items-center" @click="useRouter().back()">
                 <UIcon name="i-lucide-arrow-left" class="size-5" />
             </UButton>
-            
+
             <!-- Hero Section com Background -->
             <section class="relative h-[37vh] w-full">
                 <!-- Background Image -->
@@ -137,6 +136,26 @@ onMounted(async () => {
                         icon: 'i-lucide-book-text',
                         content: anime.synopsis || 'No synopsis available.',
                     }]" />
+                </UContainer>
+            </section>
+
+            <USeparator />
+
+            <!-- Reccomendations -->
+            <section class="flex flex-col mt-5 px-5">
+                <UContainer class="mb-5 select-none sm:p-0 lg:p-0 mx-0 min-w-full">
+                    <h2 class="text-2xl font-bold mb-4">Recommendations</h2>
+                    <UCard v-for="item in recomendations" :ui="{ body: 'w-full flex flex-row' }" class="mb-4 flex flex-row">
+                        <img :src="item.images?.webp?.image_url" :alt="item.title"
+                            class="w-24 h-36 object-cover rounded-md mr-4" />
+                        <div class="flex grow flex-col justify-between">
+                            <div>
+                                <h3 class="text-lg font-bold mb-2 line-clamp-1">{{ item.title }}</h3>
+                                <p class="text-sm text-muted">{{ 'No synopsis available.' }}</p>
+                            </div>
+                            <UButton variant="soft" :to="`/animes/${item.mal_id}`" label="View Details" class="max-w-30 justify-center" />
+                        </div>
+                    </UCard>
                 </UContainer>
             </section>
         </div>
