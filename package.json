@@ -14,7 +14,7 @@
     "@nuxt/ui": "^3.2.0",
     "@nuxtjs/i18n": "^9.5.6",
     "@tutkli/jikan-ts": "^2.2.0",
-    "nuxt": "^3.17.6",
+    "nuxt": "^4.0.3",
     "typescript": "^5.6.3",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1"
