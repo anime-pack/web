@@ -8,7 +8,7 @@ const items = ref<DropdownMenuItem[][]>([
   [
     {
       label: t('header.languageSwitcher.label'),  //* look on setting this label immediately on select
-      icon: 'i-gis-globe-poi',
+      icon: 'i-lucide-languages',
       type: 'label',
     }
   ],
@@ -26,6 +26,7 @@ const items = ref<DropdownMenuItem[][]>([
   <UDropdownMenu :items="items" :ui="{
     content: 'w-48'
   }">
-    <UButton :icon="`i-flagpack-${locales.find(l => l.code === locale)?.flag}`" :label="locales.find(l => l.code == locale)?.code.slice(0,2)" color="neutral" variant="outline" />
+    <UButton :icon="`i-flagpack-${locales.find(l => l.code === locale)?.flag}`"
+      :label="locales.find(l => l.code == locale)?.code.slice(0, 2)" color="neutral" variant="outline" />
   </UDropdownMenu>
 </template>
