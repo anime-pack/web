@@ -17,6 +17,8 @@ useHead({
         dir
     }
 })
+
+const router = useRouter();
 </script>
 
 <template>
@@ -29,7 +31,7 @@ useHead({
                     <p class="text-muted mt-3">{{ error?.statusMessage || "Woops..." }}</p>
                 </UContainer>
                 <UContainer class="w-full h-fit gap-3 flex justify-center">
-                    <UButton @click="useRouter().back()" variant="outline" label="Go Back" />
+                    <UButton @click="router.back()" variant="outline" label="Go Back" />
                     <UButton to="/" variant="outline" label="Go Home" />
                 </UContainer>
             </div>

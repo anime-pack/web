@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import type { Anime, RecommendationEntry } from '@tutkli/jikan-ts';
 
+const router = useRouter();
+
 const anime = ref<Anime | null>(null);
 const recomendations = ref<RecommendationEntry[]>([]);
 const isLoading = ref(true);
@@ -43,7 +45,7 @@ onMounted(async () => {
         </UContainer>
 
         <div v-else-if="anime" class="flex flex-col w-full">
-            <UButton variant="ghost" class="absolute left-6 top-6 z-1 size-10 items-center" @click="useRouter().back()">
+            <UButton variant="ghost" class="absolute left-6 top-6 z-1 size-10 items-center" @click="router.back()">
                 <UIcon name="i-lucide-arrow-left" class="size-5" />
             </UButton>
 
@@ -168,7 +170,7 @@ onMounted(async () => {
                 <UButton variant="link" label="Discord" to="/discord" class="p-0 underline underline-offset-2" />.
             </p>
             <div>
-                <UButton color="primary" @click="useRouter().back()" size="lg" icon="i-lucide-arrow-left"
+                <UButton color="primary" @click="router.back()" size="lg" icon="i-lucide-arrow-left"
                     label="Go back" class="mt-4" />
             </div>
         </UContainer as="section">
