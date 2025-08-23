@@ -11,14 +11,14 @@ function handleSearch(e: any) {
     router.push(`/animes/${searchTerm.value}`);
     return;
   };
-  if (searchTerm.value.trim() && searchTerm.value.length > 3){
+  if (searchTerm.value.trim() && searchTerm.value.length > 2){
     router.push(`/animes?q=${searchTerm.value.trim()}`);
   };
 }
 </script>
 
 <template>
-  <section class="my-8">
+  <section class="mb-8">
     <USeparator />
     <div class="flex flex-col items-center justify-center gap-4">
       <h3 class="font-semibold mt-2">Haven't found what you're looking for?</h3>
