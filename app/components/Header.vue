@@ -5,26 +5,30 @@ import type { NavigationMenuItem } from '@nuxt/ui';
 
 const navItems = ref<NavigationMenuItem[]>([
     {
-        label: 'Anime',
+        label: 'Animes',
         to: '/animes',
-        children: [
-            {
-                label: 'Top Anime',
-                to: '/animes/top',
-            },
-            {
-                label: 'Calendar',
-                to: '/animes/calendar',
-            },
-            {
-                label: 'Upcoming',
-                to: '/animes/upcoming',
-            },
-            {
-                label: 'This Season',
-                to: '/animes?season=current',
-            },
-        ],
+        // children: [
+        //     {
+        //         label: 'Top Anime',
+        //         to: '/animes/top',
+        //     },
+        //     {
+        //         label: 'Calendar',
+        //         to: '/animes/calendar',
+        //     },
+        //     {
+        //         label: 'Upcoming',
+        //         to: '/animes/upcoming',
+        //     },
+        //     {
+        //         label: 'This Season',
+        //         to: '/animes?season=current',
+        //     },
+        // ],
+    },
+    {
+        label: 'About',
+        to: '/about',
     },
     // {
     //     label: 'Manga',
@@ -63,9 +67,10 @@ const navItems = ref<NavigationMenuItem[]>([
                 </NuxtLink>
             </UContainer>
 
-            <UNavigationMenu :items="navItems" class="w-[75%]" />
+            <UNavigationMenu :items="navItems" class="w-[45%]" />
 
             <UContainer class="flex items-center gap-2 w-fit mx-0 px-0 sm:px-0 lg:px-0">
+                <SearchButton />
                 <LanguageSwitcher />
                 <ColorModeButton />
             </UContainer>

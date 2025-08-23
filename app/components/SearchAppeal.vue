@@ -1,0 +1,37 @@
+<script lang="ts" setup>
+
+const router = useRouter();
+const searchTerm = ref('');
+
+function handleSearch(e: any) {
+  if (e.key !== 'Enter') return;
+  console.log('in func')
+  if (!isNaN(Number(searchTerm.value))) {
+    console.log('número');
+    router.push(`/animes/${searchTerm.value}`);
+    return;
+  };
+  if (searchTerm.value.trim() && searchTerm.value.length > 3){
+    router.push(`/animes?q=${searchTerm.value.trim()}`);
+  };
+}
+</script>
+
+<template>
+  <section class="my-8">
+    <USeparator />
+    <div class="flex flex-col items-center justify-center gap-4">
+      <h3 class="font-semibold mt-2">Haven't found what you're looking for?</h3>
+      <div>
+        <UInput v-model="searchTerm" placeholder="Try searching for it" icon="i-lucide-search" size="lg"
+          @keydown="(e: any) => handleSearch(e)" class="w-110">
+          <template v-if="searchTerm?.length" #trailing>
+            <UButton color="neutral" variant="link" size="sm" icon="i-lucide-x" aria-label="Clear input"
+              @click="searchTerm = ''" />
+          </template>
+        </UInput>
+        <p class="text-muted text-xs">hint: you can put in a MAL id</p>
+      </div>
+    </div>
+  </section>
+</template>

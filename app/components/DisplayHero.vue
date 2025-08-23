@@ -36,7 +36,7 @@ onMounted(fetchAnimes);
                                 <!-- <UButton color="primary" size="lg" icon="i-heroicons-play" label="Assistir" /> -->
                                 <UButton :to="`/animes/${item.mal_id}`" color="info" size="lg"
                                     icon="i-heroicons-information-circle" label="Detalhes" />
-                                <UButton color="error" size="lg" icon="i-lucide-heart" variant="soft" />
+                                <!-- <UButton color="error" size="lg" icon="i-lucide-heart" variant="soft" /> -->
                             </div>
                             <div class="flex gap-2">
                                 <UBadge variant="soft">{{ item.type }}</UBadge>
