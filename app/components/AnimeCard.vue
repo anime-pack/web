@@ -5,7 +5,6 @@ import type { Anime } from '@tutkli/jikan-ts';
 const props = defineProps<{
     anime: Anime | undefined;
 }>();
-console.log(props.anime);
 </script>
 
 <template>

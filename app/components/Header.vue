@@ -30,6 +30,10 @@ const navItems = ref<NavigationMenuItem[]>([
         label: 'About',
         to: '/about',
     },
+    {
+        label: 'Discord',
+        to: '/discord',
+    },
     // {
     //     label: 'Manga',
     //     to: '/manga',
@@ -57,7 +61,7 @@ const navItems = ref<NavigationMenuItem[]>([
 
 <template>
     <header
-        class="sticky top-0 z-50 w-full border-b border-neutral-700/30 bg-neutral-900/55 backdrop-blur">
+        class="sticky top-0 z-50 w-full bg-neutral-900/55 backdrop-blur">
         <UContainer class="container flex h-15 max-w-screen-2xl items-center px-4 justify-between">
 
             <UContainer class="flex items-center gap-2 w-fit mx-0 px-0 sm:px-0 lg:px-0">
@@ -76,5 +80,6 @@ const navItems = ref<NavigationMenuItem[]>([
             </UContainer>
 
         </UContainer>
+        <USeparator />
     </header>
 </template>
