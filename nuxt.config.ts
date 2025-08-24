@@ -2,15 +2,31 @@
 export default defineNuxtConfig({
     compatibilityDate: '2025-05-15',
     devtools: { enabled: true },
-    app: {
-        head: {
+    // app: {
+    //     head: {
+    //         title: 'Anime Pack',
+    //     },
+    // },
+    site: {
+        name: 'Anime Pack',
+    },
+    seo: {
+        meta: {
             title: 'Anime Pack',
+            description: 'Your ultimate anime companion app for tracking, discovering, and enjoying your favorite anime series.',
+            applicationName: 'AnimePack',
+
+            ogTitle: 'Anime Pack',
+            ogSiteName: 'AnimePack',
+            ogDescription: 'Your ultimate anime companion app for tracking, discovering, and enjoying your favorite anime series.',
+            ogType: 'website',
         },
     },
     modules: [
       '@nuxt/ui',
       '@nuxt/image',
       '@nuxtjs/i18n',
+      '@nuxtjs/seo',
     ],
     css: ['./assets/css/main.css'],
     i18n: {

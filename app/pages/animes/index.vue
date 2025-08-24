@@ -44,6 +44,18 @@ onMounted(async () => {
         animes.value = await jk.seasons.getSeasonNow().then(res => res.data);
     } else fetchSearchResults();    
 });
+
+useSeoMeta({
+    title: 'Search',
+    description: 'Search for animes.',
+    ogSiteName: 'Anime Pack',
+    ogTitle: 'Search',
+    ogDescription: 'Search for animes.',
+    // ogImage: '/images/og-home.png',
+    twitterTitle: 'Search - Anime Pack',
+    twitterDescription: 'Search for animes.',
+    // twitterImage: '/images/twitter-home.png',
+});
 </script>
 
 <template>

@@ -1,3 +1,18 @@
+<script setup lang="ts">
+
+useSeoMeta({
+    title: 'Home',
+    description: 'All about animes, just for you ❤️.',
+    ogSiteName: 'Anime Pack',
+    ogTitle: 'Home',
+    ogDescription: 'All about animes, just for you ❤️.',
+    // ogImage: '/images/og-home.png',
+    twitterTitle: 'Home - Anime Pack',
+    twitterDescription: 'All about animes, just for you ❤️.',
+    // twitterImage: '/images/twitter-home.png',
+});
+</script>
+
 <template>
     <main class="w-full flex flex-col justify-between">
         <section>
