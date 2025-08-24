@@ -2,13 +2,14 @@
 
 useSeoMeta({
     title: 'Home',
-    description: 'All about animes, just for you ❤️.',
+    description: 'All about animes, just for you. ❤️',
     ogSiteName: 'Anime Pack',
+    ogType: 'website',
     ogTitle: 'Home',
-    ogDescription: 'All about animes, just for you ❤️.',
+    ogDescription: 'All about animes, just for you. ❤️',
     // ogImage: '/images/og-home.png',
     twitterTitle: 'Home - Anime Pack',
-    twitterDescription: 'All about animes, just for you ❤️.',
+    twitterDescription: 'All about animes, just for you. ❤️',
     // twitterImage: '/images/twitter-home.png',
 });
 </script>

@@ -30,7 +30,20 @@ onMounted(async () => {
     } finally {
         isLoading.value = false;
     };
-})
+});
+
+useSeoMeta({
+    title: 'Anime',
+    description: anime.value?.synopsis,
+    ogSiteName: 'Anime Pack',
+    ogType: 'article',
+    ogTitle: 'Anime',
+    ogDescription: anime.value?.synopsis,
+    // ogImage: '/images/og-home.png',
+    twitterTitle: 'Anime - Anime Pack',
+    twitterDescription: anime.value?.synopsis,
+    // twitterImage: '/images/twitter-home.png',
+});
 </script>
 
 <template>
@@ -39,7 +52,7 @@ onMounted(async () => {
         <LoadingBlock v-if="isLoading" />
 
         <div v-else-if="anime" class="flex flex-col w-full">
-            <UButton variant="ghost" class="absolute left-6 top-6 z-1 size-10 items-center" @click="router.back()">
+            <UButton variant="soft" class="absolute left-6 top-6 z-1 size-10 items-center" @click="router.back()">
                 <UIcon name="i-lucide-arrow-left" class="size-5" />
             </UButton>
 
