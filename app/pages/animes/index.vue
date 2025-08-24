@@ -4,7 +4,7 @@ import type { Anime } from '@tutkli/jikan-ts';
 let searchTerm = ref(useRoute().query.q as string || '');
 const animes = ref<Anime[]>([]);
 const router = useRouter();
-const loading = ref(false);
+const loading = ref(true);
 
 function fetchSearchResults() {
     if (!searchTerm.value.trim()) return;
@@ -40,9 +40,15 @@ function handleSearch(e: any) {
 };
 
 onMounted(async () => {
-    if (!searchTerm.value) {
-        animes.value = await jk.seasons.getSeasonNow().then(res => res.data);
-    } else fetchSearchResults();    
+    try {
+        if (!searchTerm.value) {
+            animes.value = await jk.seasons.getSeasonNow().then(res => res.data);
+        } else fetchSearchResults();    
+    } catch (error) {
+        console.error(error); //* Handle error properly later
+    } finally {
+        loading.value = false;        
+    };
 });
 
 useSeoMeta({
@@ -59,7 +65,7 @@ useSeoMeta({
 </script>
 
 <template>
-    <main class="size-full min-h-full grow flex flex-col">
+    <main class="w-full flex flex-col">
 
         <div class="flex justify-center my-4">
             <UInput v-model="searchTerm" placeholder="Search animes..." icon="i-lucide-search" size="lg"
@@ -77,20 +83,28 @@ useSeoMeta({
         </section>
 
         <UContainer as="section" v-else-if="loading"
-            class="min-w-full min-h-full sm:p-0 lg:p-0 mx-0 flex items-center justify-center">
+            class="min-w-full sm:p-0 lg:p-0 mx-0 flex flex-1 items-center justify-center">
             <USkeleton class="w-full h-full rounded-lg flex flex-col justify-center items-center">
                 <UIcon name="i-lucide-loader-circle" class="size-10 animate-spin text-primary mb-2" />
                 <h3 class="font-bold">We are preparing this, just for you. ❤️</h3>
             </USkeleton>
         </UContainer>
 
-        <UContainer as="section" v-else
+        <!-- <UContainer as="section" v-else
             class="min-w-full min-h-full mt-7 sm:p-0 lg:p-0 mx-0 flex flex-1 flex-col items-center justify-center">
             <h3 class="font-bold text-muted text-7xl mb-3">Oops...</h3>
             <p>We could not find a anime matching you search, maybe remove some filters?</p>
             <p>Do you think this is an issue? Contact us via
                 <UButton variant="link" label="Discord" to="/discord" class="p-0 underline underline-offset-2" />.
             </p>
-        </UContainer as="section">
+        </UContainer> -->
+        <section v-else
+            class="w-full mt-7 flex flex-1 grow flex-col items-center justify-center">
+            <h3 class="font-bold text-muted text-7xl mb-3">Oops...</h3>
+            <p>We could not find a anime matching you search, maybe remove some filters?</p>
+            <p>Do you think this is an issue? Contact us via
+                <UButton variant="link" label="Discord" to="/discord" class="p-0 underline underline-offset-2" />.
+            </p>
+        </section>
     </main>
 </template>
