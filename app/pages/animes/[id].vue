@@ -4,7 +4,7 @@ import type { Anime, RecommendationEntry } from '@tutkli/jikan-ts';
 const router = useRouter();
 
 const anime = ref<Anime | null>(null);
-const recomendations = ref<RecommendationEntry[]>([]);
+const recommendations = ref<RecommendationEntry[]>([]);
 const isLoading = ref(true);
 const id = useRoute().params.id as string;
 
@@ -23,7 +23,7 @@ onMounted(async () => {
     isLoading.value = true;
     try {
         anime.value = await fetchAnime();
-        recomendations.value = await fetchRecommendations();
+        recommendations.value = await fetchRecommendations();
     } catch (error) {
         console.error('Error fetching anime:', error);
         anime.value = null;
@@ -141,13 +141,13 @@ onMounted(async () => {
                 </UContainer>
             </section>
 
-            <USeparator />
+            <USeparator class="mt-3" />
 
             <!-- Reccomendations -->
             <section class="flex flex-col mt-5 px-5">
                 <UContainer class="mb-5 select-none sm:p-0 lg:p-0 mx-0 min-w-full">
                     <h2 class="text-2xl font-bold mb-4">Recommendations</h2>
-                    <UCard v-for="item in recomendations" :ui="{ body: 'w-full flex flex-row' }" class="mb-4 flex flex-row">
+                    <UCard v-if="recommendations" v-for="item in recommendations" :ui="{ body: 'w-full flex flex-row' }" class="mb-4 flex flex-row">
                         <img :src="item.images?.webp?.image_url" :alt="item.title"
                             class="w-24 h-36 object-cover rounded-md mr-4" />
                         <div class="flex grow flex-col justify-between">
@@ -158,6 +158,9 @@ onMounted(async () => {
                             <UButton variant="soft" :to="`/animes/${item.mal_id}`" label="View Details" class="max-w-30 justify-center" />
                         </div>
                     </UCard>
+                    <div v-else class="mb-4 flex flex-col justify-center text-muted items-center">
+                        <h3 class="pl-4">No Recomendations found...</h3>
+                    </div>
                 </UContainer>
             </section>
         </div>
