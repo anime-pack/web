@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     // },
     site: {
         name: 'Anime Pack',
+        url: 'animepack.net',
     },
     seo: {
         meta: {
