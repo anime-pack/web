@@ -176,6 +176,6 @@ onMounted(async () => {
                 <UButton color="primary" @click="router.back()" size="lg" icon="i-lucide-arrow-left"
                     label="Go back" class="mt-4" />
             </div>
-        </UContainer as="section">
+        </UContainer>
     </div>
 </template>0

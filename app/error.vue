@@ -24,17 +24,19 @@ const router = useRouter();
 <template>
     <UApp>
         <NuxtLayout name="default">
-            <div
-                class="w-full flex flex-col items-center justify-center gap-3 mx-0 flex-grow text-center bg-gradient-to-t from-primary from-10% to-transparent to-35%">
-                <UContainer class="flex flex-col items-center justify-center">
-                    <h1 class="font-bold w-full h-fit text-9xl">{{ error?.statusCode || "Wait what?" }}</h1>
-                    <p class="text-muted mt-3">{{ error?.statusMessage || "Woops..." }}</p>
-                </UContainer>
-                <UContainer class="w-full h-fit gap-3 flex justify-center">
-                    <UButton @click="router.back()" variant="outline" label="Go Back" />
-                    <UButton to="/" variant="outline" label="Go Home" />
-                </UContainer>
-            </div>
+            <UContainer as="section"
+                class="min-w-full min-h-full sm:p-0 lg:p-0 mx-0 flex flex-col items-center justify-center">
+                <h3 class="font-bold text-7xl mb-3">{{ error?.statusCode || "Wait what?" }}</h3>
+                <p>{{ error?.statusMessage || "Woops..." }}</p>
+                <p>Do you think this is an issue? Contact us via
+                    <UButton variant="link" label="Discord" to="/discord" class="p-0 underline underline-offset-2" />.
+                </p>
+                <div class="flex gap-4">
+                    <UButton color="primary" @click="router.back()" size="lg" icon="i-lucide-arrow-left" label="Go back"
+                        class="mt-4" />
+                    <UButton color="primary" to="/" icon="i-lucide-home" label="Go Home" size="lg" class="mt-4" />
+                </div>
+            </UContainer>
         </NuxtLayout>
     </UApp>
 </template>
