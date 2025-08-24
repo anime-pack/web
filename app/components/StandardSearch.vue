@@ -5,9 +5,7 @@ const searchTerm = ref('');
 
 function handleSearch(e: any) {
     if (e.key !== 'Enter') return;
-    console.log('in func')
     if (!isNaN(Number(searchTerm.value))) {
-        console.log('número');
         router.push(`/animes/${searchTerm.value}`);
         return;
     };
