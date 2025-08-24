@@ -1,10 +1,12 @@
 
-# Workflow for building and deploying a Next.js site to GitHub Pages
-name: Deploy Next.js site to Pages
+# Workflow for building and deploying a Nuxt.js site to GitHub Pages
+name: Deploy Nuxt.js site to Pages
 
 on:
   # Runs on pushes targeting the default branch
   push:
+    branches: ["main"] # Or your default branch, e.g., master
+  pull_request:
     branches: ["main"] # Or your default branch, e.g., master
 
   # Allows you to run this workflow manually from the Actions tab
@@ -30,23 +32,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: oven-sh/setup-bun@v2 # Yes, we are using Bun
         with:
-          node-version: "20" # Specify your Node.js version
-          cache: "npm"
+          bun-version: "latest"
       - name: Install Dependencies
-        run: npm install
-      - name: Build Next.js site
-        run: npm run build # This runs `next build` which includes `next export` due to `output: 'export'`
+        run: bun install
+      - name: Build Nuxt.js site
+        run: bun run generate
       - name: Create .nojekyll file
-        run: touch ./out/.nojekyll # Prevents GitHub Pages from running Jekyll
+        run: touch ./.output/.nojekyll # Prevents GitHub Pages from running Jekyll
       - name: Create CNAME file
-        run: echo "animepack.net" > ./out/CNAME # Add your custom domain here
+        run: echo "animepack.net" > ./.output/CNAME # Add your custom domain here
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload the out directory
-          path: ./out
+          # Upload the output directory
+          path: ./.output
 
   # Deployment job
   deploy:
