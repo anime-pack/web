@@ -36,13 +36,7 @@ onMounted(async () => {
 <template>
     <div class="relative flex flex-grow">
 
-        <UContainer as="section" v-if="isLoading"
-            class="min-w-full min-h-full sm:p-0 lg:p-0 mx-0 flex items-center justify-center">
-            <USkeleton class="w-full h-full rounded-lg flex flex-col justify-center items-center">
-                <UIcon name="i-lucide-loader-circle" class="size-10 animate-spin text-primary mb-2" />
-                <h3 class="font-bold">We are preparing this, just for you. ❤️</h3>
-            </USkeleton>
-        </UContainer>
+        <LoadingBlock v-if="isLoading" />
 
         <div v-else-if="anime" class="flex flex-col w-full">
             <UButton variant="ghost" class="absolute left-6 top-6 z-1 size-10 items-center" @click="router.back()">

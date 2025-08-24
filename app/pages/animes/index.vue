@@ -84,12 +84,7 @@ useSeoMeta({
             <AnimeCard v-for="anime in animes" :key="anime.mal_id" :anime="anime" />
         </section>
 
-        <section v-else-if="loading" class="min-w-full sm:p-0 lg:p-0 mx-0 flex flex-1 items-center justify-center">
-            <USkeleton class="w-full h-full rounded-lg flex flex-col justify-center items-center">
-                <UIcon name="i-lucide-loader-circle" class="size-10 animate-spin text-primary mb-2" />
-                <h3 class="font-bold">We are preparing this, just for you. ❤️</h3>
-            </USkeleton>
-        </section>
+        <LoadingBlock v-else-if="loading" />
 
         <section v-else class="w-full mt-7 flex flex-1 grow flex-col items-center justify-center">
             <h3 class="font-bold text-muted text-7xl mb-3">Oops...</h3>
