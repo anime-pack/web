@@ -34,6 +34,10 @@ const navItems = ref<NavigationMenuItem[]>([
         label: 'Discord',
         to: '/discord',
     },
+    {
+        label: 'Blog',
+        to: '/blog',
+    },
     // {
     //     label: 'Manga',
     //     to: '/manga',

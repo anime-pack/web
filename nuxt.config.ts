@@ -23,12 +23,7 @@ export default defineNuxtConfig({
             ogType: 'website',
         },
     },
-    modules: [
-      '@nuxt/ui',
-      '@nuxt/image',
-      '@nuxtjs/i18n',
-      '@nuxtjs/seo',
-    ],
+    modules: ['@nuxt/ui', '@nuxt/image', '@nuxtjs/i18n', '@nuxtjs/seo', '@nuxt/content'],
     css: ['./assets/css/main.css'],
     i18n: {
         locales: [
