@@ -1,5 +1,18 @@
 <script setup lang="ts">
 
+function date3DaysAgo(): string {
+    const date = new Date();
+    date.setDate(date.getDate() - 2);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+};
+
+const { data: recentPost } = await useAsyncData('blog-posts', () => 
+    queryCollection('blog').order('date', 'DESC').where('date', '>', date3DaysAgo()).first()
+);
+
 useSeoMeta({
     title: 'Home',
     description: 'All about animes, just for you. ❤️',
@@ -16,6 +29,9 @@ useSeoMeta({
 
 <template>
     <main class="w-full flex flex-col justify-between">
+        <NuxtLink :to="recentPost?.path">
+            <UAlert v-if="recentPost" variant="soft" description="Check out the latest updates at the blog!" icon="i-lucide-heart" class="rounded-none" />
+        </NuxtLink>
         <section>
             <DisplayHero />
         </section>
