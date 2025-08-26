@@ -44,24 +44,24 @@ onMounted(async () => {
         <section v-if="posts" class="mt-8 space-y-12">
             <!-- Featured Post -->
             <!-- @vue-ignore -->
-            <NuxtLink v-if="mostRecentPost" :to="`/blog/${slugfy(mostRecentPost?.title)}`">
+            <NuxtLink v-if="mostRecentPost" :to="`/blog/${slugfy(mostRecentPost.title)}`">
                 <UCard
                     class="transform transition-all duration-300 hover:scale-[1.02] bg-gradient-to-br from-background to-accented/5">
                     <template #header>
                         <span class="text-xs font-medium text-primary/80 mb-2 inline-block">FEATURED POST</span>
-                        <h2 class="text-3xl font-bold tracking-tight">{{ mostRecentPost?.title }}</h2>
+                        <h2 class="text-3xl font-bold tracking-tight">{{ mostRecentPost.title }}</h2>
                     </template>
 
                     <template #default>
                         <p class="text-muted/90 mt-4 text-lg leading-relaxed">
-                            {{ mostRecentPost?.description }}
+                            {{ mostRecentPost.description }}
                         </p>
                     </template>
 
                     <template #footer>
                         <div class="flex items-center justify-between mt-6">
                             <p class="flex items-center">
-                                <span class="text-primary/90 font-medium">{{ mostRecentPost?.author }}</span>
+                                <span class="text-primary/90 font-medium">{{ mostRecentPost.author }}</span>
                             </p>
                             <UButton color="primary" variant="ghost" trailing-icon="i-lucide-arrow-right">
                                 Read more

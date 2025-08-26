@@ -9,9 +9,10 @@ function date3DaysAgo(): string {
     return `${year}-${month}-${day}`;
 };
 
-const { data: recentPost } = await useAsyncData('blog-posts', () => 
-    queryCollection('blog').order('date', 'DESC').where('date', '>', date3DaysAgo()).first()
-);
+//* For next update
+// const { data: recentPost } = await useAsyncData('blog-posts', () => 
+//     queryCollection('blog').order('date', 'DESC').where('date', '>', date3DaysAgo()).first()
+// );
 
 useSeoMeta({
     title: 'Home',
@@ -29,9 +30,10 @@ useSeoMeta({
 
 <template>
     <main class="w-full flex flex-col">
-        <NuxtLink :to="recentPost?.path">
+        <!-- //* For next update -->
+        <!-- <NuxtLink :to="recentPost?.path">
             <UAlert v-if="recentPost" variant="soft" description="Check out the latest updates at the blog!" icon="i-lucide-heart" class="rounded-none" />
-        </NuxtLink>
+        </NuxtLink> -->
         <section>
             <DisplayHero />
         </section>

@@ -48,12 +48,12 @@ const { data: post } = await useAsyncData('blog-post', () =>
 
         <footer class="mt-12 pt-6 border-t border-default">
             <p class="text-sm text-muted text-center">
-                Gostou deste post? Confira nosso
+                Did you like this post? Check our
                 <UButton variant="link" to="/blog" class="text-primary">
                     blog
                     <UIcon name="i-lucide-arrow-right" class="size-4" />
                 </UButton>
-                para mais atualizações.
+                for more updates.
             </p>
         </footer>
     </article>
