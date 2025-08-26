@@ -81,9 +81,9 @@ const navItems = ref<NavigationMenuItem[]>([
             <UNavigationMenu :items="navItems" class="w-[45%]" />
 
             <UContainer class="flex items-center gap-2 w-fit mx-0 px-0 sm:px-0 lg:px-0">
-                <SearchButton />
-                <LanguageSwitcher />
-                <ColorModeButton />
+                <SearchButton aria-label="advanced search" />
+                <LanguageSwitcher aria-label="language selector" />
+                <ColorModeButton aria-label="theme or colormode button" />
             </UContainer>
 
         </UContainer>
