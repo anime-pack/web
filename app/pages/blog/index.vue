@@ -1,15 +1,39 @@
 <script setup lang="ts">
+import type { BlogCollectionItem } from '@nuxt/content';
+
+const loading = ref(true);
+const router = useRouter();
+const toast = useToast();
+
 const { data: posts } = await useAsyncData('blog-posts', () =>
     queryCollection('blog').order('date', 'DESC').all()
 );
 
-const mostRecentPost = computed(() => {
-    return posts?.value?.shift();
+const mostRecentPost = ref<BlogCollectionItem | undefined>(undefined);
+
+onMounted(async () => {
+    try {
+        mostRecentPost.value = posts?.value?.shift();
+    } catch (error) {
+        console.error(error);
+        toast.add({
+            title: 'Error',
+            description: 'Failed to load blog posts. Please try again or notify this on the Discord.',
+            type: 'background',
+            color: 'warning',
+            duration: 5000,
+            icon: 'i-lucide-alert-triangle',
+        });
+        router.back();
+    } finally {
+        loading.value = false;
+    };
 });
 </script>
 
 <template>
-    <main class="flex flex-col py-8 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <LoadingBlock v-if="loading" />
+    <main v-else class="flex flex-col py-8 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col mb-12">
             <h1
                 class="text-4xl h-14 sm:text-5xl font-bold bg-gradient-to-r from-primary/80 to-primary bg-clip-text text-transparent">
@@ -75,5 +99,18 @@ const mostRecentPost = computed(() => {
                 </NuxtLink>
             </div>
         </section>
+
+        <UContainer as="section" v-else
+            class="min-w-full min-h-full sm:p-0 lg:p-0 mx-0 flex flex-col items-center justify-center">
+            <h3 class="font-bold text-7xl mb-3">Uh, were are the posts?</h3>
+            <p>We've found no posts.</p>
+            <p>Do you think this is an issue? Contact us via
+                <UButton variant="link" label="Discord" to="/discord" class="p-0 underline underline-offset-2" />.
+            </p>
+            <div>
+                <UButton color="primary" @click="router.back()" size="lg" icon="i-lucide-arrow-left" label="Go back"
+                    class="mt-4" />
+            </div>
+        </UContainer>
     </main>
 </template>

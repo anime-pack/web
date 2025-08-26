@@ -33,6 +33,7 @@ const navItems = ref<NavigationMenuItem[]>([
     {
         label: 'Discord',
         to: '/discord',
+        trailingIcon: 'i-lucide-external-link',
     },
     {
         label: 'Blog',
@@ -69,10 +70,12 @@ const navItems = ref<NavigationMenuItem[]>([
         <UContainer class="container flex h-15 max-w-screen-2xl items-center px-4 justify-between">
 
             <UContainer class="flex items-center gap-2 w-fit mx-0 px-0 sm:px-0 lg:px-0">
-                <NuxtLink to="/" class="flex items-center gap-2">
-                    <img src="~/assets/images/app_icon.png" alt="App Icon" class="size-[50px]">
-                    <h2 class="font-bold text-xl">{{ $t('common.appName') }}</h2>
-                </NuxtLink>
+                <UTooltip :delay-duration="6000" text="❤️" :ui="{ text: 'text-md' }">
+                    <NuxtLink to="/" class="flex items-center gap-2">
+                        <img src="~/assets/images/app_icon.png" alt="App Icon" class="size-[50px]">
+                        <h2 class="font-bold text-xl">{{ $t('common.appName') }}</h2>
+                    </NuxtLink>
+                </UTooltip>
             </UContainer>
 
             <UNavigationMenu :items="navItems" class="w-[45%]" />
