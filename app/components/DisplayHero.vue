@@ -16,16 +16,18 @@ onMounted(fetchAnimes);
                 :ui="{ container: 'max-h-[40vh]', item: 'max-h-[40vh] min-w-[100%] rounded-none' }" as="section"
                 :autoplay="{ delay: 7000 }" :loop="true">
                 <template #default="{ item }">
-                    <div class="relative flex items-center h-[40vh] w-full bg-cover bg-center bg-no-repeat before:absolute before:inset-0 before:bg-gradient-to-t before:from-black/60 before:to-transparent before:z-0"
-                        :style="{
-                            backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0.2)), url(${item.images?.jpg?.large_image_url || item.images?.jpg?.image_url})`
-                        }">
+                    <div
+                        class="relative flex items-center h-[40vh] w-full before:absolute before:inset-0 before:bg-gradient-to-t before:from-black/60 before:to-transparent before:z-[1]">
+                        <NuxtImg :src="item.images?.jpg?.large_image_url || item.images?.jpg?.image_url"
+                            class="absolute inset-0 w-full h-full object-cover z-0" :alt="item.title" />
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/85 to-black/20 z-[1]"></div>
                         <div class="relative z-10 p-8 max-w-7xl">
-                            <h2 class="text-3xl md:text-5xl font-bold text-white mb-1 drop-shadow-lg line-clamp-1">
+                            <h2 class="text-3xl md:text-5xl h-14 font-bold text-white mb-1 drop-shadow-lg line-clamp-1">
                                 {{ item.title }}
                             </h2>
                             <ul v-if="item.genres.length" class="flex flex-wrap mb-4">
-                                <li v-for="genre in item.genres.slice(0, 4)" :key="genre.name" class="inline-block mr-2">
+                                <li v-for="genre in item.genres.slice(0, 4)" :key="genre.name"
+                                    class="inline-block mr-2">
                                     <UBadge variant="soft">{{ genre.name }}</UBadge>
                                 </li>
                             </ul>
@@ -44,14 +46,14 @@ onMounted(fetchAnimes);
                                 <UBadge variant="soft">{{ item.episodes }} eps</UBadge>
                             </div>
                         </div>
-                        <img v-if="item.images?.jpg?.large_image_url" :src="item.images.jpg.large_image_url"
+                        <NuxtImg v-if="item.images?.jpg?.large_image_url" :src="item.images.jpg.large_image_url"
                             alt="Poster"
                             class="hidden md:block absolute right-8 bottom-8 w-40 h-56 object-cover rounded-lg shadow-lg border-4 border-white/10" />
                     </div>
                 </template>
             </UCarousel>
             <div v-else class="flex items-center justify-center h-[40vh]">
-                <USkeleton class="w-full h-full rounded-lg" />
+                <USkeleton class="size-[98%] rounded-lg" />
             </div>
         </div>
     </UContainer>
