@@ -28,18 +28,15 @@ useSeoMeta({
 </script>
 
 <template>
-    <main class="w-full flex flex-col justify-between">
+    <main class="w-full flex flex-col">
         <NuxtLink :to="recentPost?.path">
             <UAlert v-if="recentPost" variant="soft" description="Check out the latest updates at the blog!" icon="i-lucide-heart" class="rounded-none" />
         </NuxtLink>
         <section>
             <DisplayHero />
         </section>
-        <section class="flex-1">
-            <USeparator />
-            <USkeleton class="size-full flex flex-col items-center justify-center">
-                <h1 class="font-bold">❤️‍🩹 Hey, we're still working on this page...</h1>
-            </USkeleton>
+        <section class="grow pb-10">
+            <CarouselsList />
         </section>
         <SearchAppeal />
     </main>

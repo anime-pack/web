@@ -4,11 +4,13 @@ import type { Anime } from '@tutkli/jikan-ts';
 
 const props = defineProps<{
     anime: Anime | undefined;
+    class?: string;
 }>();
 </script>
 
 <template>
-    <UCard :ui="{ body: 'p-0 sm:p-0 size-full' }" class="aspect-9/13 max-h-[450px] max-w-[300px] select-none">
+    <!-- @vue-ignore -->
+    <UCard :ui="{ body: 'p-0 sm:p-0 size-full' }" :class="cn('aspect-9/13 max-h-[450px] max-w-[300px] select-none', props.class)">
         <NuxtLink v-if="anime" :to="`/animes/${anime.mal_id}`" aschild class="size-full grow relative p-0">
             <NuxtImg
                 :src="anime.images.jpg.image_url"
