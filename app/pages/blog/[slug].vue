@@ -19,14 +19,15 @@ useSeoMeta(post.value?.seo || {})
                 <h1
                     class="text-4xl sm:text-5xl h-14 font-bold bg-gradient-to-r from-primary/80 to-primary bg-clip-text text-transparent">
                     {{ post.title }}
-                    <UPopover mode="hover" arrow :open-delay="1000" :close-delay="200" :content="{ side: 'right', align: 'center' }" :ui="{ content: 'size-fit p-1'}">
+                    <UPopover mode="hover" arrow :open-delay="1000" :close-delay="200"
+                        :content="{ side: 'right', align: 'center' }" :ui="{ content: 'size-fit p-1' }">
                         <!-- @vue-ignore -->
                         <UIcon name="i-lucide-link"
                             class="text-primary/40 hover:text-primary cursor-pointer size-5 sm:size-6 ml-2 inline-block transition-colors"
                             @click="copyUrl()" />
 
                         <template #content>
-                            Copy link to clipboard
+                            Copy link
                         </template>
                     </UPopover>
                 </h1>
@@ -34,24 +35,29 @@ useSeoMeta(post.value?.seo || {})
                 <div class="flex items-center gap-3 text-muted">
                     <div v-if="post.author" class="flex items-center gap-2">
                         <UIcon name="i-lucide-user" class="size-4" />
-                        <span class="text-primary/90 font-medium">{{ post.author }}</span>
+                        <span class="text-primary/90 font-medium">@{{ post.author }}</span>
                     </div>
                     <div v-if="post.date" class="flex items-center gap-2">
                         <UIcon name="i-lucide-calendar" class="size-4" />
-                        <span>{{ post.date }}</span>
+                        <span>{{ post.date }} / {{ post.hour }}</span>
                     </div>
                 </div>
 
                 <p v-if="post.description" class="text-lg sm:text-xl text-muted/90 max-w-3xl leading-relaxed">
                     {{ post.description }}
                 </p>
+                <span>
+                    <UBadge v-for="tag in post.tags" :key="tag" size="md" variant="soft" class="hover:scale-105 transition-transform cursor-pointer not-first:ml-2">
+                        #{{ tag }}
+                    </UBadge>
+                </span>
             </div>
         </header>
 
         <USeparator />
 
-        <section class="prose prose-lg dark:prose-invert max-w-none mt-8">
-            <ContentRenderer :value="post" />
+        <section class="max-w-none mt-8">
+            <ContentRenderer :value="post" :prose="true" />
         </section>
 
         <footer class="mt-12 pt-6 border-t border-default">

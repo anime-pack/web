@@ -14,6 +14,10 @@ export default defineContentConfig({
                     description: z.string(),
                     date: z.string().transform((str) => new Date(str)),
                     ogDate: z.string().transform((str) => new Date(str)),
+                    hour: z.string(),
+                    ogHour: z.string(),
+                    tags: z.array(z.string()).optional(),
+                    robots: z.boolean().default(true),
                 }),
             })
         ),

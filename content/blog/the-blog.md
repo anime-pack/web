@@ -3,18 +3,34 @@ id: "1"
 author: "AnimePack Staff"
 title: "The Blog"
 description: "Hey there, we'll be having some news and updates here."
-date: "2025-08-25"
-ogDate: "2025-08-25"
+date: "2025-08-27"
+ogDate: "2025-08-27"
+hour: "01:27"
+ogHour: "01:27"
+tags: ["news", "updates", "features"]
+robots: true
 ---
 
-Guess what? We have a blog now! 🎉
+::alert{type="info" variant="subtle" class="text-2xl"}
+We have a blog now!
+#title
+Guess what?
+#leading
+🎉
+::
 
-This is where we'll be sharing all the exciting news, updates, and behind-the-scenes peeks about AnimePack. Whether it's new features, improvements, or just some fun stuff we're working on, you'll find it all here.
+## 📢 Here’s what you’ll find:
+- 📰 News & updates
+- 🎬 Behind-the-scenes & fun facts
+- 🛠️ New features & improvements
+- 😎 Cool stuff we’re working on
 
-We are still setting things up and learning how to use it properly, so stay tuned for more updates.
+> ⏳ We’re still setting everything up and learning the ropes, so stay tuned for more updates!
 
-For a near future, we plan on adding a news page for animes/mangas as well. So, keep an eye out for that!
+## 🚀 Coming soon:
+- 📄 A news page for anime/manga
+- 🎥 Trailers to anime pages
+- 📚 More details for every anime
 
-Also adding trailers and more details to each anime/manga page is on our to-do list.
-
-Thanks for being part of the AnimePack community! Your support means the world to us. 💜
+💜 Thank you for being part of the AnimePack community.
+Your support means the world to us! 🌌
