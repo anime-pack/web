@@ -35,7 +35,7 @@ useSeoMeta(post.value?.seo || {})
                 <div class="flex items-center gap-3 text-muted">
                     <div v-if="post.author" class="flex items-center gap-2">
                         <UIcon name="i-lucide-user" class="size-4" />
-                        <span class="text-primary/90 font-medium">@{{ post.author }}</span>
+                        <span class="text-primary/90 font-medium">@{{ post.author.username }}</span>
                     </div>
                     <div v-if="post.date" class="flex items-center gap-2">
                         <UIcon name="i-lucide-calendar" class="size-4" />
@@ -47,7 +47,7 @@ useSeoMeta(post.value?.seo || {})
                     {{ post.description }}
                 </p>
                 <span>
-                    <UBadge v-for="tag in post.tags" :key="tag" size="md" variant="soft" class="hover:scale-105 transition-transform cursor-pointer not-first:ml-2">
+                    <UBadge v-for="tag in post.data.tags" :key="tag" size="md" variant="soft" class="hover:scale-105 transition-transform cursor-pointer not-first:ml-2">
                         #{{ tag }}
                     </UBadge>
                 </span>

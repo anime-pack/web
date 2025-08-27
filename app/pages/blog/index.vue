@@ -4,18 +4,26 @@ import type { BlogCollectionItem } from '@nuxt/content';
 const loading = ref(true);
 const router = useRouter();
 const toast = useToast();
-
-const { data: posts } = await useAsyncData('blog-posts', () =>
-    queryCollection('blog').order('date', 'DESC').all()
-);
-
+const posts = ref<BlogCollectionItem[] | undefined>(undefined);
 const mostRecentPost = ref<BlogCollectionItem | undefined>(undefined);
 
 onMounted(async () => {
     try {
-        mostRecentPost.value = posts?.value?.shift();
+        const { data } = await useAsyncData('blog-posts', () =>
+            queryCollection('blog').order('date', 'DESC').all()
+        );
+        if (!data.value || data.value.length === 0) {
+            throw new Error('No blog posts found');
+        };
+        mostRecentPost.value = data.value?.shift();
+        posts.value = data.value;
     } catch (error) {
         console.error(error);
+        if (error instanceof Error && error.message === 'No blog posts found') {
+            posts.value = undefined;
+            mostRecentPost.value = undefined;
+            return;
+        };
         toast.add({
             title: 'Error',
             description: 'Failed to load blog posts. Please try again or notify this on the Discord.',
@@ -30,7 +38,7 @@ onMounted(async () => {
     };
 });
 useSeoMeta({
-    title: 'Blog - AnimePack',
+    title: 'Blog',
     description: 'Stay updated with the latest news and updates from AnimePack on our blog.',
     ogTitle: 'AnimePack Blog',
     ogDescription: 'Stay updated with the latest news and updates from AnimePack on our blog.',
@@ -112,7 +120,7 @@ useSeoMeta({
 
         <UContainer as="section" v-else
             class="min-w-full min-h-full sm:p-0 lg:p-0 mx-0 flex flex-col items-center justify-center">
-            <h3 class="font-bold text-7xl mb-3">Uh, were are the posts?</h3>
+            <h3 class="font-bold text-7xl mb-3">Uh, where are the posts?</h3>
             <p>We've found no posts.</p>
             <p>Do you think this is an issue? Contact us via
                 <UButton variant="link" label="Discord" to="/discord" class="p-0 underline underline-offset-2" />.

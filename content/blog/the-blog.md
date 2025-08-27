@@ -1,14 +1,24 @@
 ---
 id: "1"
-author: "AnimePack Staff"
 title: "The Blog"
 description: "Hey there, we'll be having some news and updates here."
+og_image: 
+og_image_alt: 
 date: "2025-08-27"
-ogDate: "2025-08-27"
 hour: "01:27"
-ogHour: "01:27"
-tags: ["news", "updates", "features"]
+author:
+    username: "AnimePackStaff"
+    display_name: "AnimePack Staff"
+    uuid: "0000-0000-0000-0000"
+data: 
+    og_date: "2025-08-27"
+    og_hour: "01:27"
+    posted_at: "2025-08-27T01:27:00-03:00"
+    updated_at: "2025-08-27T01:27:00-03:00"
+    category: "updates"
+    tags: ["news", "updates", "features"]
 robots: true
+layout: "default" #later develop a blog-specific layout
 ---
 
 ::alert{type="info" variant="subtle" class="text-2xl"}
