@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "anime-pack",
   "private": true,
   "type": "module",
   "scripts": {
@@ -7,14 +7,18 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "preview:static": "bun generate && bunx serve .output/public",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/content": "3.6.3",
     "@nuxt/image": "1.10.0",
     "@nuxt/ui": "^3.2.0",
     "@nuxtjs/i18n": "^9.5.6",
     "@nuxtjs/seo": "3.1.0",
     "@tutkli/jikan-ts": "^2.2.0",
+    "better-sqlite3": "^12.2.0",
+    "clsx": "^2.1.1",
     "nuxt": "^4.0.3",
     "typescript": "^5.6.3",
     "vue": "^3.5.17",

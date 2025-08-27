@@ -1,7 +1,7 @@
 export default defineI18nLocale(async locale => {
     return {
         common: {
-            appName: 'Anime Pack',
+            appName: 'AnimePack',
             welcome: 'Welcome',
             // description: 'Your ultimate destination for discovering, organizing, and enjoying anime. Dive into a world of endless entertainment, personalized just for you.',
             // about: {

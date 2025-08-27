@@ -2,11 +2,6 @@
 export default defineNuxtConfig({
     compatibilityDate: '2025-05-15',
     devtools: { enabled: true },
-    // app: {
-    //     head: {
-    //         title: 'Anime Pack',
-    //     },
-    // },
     site: {
         name: 'Anime Pack',
         url: 'animepack.net',
@@ -23,12 +18,7 @@ export default defineNuxtConfig({
             ogType: 'website',
         },
     },
-    modules: [
-      '@nuxt/ui',
-      '@nuxt/image',
-      '@nuxtjs/i18n',
-      '@nuxtjs/seo',
-    ],
+    modules: ['@nuxt/ui', '@nuxt/image', '@nuxtjs/i18n', '@nuxtjs/seo', '@nuxt/content'],
     css: ['./assets/css/main.css'],
     i18n: {
         locales: [
