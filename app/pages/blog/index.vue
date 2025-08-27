@@ -29,6 +29,16 @@ onMounted(async () => {
         loading.value = false;
     };
 });
+useSeoMeta({
+    title: 'Blog - AnimePack',
+    description: 'Stay updated with the latest news and updates from AnimePack on our blog.',
+    ogTitle: 'AnimePack Blog',
+    ogDescription: 'Stay updated with the latest news and updates from AnimePack on our blog.',
+    // ogImage: '/og-image.png',
+    // ogImageAlt: 'AnimePack Logo',
+    ogType: 'website',
+    // twitterCard: 'summary_large_image',
+});
 </script>
 
 <template>
