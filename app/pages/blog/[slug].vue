@@ -4,11 +4,13 @@ const { path } = useRoute();
 const { data: post } = await useAsyncData('blog-post', () =>
     queryCollection('blog').where('path', '=', path).first()
 );
+useSeoMeta(post.value?.seo || {})
 </script>
 
 <template>
     <article v-if="post" class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative">
-        <UButton variant="soft" class="absolute -left-6 top-10 z-1 size-10 items-center" @click="router.back()">
+        <UButton variant="soft" aria-label="return button" class="absolute -left-6 top-10 z-1 size-10 items-center"
+            @click="router.back()">
             <UIcon name="i-lucide-arrow-left" class="size-5" />
         </UButton>
 
@@ -17,10 +19,16 @@ const { data: post } = await useAsyncData('blog-post', () =>
                 <h1
                     class="text-4xl sm:text-5xl h-14 font-bold bg-gradient-to-r from-primary/80 to-primary bg-clip-text text-transparent">
                     {{ post.title }}
-                    <!-- @vue-ignore -->
-                    <UIcon name="i-lucide-link"
-                        class="text-primary/40 hover:text-primary cursor-pointer size-5 sm:size-6 ml-2 inline-block transition-colors"
-                        @click="copyUrl()" />
+                    <UPopover mode="hover" arrow :open-delay="1000" :close-delay="200" :content="{ side: 'right', align: 'center' }" :ui="{ content: 'size-fit p-1'}">
+                        <!-- @vue-ignore -->
+                        <UIcon name="i-lucide-link"
+                            class="text-primary/40 hover:text-primary cursor-pointer size-5 sm:size-6 ml-2 inline-block transition-colors"
+                            @click="copyUrl()" />
+
+                        <template #content>
+                            Copy link to clipboard
+                        </template>
+                    </UPopover>
                 </h1>
 
                 <div class="flex items-center gap-3 text-muted">
