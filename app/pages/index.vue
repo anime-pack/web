@@ -35,7 +35,7 @@ useSeoMeta({
         <section>
             <DisplayHero />
         </section>
-        <section class="grow pb-10">
+        <section class="grow pb-10 mt-2">
             <CarouselsList />
         </section>
         <SearchAppeal />
